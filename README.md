@@ -1,2 +1,2 @@
 # group-g-retards
-Web Dev course work of Group G
+4COSC011C.3 Web Design and Development coursework.

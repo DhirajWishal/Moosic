@@ -1,0 +1,21 @@
+/* Good Times font */
+@font-face {
+    font-family: 'GoodTimes';
+    src: url('Font/good\ times\ rg.woff2') format('woff2'),
+        /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        url('Font/good\ times\ rg.ttf times.ttf') format('truetype');
+    /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+html {
+    background: radial-gradient(ellipse at bottom, #2f4763 0%, #090A0F 100%);
+    height: 100%;
+    color: white;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#title {
+    font-family: 'GoodTimes';
+    color: aqua;
+}
