@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Menu</title>
+    <style>
+        .product {
+            width: 250px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+            margin-right: 10px;
+            float: left;
+            height: 350px;
+        }
+
+        .product img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="productList"></div>
+
+    <script>
+        var element = document.getElementById("productList");
+        var content = "";
+
+        var imageList = [
+            "../Assets/NTX700-1.jpg",
+            "../Assets/fender-american-pro-stratocaster-mn-3ts-hss-a.jpg",
+            "../Assets/Taylor-GS-Mini-Koa-ESB-fr-2017.png",
+            "../Assets/Taylor-PS14ce-frl-2020.png",
+            "../Assets/THRC212-1.jpg"
+        ];
+
+        var altList = [
+            "NXT700",
+            "Fender American Pro",
+            "Taylow GS Mini",
+            "Taylor PS14ce",
+            "THRC212"
+        ];
+
+        var captionList = [
+            "YAMAHA ELECTRIC ACOUSTIC GUITAR NTX700N",
+            "AMERICAN PROFESSIONAL II STRATOCASTER",
+            "Taylor GS Mini-e Koa",
+            "Taylor PS14ce Honduran Rosewood",
+            "Yamaha THRC212 300-watt 2x12\" THR Stereo Cabinet"
+        ];
+
+        // Create the product items dynamically.
+        // This is because there are a number of products, each with similar tags and this helps reduce redundant code.
+        for (var i = 0; i < imageList.length; i++) {
+            content += "<div class=\"product\">";
+
+            content += "<img src=\"" + imageList[i] + "\" alt=\"" + altList[i] + "\" />";
+
+            content += "<div style=\"padding: 10px;\">";
+            content += "<p>" + captionList[i] + "</p>"
+            content += "</div>";
+
+            content += "</div>";
+        }
+
+        element.innerHTML = content;
+    </script>
+</body>
+
+</html>
