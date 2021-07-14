@@ -1,8 +1,50 @@
-<html lang="en">
-    <meta charset="utf-8" />
-    <title> Course work </title>
-    <head>
-        <h1> Hi </h1>
+<!DOCTYPE html>
+<html>
 
-    </head>
+<head>
+    <style>
+       .image{
+           height:300px;
+           width:200px;
+       }
+       .box{
+           position:relative;
+           width: 200px;
+           height:300px;
+       }
+       .Imageoverlay{
+           top: 0;
+           bottom: 0;
+           left: 0;
+           right: 0;
+           transition:1.5s ease;
+           position:absolute;
+           width:100%;
+           height:100%;
+           background-color:black;
+           align-items:center;
+           opacity:0;
+           border-radius: 10%;
+       }
+       .Imageoverlay:hover{
+           opacity:0.8;
+       }
+       .text{
+           text-align:center;
+           color:white;
+           padding-top:50%;
+       }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img class="image" src="Guitar.png">
+        <div class="Imageoverlay">
+         <p class="text">Very Seski guitar <br>
+          USD 200</p>
+        </div>
+    </div>
+
+</body>
+
 </html>
