@@ -4,11 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Menu</title>
+    <!--<link rel="stylesheet" href="../Styles/DefaultTheme.css">-->
     <style>
         html {
             height: 100%;
             width: 100%;
-            /*background-color: blueviolet;*/
+            background-image: url("../Assets/wp2727676.jpg");
+            background-repeat: no-repeat;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: hidden;
         }
 
         #productList {
@@ -16,15 +25,16 @@
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
-            height: 600pt;
-            overflow-x: scroll;
-            overflow-y: auto;
+            height: 350pt;
+            overflow-x: hidden;
+            overflow-y: hidden;
 
             /* for Internet Explorer, Edge */
             -ms-overflow-style: none;
             /* for Firefox */
             scrollbar-width: none;
-            overflow-y: scroll;
+            background-color: white;
+            padding-left: 1%;
         }
 
         .scrollButtons {
@@ -35,6 +45,7 @@
         .productSelection {
             margin-top: auto;
             margin-bottom: auto;
+            width: 100%;
         }
 
         .product {
@@ -63,8 +74,9 @@
 
             opacity: 1;
             display: block;
-            transition: .5s ease;
-            backface-visibility: hidden;
+
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .productInfoOverlay {
@@ -90,6 +102,57 @@
             opacity: 1;
         }
     </style>
+
+    <script>
+        /***
+         * This function initializes the product list.
+         * The reason to add the product items dynamically, is because there are a lot of similar tags in the similar structure. This means that the same code gets repeated and
+         * will result in a much more complex and cluttered file. 
+         * Using JS to perform this task will not only make things easier, will also make things much more readable, and will get rid of code redundancy.
+         */
+        function initializeProductList() {
+            var element = document.getElementById("productList");
+            var content = "";
+
+            var imageList = [
+                "../Assets/NTX700-1.jpg",
+                "../Assets/fender-american-pro-stratocaster-mn-3ts-hss-a.jpg",
+                "../Assets/Taylor-GS-Mini-Koa-ESB-fr-2017.png",
+                "../Assets/Taylor-PS14ce-frl-2020.png",
+                "../Assets/THRC212-1.jpg"
+            ];
+
+            var altList = [
+                "NXT700",
+                "Fender American Pro",
+                "Taylow GS Mini",
+                "Taylor PS14ce",
+                "THRC212"
+            ];
+
+            var captionList = [
+                "YAMAHA ELECTRIC ACOUSTIC GUITAR NTX700N",
+                "AMERICAN PROFESSIONAL II STRATOCASTER",
+                "Taylor GS Mini-e Koa",
+                "Taylor PS14ce Honduran Rosewood",
+                "Yamaha THRC212 300-watt 2x12\" THR Stereo Cabinet"
+            ];
+
+            for (var i = 0; i < imageList.length; i++) {
+                content += "<div class=\"product\">";
+
+                content += "<img class=\"productImg\" src=\"" + imageList[i] + "\" alt=\"" + altList[i] + "\" />";
+
+                content += "<div class=\"productInfoOverlay\">";
+                content += "<div class=\"productCaption\">" + captionList[i] + "</div>"
+                content += "</div>";
+
+                content += "</div>";
+            }
+
+            element.innerHTML = content;
+        }
+    </script>
 </head>
 
 <body>
@@ -100,56 +163,14 @@
     </div>
 
     <script>
-        var element = document.getElementById("productList");
-        var content = "";
+        // Initialize the product list.
+        initializeProductList();
 
-        var imageList = [
-            "../Assets/NTX700-1.jpg",
-            "../Assets/fender-american-pro-stratocaster-mn-3ts-hss-a.jpg",
-            "../Assets/Taylor-GS-Mini-Koa-ESB-fr-2017.png",
-            "../Assets/Taylor-PS14ce-frl-2020.png",
-            "../Assets/THRC212-1.jpg"
-        ];
-
-        var altList = [
-            "NXT700",
-            "Fender American Pro",
-            "Taylow GS Mini",
-            "Taylor PS14ce",
-            "THRC212"
-        ];
-
-        var captionList = [
-            "YAMAHA ELECTRIC ACOUSTIC GUITAR NTX700N",
-            "AMERICAN PROFESSIONAL II STRATOCASTER",
-            "Taylor GS Mini-e Koa",
-            "Taylor PS14ce Honduran Rosewood",
-            "Yamaha THRC212 300-watt 2x12\" THR Stereo Cabinet"
-        ];
-
-        // Create the product items dynamically.
-        // This is because there are a number of products, each with similar tags and this helps reduce redundant code.
-        for (var i = 0; i < imageList.length; i++) {
-            content += "<div class=\"product\">";
-
-            content += "<img class=\"productImg\" src=\"" + imageList[i] + "\" alt=\"" + altList[i] + "\" />";
-
-            content += "<div class=\"productInfoOverlay\">";
-            content += "<div class=\"productCaption\">" + captionList[i] + "</div>"
-            content += "</div>";
-
-            content += "</div>";
-        }
-
-        element.innerHTML = content;
-
-        function onLeftClick() {
-            document.getElementById("productList").scrollLeft += 50;
-        }
-
-        function onRightClick() {
-            document.getElementById("productList").scrollLeft -= 50;
-        }
+        // Set the horizontal scroll event listener.
+        document.getElementById("productList").addEventListener("wheel", (event) => {
+            event.preventDefault();
+            document.getElementById("productList").scrollLeft += event.deltaY
+        });
     </script>
 </body>
 
