@@ -8,29 +8,7 @@
         html {
             height: 100%;
             width: 100%;
-            background-color: blueviolet;
-        }
-
-        .product {
-            width: auto;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            text-align: center;
-            margin-right: 10px;
-            float: left;
-            height: 350px;
-
-            /*max-width: 33.333%;*/
-            padding: .75rem;
-            margin-bottom: 2rem;
-            border: 0;
-            flex-basis: 33.333%;
-            flex-grow: 0;
-            flex-shrink: 0;
-        }
-
-        .product img {
-            height: inherit;
-            width: auto;
+            /*background-color: blueviolet;*/
         }
 
         #productList {
@@ -38,7 +16,7 @@
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
-            height: 600px;
+            height: 600pt;
             overflow-x: scroll;
             overflow-y: auto;
 
@@ -48,14 +26,77 @@
             scrollbar-width: none;
             overflow-y: scroll;
         }
+
+        .scrollButtons {
+            margin-top: 50%;
+            height: 100pt;
+        }
+
+        .productSelection {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        .product {
+            width: auto;
+            /*box-shadow: 0 4pt 8pt 0 rgba(0, 0, 0, 0.2), 0 6pt 20pt 0 rgba(0, 0, 0, 0.19);*/
+            text-align: center;
+            margin-right: 10pt;
+            float: left;
+            height: 300pt;
+
+            /*max-width: 33.333%;*/
+            padding: .75rem;
+            margin-bottom: 2rem;
+            border: 0;
+            flex-basis: 33.333%;
+            flex-grow: 0;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .productImg {
+            height: inherit;
+            width: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+
+            opacity: 1;
+            display: block;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+
+        .productInfoOverlay {
+            transition: .5s ease;
+            opacity: 0;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .productCaption {
+            font-size: 16pt;
+            /*padding: 16px 32px;*/
+        }
+
+        .product:hover .productImg {
+            opacity: 0.3;
+        }
+
+        .product:hover .productInfoOverlay {
+            opacity: 1;
+        }
     </style>
 </head>
 
 <body>
-    <div>
-        <button style="float: left;" onclick="onLeftClick()">LEFT</button>
-        <button style="float: right;" onclick="onRightClick()">RIGHT</button>
-        <div id="productList"></div>
+    <div class="productSelection">
+        <!--<button class="scrollButtons" style="float: left;" onclick="onLeftClick()">LEFT</button>-->
+        <!--<button class="scrollButtons" style="float: right;" onclick="onRightClick()">RIGHT</button>-->
+        <span id="productList"></span>
     </div>
 
     <script>
@@ -91,10 +132,10 @@
         for (var i = 0; i < imageList.length; i++) {
             content += "<div class=\"product\">";
 
-            content += "<img src=\"" + imageList[i] + "\" alt=\"" + altList[i] + "\" />";
+            content += "<img class=\"productImg\" src=\"" + imageList[i] + "\" alt=\"" + altList[i] + "\" />";
 
-            content += "<div style=\"padding: 10px;\">";
-            content += "<p>" + captionList[i] + "</p>"
+            content += "<div class=\"productInfoOverlay\">";
+            content += "<div class=\"productCaption\">" + captionList[i] + "</div>"
             content += "</div>";
 
             content += "</div>";
@@ -109,7 +150,6 @@
         function onRightClick() {
             document.getElementById("productList").scrollLeft -= 50;
         }
-
     </script>
 </body>
 
