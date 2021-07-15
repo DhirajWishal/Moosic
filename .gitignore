@@ -349,5 +349,7 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .vscode/
 .ionide/
-public_html/
 
+# The VS Code directory
+.vscode/
+public_html/
