@@ -347,7 +347,9 @@ healthchecksdb
 MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
+.vscode/
 .ionide/
 
 # The VS Code directory
 .vscode/
+public_html/
