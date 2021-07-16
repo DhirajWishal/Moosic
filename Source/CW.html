@@ -2,49 +2,278 @@
 <html>
 
 <head>
-    <style>
-       .image{
-           height:300px;
-           width:200px;
-       }
-       .box{
-           position:relative;
-           width: 200px;
-           height:300px;
-       }
-       .Imageoverlay{
-           top: 0;
-           bottom: 0;
-           left: 0;
-           right: 0;
-           transition:1.5s ease;
-           position:absolute;
-           width:100%;
-           height:100%;
-           background-color:black;
-           align-items:center;
-           opacity:0;
-           border-radius: 10%;
-       }
-       .Imageoverlay:hover{
-           opacity:0.8;
-       }
-       .text{
-           text-align:center;
-           color:white;
-           padding-top:50%;
-       }
-    </style>
-</head>
-<body>
-    <div class="box">
-        <img class="image" src="../Assests/Guitar.png">
-        <div class="Imageoverlay">
-         <p class="text">Very Seski guitar <br>
-          USD 200</p>
-        </div>
-    </div>
+  <style>
+    html {
+      height: 100%;
+      width: 100%;
+      background-image: url("../Assets/wp2727676.jpg");
+    }
 
+    .image {
+      height: 200px;
+      width: auto;
+    }
+
+    .box {
+      position: relative;
+      width: 60%;
+      height: 200px;
+      border-style: solid;
+      border-color: black;
+      border-radius: 10%;
+      display: inline-block;
+      overflow: x;
+    }
+
+    .box2 {
+      position: relative;
+      width: 200px;
+      height: 300px;
+      border-style: solid;
+      border-color: black;
+      border-radius: 10%;
+      float: left;
+    }
+
+    .Imageoverlay {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transition: 1.5s ease;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      align-items: center;
+      opacity: 0;
+      border-radius: 10%;
+    }
+
+    .tablaoverlay {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transition: 1.5s ease;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url("../Assets/Cat2.gif");
+      opacity: 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 10%;
+    }
+
+    .Imageoverlay:hover {
+      opacity: 0.8;
+    }
+
+    .tablaoverlay:hover {
+      opacity: 0.8;
+    }
+
+    .mainBox {
+
+      padding: 5px;
+    }
+
+    .subBox {
+      align-items: stretch;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      padding: 5px;
+      /* for Internet Explorer, Edge */
+      -ms-overflow-style: none;
+      /* for Firefox */
+      scrollbar-width: none;
+    }
+
+    .text {
+      text-align: center;
+      color: white;
+      padding-top: 80px;
+    }
+
+    h3 {
+      border-style: solid;
+      background-color: whitesmoke;
+      font-size: 20px;
+      width: 20%;
+      padding-left: 10pt;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mainBox" id="productList">
+    <h3> Guitars </h3>
+    <div class="subBox">
+      <div class="box">
+        <img class="image" src="../assets/Guitar.png">
+        <div class="Imageoverlay">
+          <p class="text">Classic Guitar<br>
+            USD 200</p>
+        </div>
+      </div>
+      <div class="box" float="left">
+        <img class="image" src="../Assets/Taylor-GS-Mini-Koa-ESB-fr-2017.png" alt="Electric">
+        <div class="Imageoverlay">
+          <p class="text">YAMAHA ELECTRIC ACOUSTIC GUITAR NTX700N<br>
+            USD 200</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/RockGuitar.png">
+        <div class="Imageoverlay">
+          <p class="text">ROCK and ROLL themed Electric Guitar <br>
+            USD 250</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/Vguitar.png">
+        <div class="Imageoverlay">
+          <p class="text">V based Guitar <br>
+            USD 300</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/Violin.png">
+        <div class="Imageoverlay">
+          <p class="text">Mendini High quality Violin<br>
+            USD 335</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/FenderPick.png">
+        <div class="Imageoverlay">
+          <p class="text">Fenders Light Pick
+            <br>[4 pack] <br>
+            USD 30
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mainBox" id="productList">
+    <h3> DRUMS </h3>
+    <div class="subBox">
+      <div class="box">
+        <img class="image" src="../assets/Drumkit.png">
+        <div class="Imageoverlay">
+          <p class="text">Pearl Full drum kit <br>
+            USD 500</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/BassDrum.png">
+        <div class="Imageoverlay">
+          <p class="text">YAMAHA Bass drum <br>
+            USD 500</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/Tamborine.png">
+        <div class="Imageoverlay">
+          <p class="text">Hermes eidition Tamborine<br>
+            USD 1000</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/Bongo.png">
+        <div class="Imageoverlay">
+          <p class="text">High Quality Bongos <br>
+            USD 250</p>
+        </div>
+      </div>
+
+      <div class="box">
+        <img class="image" src="../assets/tabla.png">
+        <div class="tablaoverlay">
+          <p class="text"> A Classic Tabla <br>
+            USD 150</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mainBox" id="productList">
+    <h3> Air instruments </h3>
+    <div class="subBox">
+      <div class="box">
+        <img class="image" src="../assets/Clarinet.png">
+        <div class="Imageoverlay">
+          <p class="text">Yamaha Clarinet <br>
+            USD 250</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/Trumpet.png">
+        <div class="Imageoverlay">
+          <p class="text">Polished Brass Trumpet<br>
+            USD 375</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/Flute.png">
+        <div class="Imageoverlay">
+          <p class="text">Maple wood Flute <br>
+            USD 125</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/Bagpipe2.png">
+        <div class="Imageoverlay">
+          <p class="text"> Scottish bagpipes <br>
+            USD 600</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mainBox" id="productList">
+    <h3> Accessories</h3>
+    <div class="subBox">
+      <div class="box">
+        <img class="image" src="../assets/Speakers.png">
+        <div class="Imageoverlay">
+          <p class="text">HI-FI Speaker Setup <br>
+            USD 600</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/Trumpet.png">
+        <div class="Imageoverlay">
+          <p class="text">Polished Brass Trumpet<br>
+            USD 375</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/Flute.png">
+        <div class="Imageoverlay">
+          <p class="text">Maple wood Flute <br>
+            USD 125</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/Bagpipe2.png">
+        <div class="Imageoverlay">
+          <p class="text"> Scottish bagpipes <br>
+            USD 600</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var elements = document.getElementsByClass("subBox");
+
+    for (let i = 0; i < elements.lenght; i++) {
+      elements[i].addEventListener("wheel", (event) => {
+        event.preventDefault();
+        elements[i].scrollLeft += event.deltaY
+      });
+    }
+  </script>
 </body>
 
 </html>
