@@ -2,112 +2,25 @@
 <html>
 
 <head>
-  <style>
-    html {
-      height: 100%;
-      width: 100%;
-      background-image: url("../Assets/wp2727676.jpg");
-    }
-
-    .image {
-      height: 200px;
-      width: auto;
-    }
-
-    .box {
-      position: relative;
-      width: 60%;
-      height: 200px;
-      border-style: solid;
-      border-color: black;
-      border-radius: 10%;
-      display: inline-block;
-      overflow: x;
-    }
-
-    .box2 {
-      position: relative;
-      width: 200px;
-      height: 300px;
-      border-style: solid;
-      border-color: black;
-      border-radius: 10%;
-      float: left;
-    }
-
-    .Imageoverlay {
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      transition: 1.5s ease;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: black;
-      align-items: center;
-      opacity: 0;
-      border-radius: 10%;
-    }
-
-    .tablaoverlay {
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      transition: 1.5s ease;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-image: url("../Assets/Cat2.gif");
-      opacity: 0;
-      background-repeat: no-repeat;
-      background-size: cover;
-      border-radius: 10%;
-    }
-
-    .Imageoverlay:hover {
-      opacity: 0.8;
-    }
-
-    .tablaoverlay:hover {
-      opacity: 0.8;
-    }
-
-    .mainBox {
-
-      padding: 5px;
-    }
-
-    .subBox {
-      align-items: stretch;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      padding: 5px;
-      /* for Internet Explorer, Edge */
-      -ms-overflow-style: none;
-      /* for Firefox */
-      scrollbar-width: none;
-    }
-
-    .text {
-      text-align: center;
-      color: white;
-      padding-top: 80px;
-    }
-
-    h3 {
-      border-style: solid;
-      background-color: whitesmoke;
-      font-size: 20px;
-      width: 20%;
-      padding-left: 10pt;
-    }
-  </style>
+  <link rel="stylesheet" href="../Styles/Shop.css">
+  
 </head>
 
 <body>
+  <div class="navbar">
+    <div class="logo">
+      <img src="../Assets/Moosic.png" width="100" height="50" />
+    </div>
+    <ul class="linkalign">
+      <li><a href="MainPage.html">Home</a></li>
+      <li><a href="Menu.html">Products</a></li>
+      <li><a href="query.html">Query</a></li>
+      <li><a href="QuizPage.html">Quiz</a></li>
+      <li><a href="CW.html">CW</a></li>
+      <li><a>About</a></li>
+    </ul>
+  </div>
+  <p class="paddown"></p>
   <div class="mainBox" id="productList">
     <h3> Guitars </h3>
     <div class="subBox">
@@ -242,38 +155,29 @@
         </div>
       </div>
       <div class="box">
-        <img class="image" src="../assets/Trumpet.png">
+        <img class="image" src="../assets/poweradpater.png">
         <div class="Imageoverlay">
-          <p class="text">Polished Brass Trumpet<br>
-            USD 375</p>
+          <p class="text">Yamaha Piano Keyboard Power adpater<br>
+            USD 120</p>
         </div>
       </div>
       <div class="box">
-        <img class="image" src="../assets/Flute.png">
+        <img class="image" src="../assets/violinbow.png">
         <div class="Imageoverlay">
-          <p class="text">Maple wood Flute <br>
-            USD 125</p>
+          <p class="text">Violin Bow<br>
+            USD 20</p>
         </div>
       </div>
       <div class="box">
-        <img class="image" src="../assets/Bagpipe2.png">
+        <img class="image" src="../assets/Drumstick.png">
         <div class="Imageoverlay">
-          <p class="text"> Scottish bagpipes <br>
-            USD 600</p>
+          <p class="text"> Wooden Drum sticks <br>
+            USD 10</p>
         </div>
       </div>
     </div>
   </div>
-  <script>
-    var elements = document.getElementsByClass("subBox");
-
-    for (let i = 0; i < elements.lenght; i++) {
-      elements[i].addEventListener("wheel", (event) => {
-        event.preventDefault();
-        elements[i].scrollLeft += event.deltaY
-      });
-    }
-  </script>
+  <script src="../Scripts/Shop.js"> </script>
 </body>
 
 </html>
