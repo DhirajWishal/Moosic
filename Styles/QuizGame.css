@@ -56,6 +56,17 @@ body{
     color: white;
 }
 
+#timer{
+    color: #fff;
+    text-align: end;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 40px;
+    margin: 0;
+    height: 70px;
+    width: 200px;
+
+}
+
 #container{
     width: 60%;
     font:'Roboto';
@@ -165,6 +176,7 @@ input[type="reset"]{
     text-align: center;
     padding: 10px;
     margin: 10px 0;
+    font-size: 20px;
     
 }
 
@@ -174,9 +186,14 @@ input[type="reset"]{
 
 }
 
-
 #result  span#bad{
     color: rgb(255, 0, 0);
+    font-weight: bold;
+
+}
+
+#result  span#okay{
+    color: rgb(255, 115, 0);
     font-weight: bold;
 
 }

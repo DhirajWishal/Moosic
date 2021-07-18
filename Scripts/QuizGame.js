@@ -32,11 +32,12 @@ function formValidation(userSelection , noOfQuestions){
             alert("You missed Question Number " + (i+1) + " Please select an answer!!")
             return false;
         }
-    }  
+    }
+    return true;  
 }
 
 /**
- * Function to Chexk Correct Answers
+ * Function to Check Correct Answers
  * @param userSelection 
  * @param noOfQuestions 
  * @param userScore 
@@ -47,16 +48,26 @@ function  evaluateAnswers(userSelection, noOfQuestions, userScore){
 
     for(i=0;i< noOfQuestions;i++){
         if (userSelection[i] == answers[i]){
-            userScore++;
+            userScore+=2;
+        }
+        else{
+            userScore -= 1;
         }
     }
-    if(userScore > 7){
-        var result = document.getElementById("result").innerHTML = "<h2> You scored <span id='good'>" + userScore + "</span> out of <span>" + noOfQuestions + "</span> Good Job!!</h2>";
+    if(userScore > 15){
+        var result = document.getElementById("result");
+        result.innerHTML = "<h2> You scored <span id='good'>" + userScore + "</span> out of <span>" + (noOfQuestions*2) + "</span> Good Job!!</h2>";
+    }
+    else if (userScore > 7){
+        var result = document.getElementById("result");
+        result.innerHTML = "<h2> You only scored <span id='okay'>" + userScore + "</span> out of <span>" + (noOfQuestions*2) + "</span> Try again!</h2>";
+
     }
     else{
-        var result = document.getElementById("result").innerHTML = "<h2> You only scored <span id='bad'>" + userScore + "</span> out of <span>" + noOfQuestions + "</span> Try again!</h2>";
-
+        var result = document.getElementById("result");
+        result.innerHTML = "<h2> You only scored <span id='bad'>" + userScore + "</span> out of <span>" + (noOfQuestions*2) + "</span> Try again!</h2>";
     }
    
     
 }
+
