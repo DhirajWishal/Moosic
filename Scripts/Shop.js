@@ -20,10 +20,10 @@ for (let index = 0; index < hello.length; index++) {
 function shoppingKart(index) {
     let outputName;
     let userInput = prompt("Please enter the amount of this item you want");
-    if (userInput == null || userInput == "") {
-        text = "Enter a Valid number OR press 0 to dismiss";
+    if (userInput == null || userInput == " "|| isNaN(userInput)) {
+        alert("Enter a Valid number ");
     } else {
-        alert("Added to cart sucessfully" + index)
+        alert("Added to cart sucessfully")
         setProduct(index, itemlist[index], userInput);
     }
 }
