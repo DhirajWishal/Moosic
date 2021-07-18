@@ -2,49 +2,182 @@
 <html>
 
 <head>
-    <style>
-       .image{
-           height:300px;
-           width:200px;
-       }
-       .box{
-           position:relative;
-           width: 200px;
-           height:300px;
-       }
-       .Imageoverlay{
-           top: 0;
-           bottom: 0;
-           left: 0;
-           right: 0;
-           transition:1.5s ease;
-           position:absolute;
-           width:100%;
-           height:100%;
-           background-color:black;
-           align-items:center;
-           opacity:0;
-           border-radius: 10%;
-       }
-       .Imageoverlay:hover{
-           opacity:0.8;
-       }
-       .text{
-           text-align:center;
-           color:white;
-           padding-top:50%;
-       }
-    </style>
-</head>
-<body>
-    <div class="box">
-        <img class="image" src="../Assests/Guitar.png">
-        <div class="Imageoverlay">
-         <p class="text">Very Seski guitar <br>
-          USD 200</p>
-        </div>
-    </div>
+  <link rel="stylesheet" href="../Styles/Shop.css">
 
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <img src="../Assets/Moosic.png" width="100" height="50" />
+    </div>
+    <ul class="linkalign">
+      <li><a href="MainPage.html">Home</a></li>
+      <li><a href="Menu.html">Products</a></li>
+      <li><a href="query.html">Query</a></li>
+      <li><a href="QuizPage.html">Quiz</a></li>
+      <li><a href="CW.html">CW</a></li>
+      <li><a>About</a></li>
+    </ul>
+  </div>
+  <p class="paddown"></p>
+  <div class="mainBox" id="productList">
+    <h3> Guitars </h3>
+    <div class="subBox" id="testTag">
+      <div class="box">
+        <img class="image" src="../assets/Guitar.png">
+        <div class="Imageoverlay">
+          <p class="text">Classic Guitar<br>
+            USD 200</p>
+        </div>
+      </div>
+      <div class="box" float="left">
+        <img class="image" src="../Assets/Taylor-GS-Mini-Koa-ESB-fr-2017.png" alt="Electric">
+        <div class="Imageoverlay">
+          <p class="text">YAMAHA ELECTRIC ACOUSTIC GUITAR NTX700N<br>
+            USD 200</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/RockGuitar.png">
+        <div class="Imageoverlay">
+          <p class="text">ROCK and ROLL themed Electric Guitar <br>
+            USD 250</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/Vguitar.png">
+        <div class="Imageoverlay">
+          <p class="text">V based Guitar <br>
+            USD 300</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/Violin.png">
+        <div class="Imageoverlay">
+          <p class="text">Mendini High quality Violin<br>
+            USD 335</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/FenderPick.png">
+        <div class="Imageoverlay">
+          <p class="text">Fenders Light Pick
+            <br>[4 pack] <br>
+            USD 30
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mainBox" id="productList">
+    <h3> DRUMS </h3>
+    <div class="subBox">
+      <div class="box">
+        <img class="image" src="../assets/Drumkit.png">
+        <div class="Imageoverlay">
+          <p class="text">Pearl Full drum kit <br>
+            USD 500</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/BassDrum.png">
+        <div class="Imageoverlay">
+          <p class="text">YAMAHA Bass drum <br>
+            USD 500</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/Tamborine.png">
+        <div class="Imageoverlay">
+          <p class="text">Hermes eidition Tamborine<br>
+            USD 1000</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/Bongo.png">
+        <div class="Imageoverlay">
+          <p class="text">High Quality Bongos <br>
+            USD 250</p>
+        </div>
+      </div>
+
+      <div class="box">
+        <img class="image" src="../assets/tabla.png">
+        <div class="tablaoverlay">
+          <p class="text"> A Classic Tabla <br>
+            USD 150</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mainBox" id="productList">
+    <h3> Air instruments </h3>
+    <div class="subBox">
+      <div class="box">
+        <img class="image" src="../assets/Clarinet.png">
+        <div class="Imageoverlay">
+          <p class="text">Yamaha Clarinet <br>
+            USD 250</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/Trumpet.png">
+        <div class="Imageoverlay">
+          <p class="text">Polished Brass Trumpet<br>
+            USD 375</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/Flute.png">
+        <div class="Imageoverlay">
+          <p class="text">Maple wood Flute <br>
+            USD 125</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/Bagpipe2.png">
+        <div class="Imageoverlay">
+          <p class="text"> Scottish bagpipes <br>
+            USD 600</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mainBox" id="productList">
+    <h3> Accessories</h3>
+    <div class="subBox">
+      <div class="box">
+        <img class="image" src="../assets/Speakers.png">
+        <div class="Imageoverlay">
+          <p class="text">HI-FI Speaker Setup <br>
+            USD 600</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/poweradpater.png">
+        <div class="Imageoverlay">
+          <p class="text">Yamaha Piano Keyboard Power adpater<br>
+            USD 120</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/violinbow.png">
+        <div class="Imageoverlay">
+          <p class="text">Violin Bow<br>
+            USD 20</p>
+        </div>
+      </div>
+      <div class="box">
+        <img class="image" src="../assets/Drumstick.png">
+        <div class="Imageoverlay">
+          <p class="text"> Wooden Drum sticks <br>
+            USD 10</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../Scripts/Shop.js"></script>
 </body>
 
 </html>
