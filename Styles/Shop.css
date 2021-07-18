@@ -2,12 +2,19 @@
 html {
   height: 100%;
   width: 100%;
-  background-image: url("../Assets/wp2727676.jpg");
+  background-size:cover;
 }
-
+body{
+  background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url("../Assets/Backdrop3.jpg");
+}
 .image {
   height: 200px;
   width: auto;
+}
+footer{
+  background-color: white;
+  text-align: center;
+  font-size: 15pt;
 }
 
 .box {
@@ -71,8 +78,7 @@ html {
 }
 
 .mainBox {
-
-  padding: 5px;
+  padding: 5pt;
 }
 
 .subBox {
@@ -80,7 +86,11 @@ html {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  padding: 5px;
+  padding: 5pt;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+
   /* for Internet Explorer, Edge */
   -ms-overflow-style: none;
   /* for Firefox */
@@ -90,7 +100,7 @@ html {
 .text {
   text-align: center;
   color: white;
-  padding-top: 80px;
+  padding-top: 60pt;
 }
 
 h3 {
@@ -148,4 +158,13 @@ h3 {
 }
 .paddown{
   padding-bottom: 60pt;
+}
+.paddRight{
+  padding-right:10pt ;
+}
+.buttoncss{
+  padding:10pt;
+  background-color:pink;
+  font-size:20pt;
+  margin-left:80%;
 }
