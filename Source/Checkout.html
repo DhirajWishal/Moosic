@@ -3,10 +3,129 @@
 
 <head>
     <title>Checkout</title>
+    <script src="../Scripts/ShoppingCart.js"></script>
+    <link rel="stylesheet" href="../Styles/DefaultTheme.css">
+    <link rel="stylesheet" href="../Styles/NavBar.css">
+
+    <style>
+        .container {
+            margin-top: 3.9%;
+        }
+
+        #pageFooter {
+            width: 100%;
+            background-color: whitesmoke;
+        }
+
+        body {
+            height: 100%;
+            background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../Assets/1162936.jpg");
+            color: white;
+            font-size: large;
+        }
+        
+        #productTable table {
+            border-collapse: collapse;
+            text-align: center;
+            font-size: larger;
+        }
+    </style>
 </head>
 
 <body>
+    <!--This is the Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="../Assets/Moosic.png" width="100" height="50" />
+        </div>
+        <ul class="linkalign">
+            <li><a href="MainPage.html">Home</a></li>
+            <li><a href="Menu.html">Products</a></li>
+            <li><a href="query.html">Query</a></li>
+            <li><a href="QuizPage.html">Quiz</a></li>
+            <li><a href="CW.html">CW</a></li>
+            <li><a>About</a></li>
+        </ul>
+    </div>
 
+    <div class="container">
+        <div id="productTable">
+            <script>
+                {
+                    setProduct(0, "Dhiraj", 2);
+                    setProduct(1, "Fizz", 3);
+                    setProduct(2, "Miran", 75);
+                    setProduct(3, "Thulana", 69);
+                }
+
+                var tableString = "<table>";
+                tableString += "<tr>";
+                tableString += "<th>Product Name</th><th>Quantity</th>";
+                tableString += "</tr>";
+
+                for (let i = 0; i < 20; i++) {
+                    var product = getProduct(i);
+                    if (!product.isNull()) {
+                        tableString += "<tr>";
+
+                        tableString += "<td>" + product.mProductName + "</td><td>" + product.mQuantity + "</td>";
+
+                        tableString += "</tr>";
+                    }
+                }
+                tableString += "</table>";
+
+                document.getElementById("productTable").innerHTML = tableString;
+            </script>
+        </div>
+
+        <form>
+            <fieldset>
+                <legend>Personal Information</legend>
+                <p style="color: red;">All fields marked with * is mandatory.</p>
+                <label> First Name:* <input type="text" name="customer_first_name" placeholder="John" /></label> <br />
+                <label> Last Name:* <input type="text" name="customer_last_name" placeholder="McDonald" /> </label>
+                <br />
+
+                <label> Country:*
+                    <select name="customer_country">
+                        <option value="sri_lanka" selected>Sri Lanka</option>
+                        <option value="india">India</option>
+                        <option value="Russia">Russia</option> <!-- Mother rrrussia -->
+                        <option value="england">United Kingdom</option>
+                        <option value="murrica">United States</option>
+                    </select>
+                </label> <br />
+
+                <label> Address:* <input type="text" name="customer_address"
+                        placeholder="123/45, Zoo road, Dehiwala." />
+                </label> <br />
+
+                <label> Date of birth: <input type="date" name="customer_date_of_birth"></label> <br />
+
+                <input type="button" value="Checkout" onclick="onCheckout(this.form)" />
+                <input type="reset" value="Clear" />
+            </fieldset>
+
+            <script>
+                /**
+                 * On checkout function.
+                 * 
+                 * @param form The html form.
+                 */
+                function onCheckout(form) {
+                    // Validate the form.
+                    if (form.customer_first_name.value.length == 0 || form.customer_last_name.value.length == 0 || form
+                        .customer_country.value.length == 0 || form.customer_address.value.length == 0) {
+                        alert("Field specified as required (*) should not be empty!");
+                    }
+                }
+            </script>
+        </form>
+    </div>
+    <footer id="pageFooter">
+        <a href="Dhiraj.html">Dhiraj Wishal | Student 1</a>
+    </footer>
 </body>
 
 </html>
