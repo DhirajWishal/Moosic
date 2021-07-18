@@ -351,3 +351,4 @@ MigrationBackup/
 
 # The VS Code directory
 .vscode/
+public_html/
