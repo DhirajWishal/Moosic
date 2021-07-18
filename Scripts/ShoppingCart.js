@@ -1,6 +1,3 @@
-var products = [];
-var productImages = [];
-
 /**
  * Product information class.
  * This class is used to store a single product's information.

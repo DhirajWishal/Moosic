@@ -1,12 +1,20 @@
+
 html {
   height: 100%;
   width: 100%;
-  background-image: url("../Assets/wp2727676.jpg");
-}
+  background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url("../Assets/Backdrop3.jpg");
+  background-size:1000pt 1000pt ;
+  background-repeat: no-repeat;
 
+}
 .image {
   height: 200px;
   width: auto;
+}
+footer{
+  background-color: white;
+  text-align: center;
+  font-size: 15pt;
 }
 
 .box {
@@ -71,7 +79,7 @@ html {
 
 .mainBox {
 
-  padding: 5px;
+  padding: 5pt;
 }
 
 .subBox {
@@ -79,9 +87,10 @@ html {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  padding: 5px;
+  padding: 5pt;
   overflow-x: hidden;
   overflow-y: hidden;
+
 
   /* for Internet Explorer, Edge */
   -ms-overflow-style: none;
@@ -92,7 +101,7 @@ html {
 .text {
   text-align: center;
   color: white;
-  padding-top: 80px;
+  padding-top: 60pt;
 }
 
 h3 {
@@ -102,8 +111,7 @@ h3 {
   width: 20%;
   padding-left: 10pt;
 }
-
-.logo {
+.logo{
   float: left;
   padding-top: 0.6%;
   padding-left: 0.8%;
@@ -111,45 +119,52 @@ h3 {
   border-radius: 0.4%;
 }
 
-.navbar {
+.navbar{
   z-index: 500;
   overflow: hidden;
   background-color: black;
   position: fixed;
-  top: 0;
-  width: 100%;
+  top:0;
+  width:100%;
   font-size: 1.5vw;
-
+  
 }
 
-.linkalign a {
+.linkalign a{
   color: white;
   text-decoration: none;
   text-transform: uppercase;
   padding: 15pt 45pt;
-  display: block;
+  display: block; 
 }
 
 
-.linkalign a:hover {
-  color: rgb(25, 26, 27);
-  background-color: rgba(4, 9, 30, 0.7);
+.linkalign a:hover{
+  color:rgb(25, 26, 27) ;
+  background-color: rgba(4,9,30,0.7);
 }
 
-.linkalign ul {
+.linkalign ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
   text-align: center;
-
-
+ 
+  
 }
 
-.linkalign li {
+.linkalign li{
   list-style: none;
-  display: inline-block;
+  display:inline-block;
 }
-
-.paddown {
-  padding-bottom: 80px;
+.paddown{
+  padding-bottom: 60pt;
+}
+.paddRight{
+  padding-right:10pt ;
+}
+.buttoncss{
+  padding:10pt;
+  background-color:pink;
+  font-size:20pt;
 }
