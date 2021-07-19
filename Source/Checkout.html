@@ -6,6 +6,7 @@
     <script src="../Scripts/ShoppingCart.js"></script>
     <link rel="stylesheet" href="../Styles/DefaultTheme.css">
     <link rel="stylesheet" href="../Styles/NavBar.css">
+    <link rel="stylesheet" href="../Styles/ButtonStyle.css">
 
     <style>
         .container {
@@ -22,6 +23,14 @@
             background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../Assets/1162936.jpg");
             color: white;
             font-size: larger;
+            display: grid;
+            grid-template-rows: auto auto auto;
+        }
+
+        footer {
+            display: grid;
+            align-self: end;
+            /* The trick */
         }
 
         #productTable table {
@@ -53,6 +62,41 @@
         .totalPrice {
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .inputForm {
+            text-align: left;
+        }
+
+        .formStyle {
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .formInputElement {
+            background: transparent;
+            border-style: none;
+            outline: none;
+            font-size: large;
+            color: white;
+            border-bottom: white;
+            border-bottom-style: solid;
+            margin-top: 20pt;
+            width: 50%;
+        }
+
+        .formStyle option {
+            color: black;
+        }
+
+        .formSubmitButton {
+            background: transparent;
+            border-style: solid;
+            border-color: white;
+            color: white;
+            font-size: large;
+            border-radius: 7.5pt;
         }
     </style>
 </head>
@@ -212,32 +256,32 @@
         </div>
 
         <!--<hr style="width: 50%; margin-left: auto; margin-right: auto; margin-top: 10pt;" />-->
-        <form>
+        <form class="formStyle">
             <fieldset>
                 <legend style="font-size: xx-large;">Personal Information</legend>
                 <p style="color: red;">All fields marked with * is mandatory.</p>
-                <label> First Name:* <input type="text" name="customer_first_name" placeholder="John" /></label> <br />
-                <label> Last Name:* <input type="text" name="customer_last_name" placeholder="McDonald" /> </label>
-                <br />
+                <input type="text" name="customer_first_name" placeholder="First Name *"
+                    class="formInputElement" /><br />
+                <input type="text" name="customer_last_name" placeholder="Last Name * "
+                    class="formInputElement" /><br />
 
-                <label> Country:*
-                    <select name="customer_country">
-                        <option value="sri_lanka" selected>Sri Lanka</option>
-                        <option value="india">India</option>
-                        <option value="Russia">Russia</option> <!-- Mother rrrussia -->
-                        <option value="england">United Kingdom</option>
-                        <option value="murrica">United States</option>
-                    </select>
-                </label> <br />
+                <select name="customer_country" class="formInputElement">
+                    <option value="sri_lanka" selected>Sri Lanka</option>
+                    <option value="india">India</option>
+                    <option value="Russia">Russia</option> <!-- Mother rrrussia -->
+                    <option value="england">United Kingdom</option>
+                    <option value="murrica">United States</option>
+                </select><br />
 
-                <label> Address:* <input type="text" name="customer_address"
-                        placeholder="123/45, Zoo road, Dehiwala." />
-                </label> <br />
+                <input type="text" name="customer_address" placeholder="Address *" class="formInputElement" /><br />
+                <input type="date" name="customer_date_of_birth" placeholder="Date of birth"
+                    class="formInputElement"><br />
 
-                <label> Date of birth: <input type="date" name="customer_date_of_birth"></label> <br />
-
-                <input type="button" value="Checkout" onclick="onCheckout(this.form)" />
-                <input type="reset" value="Clear" />
+                <div style="margin-top: 20pt;">
+                    <input type="button" value="Checkout" onclick="onCheckout(this.form)" class="button"
+                        style="float: left; margin-left: 25%;" />
+                    <input type="reset" value="Clear" class="button" style="float: right; margin-right: 25%;" />
+                </div>
             </fieldset>
 
             <script>
