@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Invoice</title>
+</head>
+
+<body>
+    <h1>Purchase Invoice</h1>
+    <p id="detailArea"></p>
+    <script src="../Scripts/ShoppingCart.js">
+        var element = document.getElementById("detailArea");
+
+        var details = "Customer Name: " + sessionStorage.getItem("customer_first_name") + " " + sessionStorage.getItem(
+            "customer_last_name") + "<br>";
+        details += "Customer Country: " + sessionStorage.getItem("customer_country") + "<br>";
+        details += "Customer Address: " + sessionStorage.getItem("customer_address") + "<br>";
+        details += "Customer Email: " + sessionStorage.getItem("customer_email") + "<br>";
+    </script>
+</body>
+
+</html>

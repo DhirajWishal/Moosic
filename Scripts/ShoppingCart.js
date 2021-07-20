@@ -1,3 +1,25 @@
+const priceList = [
+    200,
+    200,
+    250,
+    300,
+    335,
+    30,
+    500,
+    500,
+    1000,
+    250,
+    150,
+    250,
+    375,
+    125,
+    600,
+    600,
+    120,
+    20,
+    10
+];
+
 /**
  * Product information class.
  * This class is used to store a single product's information.
