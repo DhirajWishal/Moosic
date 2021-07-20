@@ -35,21 +35,21 @@ function viewquery(frm) {
         filled=false;
         frm.firstname.value="";
     }
-    if(lname.length==1 || lname.length>30){
+    if(lname.length==1 || lname.length>30 || !isNaN(lname)){
         alert("Enter a valid Last name!");
         filled=false;
         frm.lastname.value="";   
     }
-    if(email.length<7){
+    if(mail.length<7){
         alert("Enter a valid Email Address!");
         filled=false;
         frm.email.value="";
     }
-    if(feedback.length<11){
+    if(feedback.length<11 || feedback.length>1000){
         alert("Please type in more details in your query!")
         filled=false;
         frm.feedback.value="";
-    }*/
+    }
 
     if (filled == true) {
         x.style.display = 'none';
