@@ -32,7 +32,7 @@ html {
     border-radius: 0.4%;
 }
 
-.navbar {
+#navbar {
     text-align: center;
     z-index: 500;
     overflow: hidden;
