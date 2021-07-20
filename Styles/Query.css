@@ -21,9 +21,12 @@ fieldset{
     width: 800pt;
     border-radius: 3px;
     padding-bottom: 10pt;
+    margin-bottom: 5%;
+
 }
 
 .faq p{
+    margin-left: 0.8%;
     opacity: 1;
     text-align: left;
 }

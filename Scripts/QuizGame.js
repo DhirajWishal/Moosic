@@ -27,6 +27,9 @@
     return false;
 }
 
+document.getElementById("submit").addEventListener("click", QuizResults);
+
+
 /**
  * Validation - to ensure user selects an answer for every question
  * @param {*} userSelection 
@@ -60,6 +63,7 @@ function  evaluateAnswers(userSelection, noOfQuestions, userScore){
         }
         else{
             userScore -= 1;
+            
         }
     }
     
@@ -116,5 +120,7 @@ function showTime(seconds){
 }
    
     
-
+function resetForm(){
+    location.reload();
+}
 
