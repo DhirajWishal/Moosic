@@ -19,3 +19,7 @@ html {
     font-family: 'GoodTimes';
     color: aqua;
 }
+*{
+    margin: 0;
+    padding: 0;
+}
