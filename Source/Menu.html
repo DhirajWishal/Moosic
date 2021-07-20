@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../Styles/DefaultTheme.css">
     <link rel="stylesheet" href="../Styles/ButtonStyle.css">
     <link rel="stylesheet" href="../Styles/Menu.css">
-    <script src="../Scripts/Menu.js"></script>
     <script src="../Scripts/Interactivity.js"></script>
 </head>
 
@@ -19,32 +18,6 @@
         <script src="../Scripts/navbar.js"></script>
 
         <div class="infoSection">
-            <!--
-            <div class="banner">
-                <div class="fade"><img src="../Assets/crafts-hobby-music-instrument.jpg" /></div>
-                <div class="fade"><img src="../Assets/crafts-hobby-music-instrument.jpg" /></div>
-                <div class="fade"><img src="../Assets/crafts-hobby-music-instrument.jpg" /></div>
-            </div>
-            <script>
-                var slideIndex = 0;
-                showSlides();
-
-                function showSlides() {
-                    var i;
-                    var slides = document.getElementsByClassName("fade");
-                    for (i = 0; i < slides.length; i++) {
-                        slides[i].style.display = "none";
-                    }
-                    slideIndex++;
-                    if (slideIndex > slides.length) {
-                        slideIndex = 1
-                    }
-                    slides[slideIndex - 1].style.display = "block";
-                    setTimeout(showSlides, 2000); // Change image every 2 seconds
-                }
-            </script>
-        -->
-
             <h1 id="#guitars">Guitars</h1>
             <div class="productInfo">
                 <div class="productList">
@@ -80,13 +53,16 @@
 
     <div style="float: right; bottom: 0; position: fixed; margin-bottom: 5%; margin-left: 89%;">
         <a href="Checkout.html" class="button goBackButton">Checkout</a>
+        <span id="itemNumber">0</span>
     </div>
     <footer class="footer">
         <a href="Dhiraj.html">Dhiraj Wishal | Student 1</a>
     </footer>
 
+    <script src="../Scripts/Menu.js"></script>
     <script>
         initializeProductList();
+        updateItemCount();
 
         var elements = document.getElementsByClassName("productList");
         for (let i = 0; i < elements.length; i++) {

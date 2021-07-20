@@ -51,6 +51,9 @@
                 function removeProductAndRow(index) {
                     removeProduct(index);
                     processTable();
+
+                    itemCount--;
+                    sessionStorage.setItem("itemCount", itemCount);
                 }
 
                 /**
