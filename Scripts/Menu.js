@@ -135,8 +135,8 @@ function onProductSelect(index) {
     content += "<input type=\"text\" class=\"ghostInputElement\" name=\"quantity\" placeholder=\"Quantity*\" />";
     content += "<br>";
 
-    content += "<input type=\"button\" class=\"button\" onclick=\"handleAddToCart(" + index + ", this.form)\" value=\"Add to cart\">";
     content += "<input type=\"button\" class=\"button\" onclick=\"hideGhost()\" value=\"Cancel\">";
+    content += "<input type=\"button\" class=\"button\" onclick=\"handleAddToCart(" + index + ", this.form)\" value=\"Add to cart\">";
     content += "</form>";
     content += "</div>";
     content += "</div>";
