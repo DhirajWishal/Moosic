@@ -8,91 +8,108 @@
     <link rel="stylesheet" href="../Styles/DefaultTheme.css">
     <link rel="stylesheet" href="../Styles/ButtonStyle.css">
     <link rel="stylesheet" href="../Styles/Menu.css">
-
-    <script>
-        /***
-         * This function initializes the product list.
-         * The reason to add the product items dynamically, is because there are a lot of similar tags in the similar structure. This means that the same code gets repeated and
-         * will result in a much more complex and cluttered file. 
-         * Using JS to perform this task will not only make things easier, will also make things much more readable, and will get rid of code redundancy.
-         */
-        function initializeProductList() {
-            var element = document.getElementById("productList");
-            var content = "";
-
-            var productIDs = ["p1", "p2", "p3", "p4", "p5"];
-
-            var imageList = [
-                "../Assets/NTX700-1.jpg",
-                "../Assets/fender-american-pro-stratocaster-mn-3ts-hss-a.jpg",
-                "../Assets/Taylor-GS-Mini-Koa-ESB-fr-2017.png",
-                "../Assets/Taylor-PS14ce-frl-2020.png",
-                "../Assets/THRC212-1.jpg"
-            ];
-
-            var altList = [
-                "NXT700",
-                "Fender American Pro",
-                "Taylow GS Mini",
-                "Taylor PS14ce",
-                "THRC212"
-            ];
-
-            var captionList = [
-                "YAMAHA ELECTRIC ACOUSTIC GUITAR NTX700N",
-                "AMERICAN PROFESSIONAL II STRATOCASTER",
-                "Taylor GS Mini-e Koa",
-                "Taylor PS14ce Honduran Rosewood",
-                "Yamaha THRC212 300-watt 2x12\" THR Stereo Cabinet"
-            ];
-
-            for (var i = 0; i < imageList.length; i++) {
-                content += "<div class=\"product\">";
-
-                content += "<img class=\"productImg\" src=\"" + imageList[i] + "\" alt=\"" + altList[i] + "\" />";
-
-                content += "<div class=\"productInfoOverlay\">";
-                content += "<div class=\"productCaption\">" + captionList[i] + "</div>"
-                content += "</div>";
-
-                content += "</div>";
-            }
-
-            element.innerHTML = content;
-        }
-    </script>
+    <script src="../Scripts/Menu.js"></script>
 </head>
 
 <body>
     <!--This is the Navbar -->
-    <div id='navbar'></div>
-    <script src="../Scripts/navbar.js"></script>
-
     <div class="container">
-        <div class="productSelection">
-            <!--<button class="scrollButtons" style="float: left;" onclick="onLeftClick()">LEFT</button>-->
-            <!--<button class="scrollButtons" style="float: right;" onclick="onRightClick()">RIGHT</button>-->
-            <span id="productList"></span>
+        <div id='navbar'></div>
+        <script src="../Scripts/navbar.js"></script>
+
+        <div class="infoSection">
+            <!--
+            <div class="banner">
+                <div class="fade"><img src="../Assets/crafts-hobby-music-instrument.jpg" /></div>
+                <div class="fade"><img src="../Assets/crafts-hobby-music-instrument.jpg" /></div>
+                <div class="fade"><img src="../Assets/crafts-hobby-music-instrument.jpg" /></div>
+            </div>
+            <script>
+                var slideIndex = 0;
+                showSlides();
+
+                function showSlides() {
+                    var i;
+                    var slides = document.getElementsByClassName("fade");
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    slideIndex++;
+                    if (slideIndex > slides.length) {
+                        slideIndex = 1
+                    }
+                    slides[slideIndex - 1].style.display = "block";
+                    setTimeout(showSlides, 2000); // Change image every 2 seconds
+                }
+            </script>
+        -->
+
+            <div class="productInfo">
+                <h1>Guitars</h1>
+
+                <div class="productList">
+                </div>
+            </div>
+
+            <div class="productInfo">
+                <h1>Percussion</h1>
+
+                <div class="productList">
+                </div>
+            </div>
+
+            <h1>Drums</h1>
+            <div class="productInfo">
+
+                <div class="productList">
+                </div>
+            </div>
+
+            <div class="productInfo">
+                <h1>Accessories</h1>
+
+                <div class="productList"></div>
+                <div style="height: 100pt;"></div> <!-- Just some padding. -->
+            </div>
         </div>
+    </div>
 
-        <script>
-            // Initialize the product list.
-            initializeProductList();
+    <!-- Fade overlay -->
+    <div id="fadeOverlay"></div>
 
-            // Set the horizontal scroll event listener.
-            document.getElementById("productList").addEventListener("wheel", (event) => {
-                event.preventDefault();
-                document.getElementById("productList").scrollLeft += event.deltaY;
-            });
-        </script>
+    <!-- Ghost box. This will contain the selected item information. -->
+    <div id="productGhost" class="ghostHide">
     </div>
 
     <div style="float: right; bottom: 0; position: fixed; margin-bottom: 5%; margin-left: 89%;">
-        <a href="Shop.html" class="button goBackButton">Checkout</a>
+        <a href="Checkout.html" class="button goBackButton">Checkout</a>
     </div>
     <footer class="footer">
         <a href="Dhiraj.html">Dhiraj Wishal | Student 1</a>
     </footer>
+
+    <script>
+        initializeProductList();
+
+        var elements = document.getElementsByClassName("productList");
+        for (let i = 0; i < elements.length; i++) {
+            let element = elements[i];
+
+            element.addEventListener("wheel", (event) => {
+                event.preventDefault();
+                element.scrollLeft += event.deltaY;
+            })
+        }
+
+        var products = document.getElementsByClassName("product");
+        for (let i = 0; i < products.length; i++) {
+            let product = products[i];
+
+            product.addEventListener("click", () => {
+                onProductSelect(i);
+            })
+        }
+    </script>
 </body>
 
 </html>

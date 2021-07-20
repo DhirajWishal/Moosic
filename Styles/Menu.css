@@ -1,22 +1,157 @@
-html {
-    height: 100%;
-    width: 100%;
-    background-image: url("../Assets/wp2727676.jpg");
-    background-repeat: no-repeat;
-}
-
 body {
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    color: white;
 }
 
 .container {
-    padding-top: 3.4%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../Assets/Backdrop6.jpeg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-#productList {
+@keyframes bannerOne {
+    0% {
+        left: 0;
+    }
+
+    31% {
+        left: 0;
+    }
+
+    34% {
+        left: -100%;
+    }
+
+    97% {
+        left: 100%;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes bannerTwo {
+    0% {
+        left: 100%;
+    }
+
+    31% {
+        left: 100%;
+    }
+
+    34% {
+        left: 0;
+    }
+
+    64% {
+        left: 0;
+    }
+
+    67% {
+        left: -100%;
+    }
+
+    100% {
+        left: -100%;
+    }
+}
+
+@keyframes bannerThree {
+    0% {
+        left: 100%;
+    }
+
+    64% {
+        left: 100%;
+    }
+
+    67% {
+        left: 0;
+    }
+
+    97% {
+        left: 0;
+    }
+
+    100% {
+        left: -100%;
+    }
+}
+
+.banner {
+    position: relative;
+}
+
+.tab {
+    display: none;
+}
+
+.tOne {
+    background-image: url("../Assets/crafts-hobby-music-instrument.jpg");
+}
+
+.tTwo {
+    animation: bannerTwo;
+    background-image: url("../Assets/crafts-hobby-music-instrument.jpg");
+}
+
+.tThree {
+    animation: bannerThree;
+    background-image: url("../Assets/crafts-hobby-music-instrument.jpg");
+}
+
+.active {
+    background-color: #717171;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        left: -0%;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes fade {
+    from {
+        left: -0%;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+h1 {
+    margin-bottom: 10pt;
+}
+
+.infoSection {
+    margin-top: 3.4%;
+}
+
+.productInfo {
+    margin-bottom: 10%;
+}
+
+.productSelection {
+    padding-top: 3.4%;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+}
+
+.productList {
     align-items: stretch;
     display: flex;
     flex-direction: row;
@@ -29,19 +164,7 @@ body {
     -ms-overflow-style: none;
     /* for Firefox */
     scrollbar-width: none;
-    background-color: white;
     padding-left: 1%;
-}
-
-.scrollButtons {
-    margin-top: 50%;
-    height: 100pt;
-}
-
-.productSelection {
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 100%;
 }
 
 .product {
@@ -55,14 +178,22 @@ body {
     /*max-width: 33.333%;*/
     padding: .75rem;
     margin-bottom: 2rem;
-    border: 0;
     flex-basis: 33.333%;
     flex-grow: 0;
     flex-shrink: 0;
     position: relative;
+
+    /*border: 1;
+    border-style: solid;*/
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 5pt;
+    background-color: white;
+    color: black;
 }
 
-.productImg {
+.productImage {
     height: inherit;
     width: auto;
     transition: .5s ease;
@@ -90,10 +221,88 @@ body {
     /*padding: 16px 32px;*/
 }
 
-.product:hover .productImg {
+.product:hover .productImage {
     opacity: 0.3;
 }
 
 .product:hover .productInfoOverlay {
     opacity: 1;
+}
+
+#productGhost {
+    background-color: white;
+    border-radius: 10pt;
+
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+
+    box-shadow: 0 4pt 8pt 0 rgba(0, 0, 0, 0.2);
+}
+
+.ghostHide {
+    z-index: -1;
+}
+
+.ghostFloat {
+    z-index: 1;
+}
+
+.ghostContent {
+    color: black;
+}
+
+.ghostDescription {
+    font-size: large;
+}
+
+.ghostContent img {
+    margin-top: 1%;
+    margin-left: 1%;
+    height: 200pt;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.ghostFixedContent {
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ghostFixedContent input[type=button] {
+    position: relative;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.ghostInputElement {
+    background: transparent;
+    border-style: none;
+    outline: none;
+    font-size: large;
+    border-bottom: grey;
+    border-bottom-style: solid;
+    margin-top: 20pt;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 5%;
+    bottom: 0;
+}
+
+#fadeOverlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
 }

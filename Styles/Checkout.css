@@ -1,7 +1,3 @@
-.container {
-    padding-top: 3.4%;
-}
-
 body {
     height: 100%;
     color: white;
@@ -10,9 +6,13 @@ body {
     grid-template-rows: auto auto auto;
 }
 
-#productTable {
-    padding-top: 1%;
+.container {
     background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../Assets/1162936.jpg");
+}
+
+#productTable {
+    padding-top: 3.5%;
+    /*padding-top: 1%;*/
     padding-bottom: 1%;
 }
 
