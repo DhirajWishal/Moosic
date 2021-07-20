@@ -38,7 +38,9 @@ section{
 
 }
 .profilelist{
-    display: flex;
+    margin-left: 0;
+    margin-right: 45pt;
+    display:flex;
     justify-content: center;
     align-items: center;
 }
