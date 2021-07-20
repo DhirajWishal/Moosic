@@ -1,0 +1,19 @@
+body {
+    
+    background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("../Assets/Backdrop6.jpeg");
+    background-size: cover;
+    color: white;
+    
+}
+
+#container{
+    width: 60%;
+    font:'Roboto';
+    margin: 20px auto;
+    overflow: auto;
+    padding: 25px;
+    background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("../Assets/Backdrop6.jpeg");
+    
+
+}
+
