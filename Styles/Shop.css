@@ -1,11 +1,10 @@
-
 html {
   height: 100%;
   width: 100%;
+  background-size:cover;
+}
+body{
   background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url("../Assets/Backdrop3.jpg");
-  background-size:1000pt 1000pt ;
-  background-repeat: no-repeat;
-
 }
 .image {
   height: 200px;
@@ -78,7 +77,6 @@ footer{
 }
 
 .mainBox {
-
   padding: 5pt;
 }
 
@@ -110,6 +108,7 @@ h3 {
   font-size: 20px;
   width: 20%;
   padding-left: 10pt;
+  color: black;
 }
 .logo{
   float: left;
@@ -167,4 +166,5 @@ h3 {
   padding:10pt;
   background-color:pink;
   font-size:20pt;
+  margin-left:80%;
 }
