@@ -62,11 +62,18 @@ input[type=radio]{
 .button:hover{
     background-color:white;
     color: black;
+    cursor:pointer;
 }
 
 .querydetails{
     font-size: 18pt;
     text-align: left;  
+}
+.querydetails p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.querydetails i{
+    font-family:'Courier New', Courier, monospace;
 }
 
 .feedback{
@@ -94,4 +101,6 @@ input[type=radio]{
 .button2:hover{
     background-color:white;
     color: black;
+    cursor:pointer;
 }
+
