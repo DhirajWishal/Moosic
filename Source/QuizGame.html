@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quiz Game</title>
+        
+        <link rel="stylesheet" href="../Styles/QuizGame.css">
+        <link rel="stylesheet" href="../Styles/NavBar.css">
+        <link rel="stylesheet" href ="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+        
+        
+    </head>
+
+    <body>
+        <div class="navbar">
+            <div class="logo" >
+                <img src="../Assets/Moosic.png" width="100" height="50" />
+            </div>
+            <ul class="linkalign">
+                <li><a href="../Source/MainPage.html">Home</a></li>
+                <li><a href="../Source/CW.html">Products</a></li>
+                <li><a href="../Source/">Query</a></li>
+                <li><a href="../Source/QuizPage.html">Quiz</a></li>
+                <li><a href="../Source/About.html">About</a></li>
+            </ul>
+        </div>
+        
+        
+        <div id="container">
+            <header>
+                <br><br>
+                <h1>Moosic Trivia</h1>   
+                <div class="timer">
+                    <h2>00:00</h2>
+                </div>             
+                <br>
+                
+            </header>
+            <section>
+                <form name="quiz" onsubmit="return QuizResults()">
+                    <h3>1. The first pop music video released is?</h3>
+                    <input type="radio" name="question1" value="A" id="question1A" > 
+                    <label for="question1A"> A. Bohemian Rhapsody </label> <br> 
+                    <input type="radio" name="question1" value="B" id="question1B" > 
+                    <label for="question1B">B. In my feelings </label> <br> 
+                    <input type="radio" name="question1" value="C" id="question1C" >
+                    <label for="question1C"> C. Plutomania </label> <br>
+                    <input type="radio" name="question1" value="D" id="question1D" > 
+                    <label for="question1D"> D. Man of the woods </label> <br>
+
+                    <h3>2. Name the lead singer born Farrokh Bulsara?</h3>
+                    <input type="radio" name="question2" value="A" id="question2A">
+                    <label for="question2A"> A. Rami Malek</label> <br> 
+                    <input type="radio" name="question2" value="B" id="question2B">
+                    <label for="question2B"> B. Brian May</label> <br>
+                    <input type="radio" name="question2" value="C" id="question2C"> 
+                    <label for="question2C"> C. Jim Hutton</label> <br>
+                    <input type="radio" name="question2" value="D" id="question2D">
+                    <label for="question2D"> D. Freddie Mercury</label> <br>
+
+                    <h3>3. Name the oldest member of The Jackson 5?</h3>
+                    <input type="radio" name="question3" value="A" id="question3A">
+                    <label for="question3A"> A. Jermaine Jackson</label> <br> 
+                    <input type="radio" name="question3" value="B" id="question3B"> 
+                    <label for="question3B"> B. Jackie Jackson</label> <br>
+                    <input type="radio" name="question3" value="C" id="question3C">
+                    <label for="question3C"> C. Tito Jackson</label> <br>
+                    <input type="radio" name="question3" value="D" id="question3D">
+                    <label for="question3D"> D. Michael Jackson</label> <br>
+
+                    <h3>4. The number of strings on a Ukulele is?</h3>
+                    <input type="radio" name="question4" value="A" id="question4A">
+                    <label for="question4A"> A. 3</label> <br> 
+                    <input type="radio" name="question4" value="B" id="question4B">
+                    <label for="question4B"> B. 6</label> <br>
+                    <input type="radio" name="question4" value="C" id="question4C">
+                    <label for="question4C"> C. 4</label> <br>
+                    <input type="radio" name="question4" value="D" id="question4D">
+                    <label for="question4D"> D. 8</label> <br>
+
+                    <h3>5. A ‘pick’ is used to play which instrument?</h3>
+                    <input type="radio" name="question5" value="A" id="question5A">
+                    <label for="question5A"> A. Guitar</label> <br> 
+                    <input type="radio" name="question5" value="B" id="question5B">
+                    <label for="question5B"> B. Tamborine</label> <br>
+                    <input type="radio" name="question5" value="C" id="question5C">
+                    <label for="question5C"> C. Flute</label> <br>
+                    <input type="radio" name="question5" value="D" id="question5D">
+                    <label for="question5D"> D. Maracas</label> <br>
+
+                    <h3>6. Name the singer who released the album, "Here, My Dear"?</h3>
+                    <input type="radio" name="question6" value="A" id="question6A">
+                    <label for="question6A"> A. Marvin Gaye</label> <br> 
+                    <input type="radio" name="question6" value="B" id="question6B">
+                    <label for="question6B"> B. Elton John</label> <br>
+                    <input type="radio" name="question6" value="C" id="question6C">
+                    <label for="question6C"> C. Justin Timberlake</label> <br>
+                    <input type="radio" name="question6" value="D" id="question6D">
+                    <label for="question6D"> D. Bruno Mars</label> <br>
+
+                    <h3>7.  Who was the very first American Idol winner?</h3>
+                    <input type="radio" name="question7" value="A" id="question7A">
+                    <label for="question7A"> A. Carrie Underwood</label> <br> 
+                    <input type="radio" name="question7" value="B" id="question7B">
+                    <label for="question7B"> B. Kelly Clarkson</label> <br>
+                    <input type="radio" name="question7" value="C" id="question7C">
+                    <label for="question7C"> C. Bianca Ryan</label> <br>
+                    <input type="radio" name="question7" value="D" id="question7D">
+                    <label for="question7D"> D. Neal E. Boyd</label> <br>
+
+                    <h3>8.  Which mathematical symbol is not the name of an Ed Sheeran album?</h3>
+                    <input type="radio" name="question8" value="A" id="question8A">
+                    <label for="question8A"> A. Multiply</label> <br> 
+                    <input type="radio" name="question8" value="B" id="question8B">
+                    <label for="question8B"> B. Plus</label> <br>
+                    <input type="radio" name="question8" value="C" id="question8C">
+                    <label for="question8C"> C. Divide</label> <br>
+                    <input type="radio" name="question8" value="D" id="question8D">
+                    <label for="question8D"> D. Substract</label> <br>
+
+                    <h3>9.  In which video does Michael Jackson play a zombie?</h3>
+                    <input type="radio" name="question9" value="A" id="question9A">
+                    <label for="question9A"> A. Bad</label><br> 
+                    <input type="radio" name="question9" value="B" id="question9B">
+                    <label for="question9B"> B. Beat It</label> <br>
+                    <input type="radio" name="question9" value="C" id="question9C">
+                    <label for="question9C"> C. Thriller</label> <br>
+                    <input type="radio" name="question9" value="D" id="question9D">
+                    <label for="question9D"> D. Smooth Criminal</label> <br>
+
+                    <h3>10.  Which American singer featured on the Mark Ronson smash hit single Uptown Funk?</h3>
+                    <input type="radio" name="question10" value="A" id="question10A">
+                    <label for="question10A"> A. Bruno Mars</label> <br> 
+                    <input type="radio" name="question10" value="B" id="question10B">
+                    <label for="question10B"> B. Pharrell Williams</label> <br>
+                    <input type="radio" name="question10" value="C" id="question10C">
+                    <label for="question10C"> C. Chris Brown</label> <br>
+                    <input type="radio" name="question10" value="D" id="question10D">
+                    <label for="question10D"> D. Usher</label> <br>
+                    <br><br>
+                    <input type="submit"  value="Submit">
+                    <input type="reset" value="Retry">
+                    
+                    <a class="backtotop" href="#"><i class="fas fa-arrow-up"></i></a>
+
+                </form>
+                
+                
+                <div id="result"></div>
+
+            </section>
+            
+
+            <footer>
+                <p>Copyright &copy; Group G-retards 2021, All Rights Reserved</p>
+                <a href="../Source/Miran.html">Page Editor</a>
+            </footer>        
+
+        </div>
+        
+
+        <script src="../Scripts/QuizGame.js"></script>
+    </body>
+</html>
