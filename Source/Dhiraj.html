@@ -4,8 +4,8 @@
 <head>
     <title>Dhiraj Wishal</title>
     <link rel="stylesheet" href="../Styles/DefaultTheme.css">
-    <link rel="stylesheet" href="../Styles/NavBar.css">
     <link rel="stylesheet" href="../Styles/LinkList.css">
+    <script src="../Scripts/Interactivity.js"></script>
     <style>
         .container {
             margin-top: 3.9%;
@@ -29,7 +29,11 @@
     <div id='navbar'></div>
     <script src="../Scripts/navbar.js"></script>
     <div class="container">
-        <h1>Dhiraj Wishal</h1>
+        <h1 id="toCypher"></h1>
+        <script>
+            cypherText(document.getElementById("toCypher"), "Dhiraj Wishal");
+        </script>
+
         <h2>Student 1</h2>
         <img src="../Assets/Dhiraj.png" alt="Dhiraj" class="editorImage" />
         <p class="details">
