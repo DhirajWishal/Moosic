@@ -1,24 +1,29 @@
 
-.dp{
+.dp {
     display: block;
     width: 15%;
     height: 15%;
-    margin:auto;
+    margin: auto;
 }
-.paddown{
+
+.paddown {
     padding-bottom: 100pt;
-  }
-h4{
-      text-align:center;
-  }
-footer{
+}
+
+h4 {
+    text-align: center;
+}
+
+footer {
     background-color: white;
     color: black;
 }
-.icon{
+
+.icon {
     width: 20pt;
     height: 20pt;
 }
-.iconbar{
+
+.iconbar {
     display: inline;
 }

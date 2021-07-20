@@ -7,12 +7,6 @@
     <link rel="stylesheet" href="../Styles/DefaultTheme.css" />
     <link rel="stylesheet" href="../Styles/Query.css" />
     <script src="../Scripts/query.js"></script>
-
-
-
-
-
-
 </head>
 
 <body>
@@ -32,68 +26,69 @@
     </div>
 
     <div id="editquery"></div>
-        <div id="querypage">
-            <h1>FAQ's and Query's</h1>
-            <br>
-            <fieldset class="faq">
-                <legend><b>FAQ</b></legend>
-                <p>Q1:Can I return my product if I dislike its look after purchasing?<br>
-                    A1:No, you are able to return the product if there are any recognizable faults within a time period
-                    of 14 days.<br><br>
-                    Q2:How long would it take for my money to be returned to me after i place return request?<br>
-                    A2:It will take 3-5 days for the delivery company to come pick up your package, afterwards it will
-                    go through our quality<br>&nbsp &nbsp &nbsp assurance check and if a defect is detected you will
-                    recieve your money back within 4-6 days of our check</p>
+    <div id="querypage">
+        <h1>FAQ's and Query's</h1>
+        <br>
+        <fieldset class="faq">
+            <legend><b>FAQ</b></legend>
+            <p>Q1:Can I return my product if I dislike its look after purchasing?<br>
+                A1:No, you are able to return the product if there are any recognizable faults within a time period
+                of 14 days.<br><br>
+                Q2:How long would it take for my money to be returned to me after i place return request?<br>
+                A2:It will take 3-5 days for the delivery company to come pick up your package, afterwards it will
+                go through our quality<br>&nbsp &nbsp &nbsp assurance check and if a defect is detected you will
+                recieve your money back within 4-6 days of our check</p>
+
+        </fieldset>
+
+        <form name="queryform">
+            <fieldset>
+                <br>
+
+                <legend><b>Query form</b></legend>
+                <label for="lname" style="width: 200;float: left;margin-right: 300px;margin-left: 5px; ">
+                    <span>First Name</span>
+                    <input type="text" id="fname" name="firstname" placeholder="Enter your first name.."
+                        style="display: block;margin: 0 0 3px;" />
+                </label>
+                <label for="fname">
+                    <span>Last Name</span>
+                    <input type="text" id="lname" name="lastname" placeholder="Enter your Last name.."
+                        style="display: block;margin: 0 0 3px;" />
+                </label>
+
+                <label for="Emailadd" style="width: 200;float: left;margin-right: 300px;margin-left: 5px; ">
+                    <br><span>Email Address</span>
+                    <input type="email" id="Emailadd" name="email" placeholder="Enter your Email address.."
+                        style="display: block;margin: 0 0 3px;" />
+                </label>
+
+                <br>
+                <label>Type of query </label><br>
+                <input type="radio" name="selector" id="Delivery" value="Delivery">
+                <label for="Delivery">Delivery</label>
+                <input type="radio" name="selector" id="returnp" value="Warranty">
+                <label for="returnp">Warranty</label>
+                <input type="radio" name="selector" id="complaints" value="Complaints">
+                <label for="complaints">Complaints</label>
+                <input type="radio" name="selector" id="other" value="Other">
+                <label for="other">Other</label>
+
+
+                <br><br><br>
+                <label for="feedback" style="margin-left: 3px;">Type in your query<br></label>
+                <textarea name="feedback" id="feedback"
+                    style="width: 500px;height: 100px;border-radius: 3px;border: 1px solid #000;margin-left: 5px;"></textarea>
+
+
+                <input type="button" class="button" name="button" value="View query" onclick="viewquery(this.form)"
+                    style="margin-left: 210px;">
+                <input type="reset" class="button" name="button" value="Reset">
 
             </fieldset>
+        </form>
+    </div>
 
-            <form name="queryform">
-                <fieldset>
-                    <br>
-
-                    <legend><b>Query form</b></legend>
-                    <label for="lname" style="width: 200;float: left;margin-right: 300px;margin-left: 5px; ">
-                        <span>First Name</span>
-                        <input type="text" id="fname" name="firstname" placeholder="Enter your first name.."
-                            style="display: block;margin: 0 0 3px;" />
-                    </label>
-                    <label for="fname">
-                        <span>Last Name</span>
-                        <input type="text" id="lname" name="lastname" placeholder="Enter your Last name.."
-                            style="display: block;margin: 0 0 3px;" />
-                    </label>
-
-                    <label for="Emailadd" style="width: 200;float: left;margin-right: 300px;margin-left: 5px; ">
-                        <br><span>Email Address</span>
-                        <input type="email" id="Emailadd" name="email" placeholder="Enter your Email address.."
-                            style="display: block;margin: 0 0 3px;" />
-                    </label>
-
-                    <br>
-                    <label>Type of query </label><br>
-                    <input type="radio" name="selector" id="Delivery" value="Delivery">
-                    <label for="Delivery">Delivery</label>
-                    <input type="radio" name="selector" id="returnp" value="Warranty">
-                    <label for="returnp">Warranty</label>
-                    <input type="radio" name="selector" id="complaints" value="Complaints">
-                    <label for="complaints">Complaints</label>
-                    <input type="radio" name="selector" id="other" value="Other">
-                    <label for="other">Other</label>
-
-
-                    <br><br><br>
-                    <label for="feedback" style="margin-left: 3px;">Type in your query<br></label>
-                    <textarea name="feedback" id="feedback"
-                        style="width: 500px;height: 100px;border-radius: 3px;border: 1px solid #000;margin-left: 5px;"></textarea>
-
-
-                    <input type="button" class="button" name="button" value="View query" onclick="viewquery(this.form)" style="margin-left: 210px;">
-                    <input type="reset" class="button" name="button" value="Reset">
-
-                </fieldset>
-            </form>
-        </div>
-    
 </body>
 
 </html>
