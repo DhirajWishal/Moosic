@@ -35,7 +35,7 @@ function viewquery(frm) {
         filled=false;
         frm.firstname.value="";
     }
-    if(lname.length==1 || lname.length>30 || !isNaN(lname)){
+    if(lname.length==1 || lname.length>30){
         alert("Enter a valid Last name!");
         filled=false;
         frm.lastname.value="";   
@@ -53,7 +53,7 @@ function viewquery(frm) {
 
     if (filled == true) {
         x.style.display = 'none';
-        document.getElementById('editquery').innerHTML = "<div class='querydetails'><fieldset><form action='mailto:fizzypop470@gmail.com' method='post' enctype='text/plain' ><h3>Are these details correct?</h3><p><br><br>Your first name: " + fname +
+        document.getElementById('editquery').innerHTML = "<div class='querydetails'><fieldset><form action='mailto:fizzypop470@gmail.com'><h3>Are these details correct?</h3><p><br><br>Your first name: " + fname +
             "<br><br>Your last name: " + lname + "<br><br>Your Email Address :" + mail +
             "<br><br>Your query type: " + frm.selector.value + "<br><br>Your query: <div class='feedback'>" + feedback +
             "</div></p><button class='button2' onClick='editquery()' style='margin-left:600pt;'><b>Edit query</b></button> <input type='submit' value='Submit' class='button2' ></form></fieldset></div>";
