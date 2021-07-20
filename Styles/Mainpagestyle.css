@@ -1,12 +1,16 @@
+
+
 .header{
     min-height: 100vh;
     width: 100%;
+    
     background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("../Assets/Backdrop2.jpg");
     background-position: center;
     background-size: cover;
     position: relative;
     
 }
+/*Entrance Text */
 .entrance-text{
     width: 90%;
     color:white; 
@@ -17,16 +21,123 @@
     text-align: center;
 }
 .entrance-text h1{
-    font-size: 62px;
+    font-size: 60px;
+   
 }
 .entrance-text p{
     margin:10px 0 40px;
-    font-size: 16px;
+    font-size: 20px;
     color: white;
 }
 
-.logo{
-    color: white;
+/*Product showcase*/
+fieldset{
+    border-color: #fff;
+    border-style: solid;
+    
+}
 
+.productshow{
+    color: black;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+    
+}
+.productshow h1{
+    font-size: 300%;
+}
+.productshow p{
+    font-size: 120%;
+    color: rgb(47, 53, 53);
+}
+
+.ProductItem{
+    float:left;
+    border-radius: 10px;
+    padding-left: 1%;
+    margin: 10px 10px 0 10px;
+    position: relative;
+    overflow: hidden;
+    width: 240pt;
+    height: 300pt;
+}
+
+.ProductItem img{
+    position: relative;
+    margin-top: 25%;
+    width: 200pt;
+    border-color: rgb(107, 111, 116);
+}
+
+
+
+
+.layer{
+    background: rgba(4, 9, 30, 0.233);
+    font-size: 15pt;
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    
+    transition: 0.5s;
+}
+
+.layer:hover{
+    background: rgba(4,9,30,0.7);
+}
+
+.queryshow{
     text-align: left;
+    color:black;
+    padding-left: 130px;
+}
+.queryshow h1{
+    font-size: 2.8vw;
+}
+.queryshow p{
+    line-height: 140%;
+    font-size: 1.5vw;
+    color: rgb(47, 53, 53);
+    padding-bottom: 20px;
+    
+}
+
+
+.listimage{
+    overflow: visible;
+    float: right;
+    position: relative;
+    right: 18%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 12%;
+    height: 10%;
+    border-radius: 10px;
+    display: block;
+}
+
+.listimage:hover{
+    background-color: rgba(4,9,30,0.7);
+    transition: 0.5s;
+}
+
+.reviewcustomer{
+    color: black;
+}
+.reviews{
+    display: flex;
+    margin-top: 2%;
+    justify-content: space-between;
+}
+
+.reviewer{
+    flex-basis: 31%;
+    border-radius: 8px;
+    margin-bottom: 5%;
+    padding: 8px 12px;
+    box-sizing: border-box;
 }

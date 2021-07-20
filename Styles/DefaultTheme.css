@@ -6,9 +6,13 @@
         url('Font/good\ times\ rg.ttf times.ttf') format('truetype');
     /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }
+*{
+    margin: 0;
+    padding: 0;
+}
 
 html {
-    background: radial-gradient(ellipse at bottom, #2f4763 0%, #090A0F 100%);
+    background: white;
     height: 100%;
     color: white;
     text-align: center;
@@ -18,4 +22,53 @@ html {
 #title {
     font-family: 'GoodTimes';
     color: aqua;
+}
+
+.logo{
+    float: left;
+    padding-top: 0.6%;
+    padding-left: 0.8%;
+    border: 0.4%;
+    border-radius: 0.4%;
+}
+
+.navbar{
+    text-align: center;
+    z-index: 500;
+    overflow: hidden;
+    background-color: black;
+    position: fixed;
+    top:0;
+    width:100%;
+    font-size: 14pt;    
+}
+
+.linkalign a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 16pt 45pt;
+    display: block; 
+}
+
+
+.linkalign a:hover{
+    color:rgb(25, 26, 27) ;
+    background-color: rgba(4,9,30,0.7);
+}
+
+.linkalign ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;   
+}
+
+.linkalign li{
+    list-style: none;
+    display:inline-block;
+}
+
+.footer{
+    background-color:rgba(4,9,30,0.7) ;
 }
