@@ -1,60 +1,60 @@
-
-
-.header{
+.header {
     min-height: 100vh;
     width: 100%;
-    
-    background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("../Assets/Backdrop2.jpg");
+
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../Assets/Backdrop2.jpg");
     background-position: center;
     background-size: cover;
     position: relative;
-    
 }
+
 /*Entrance Text */
-.entrance-text{
+.entrance-text {
     width: 90%;
-    color:white; 
-    position:absolute;
-    top:50%;
+    color: white;
+    position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     text-align: center;
 }
-.entrance-text h1{
+
+.entrance-text h1 {
     font-size: 60px;
-   
+
 }
-.entrance-text p{
-    margin:10px 0 40px;
+
+.entrance-text p {
+    margin: 10px 0 40px;
     font-size: 20px;
     color: white;
 }
 
 /*Product showcase*/
-fieldset{
+fieldset {
     border-color: #fff;
     border-style: solid;
-    
 }
 
-.productshow{
+.productshow {
     color: black;
     width: 80%;
     margin: auto;
     text-align: center;
     padding-top: 50px;
-    
 }
-.productshow h1{
+
+.productshow h1 {
     font-size: 300%;
 }
-.productshow p{
+
+.productshow p {
     font-size: 120%;
     color: rgb(47, 53, 53);
 }
 
-.ProductItem{
-    float:left;
+.ProductItem {
+    float: left;
     border-radius: 10px;
     padding-left: 1%;
     margin: 10px 10px 0 10px;
@@ -64,50 +64,47 @@ fieldset{
     height: 300pt;
 }
 
-.ProductItem img{
+.ProductItem img {
     position: relative;
     margin-top: 25%;
     width: 200pt;
     border-color: rgb(107, 111, 116);
 }
 
-
-
-
-.layer{
+.layer {
     background: rgba(4, 9, 30, 0.233);
     font-size: 15pt;
     height: 100%;
     width: 100%;
-    position:absolute;
+    position: absolute;
     top: 0;
     left: 0;
-    
+
     transition: 0.5s;
 }
 
-.layer:hover{
-    background: rgba(4,9,30,0.7);
+.layer:hover {
+    background: rgba(4, 9, 30, 0.7);
 }
 
-.queryshow{
+.queryshow {
     text-align: left;
-    color:black;
+    color: black;
     padding-left: 130px;
 }
-.queryshow h1{
+
+.queryshow h1 {
     font-size: 2.8vw;
 }
-.queryshow p{
+
+.queryshow p {
     line-height: 140%;
     font-size: 1.5vw;
     color: rgb(47, 53, 53);
     padding-bottom: 20px;
-    
 }
 
-
-.listimage{
+.listimage {
     overflow: visible;
     float: right;
     position: relative;
@@ -120,21 +117,22 @@ fieldset{
     display: block;
 }
 
-.listimage:hover{
-    background-color: rgba(4,9,30,0.7);
+.listimage:hover {
+    background-color: rgba(4, 9, 30, 0.7);
     transition: 0.5s;
 }
 
-.reviewcustomer{
+.reviewcustomer {
     color: black;
 }
-.reviews{
+
+.reviews {
     display: flex;
     margin-top: 2%;
     justify-content: space-between;
 }
 
-.reviewer{
+.reviewer {
     flex-basis: 31%;
     border-radius: 8px;
     margin-bottom: 5%;
