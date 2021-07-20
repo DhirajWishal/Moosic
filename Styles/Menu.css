@@ -1,0 +1,99 @@
+html {
+    height: 100%;
+    width: 100%;
+    background-image: url("../Assets/wp2727676.jpg");
+    background-repeat: no-repeat;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.container {
+    padding-top: 3.4%;
+}
+
+#productList {
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 350pt;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    /* for Internet Explorer, Edge */
+    -ms-overflow-style: none;
+    /* for Firefox */
+    scrollbar-width: none;
+    background-color: white;
+    padding-left: 1%;
+}
+
+.scrollButtons {
+    margin-top: 50%;
+    height: 100pt;
+}
+
+.productSelection {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+}
+
+.product {
+    width: auto;
+    /*box-shadow: 0 4pt 8pt 0 rgba(0, 0, 0, 0.2), 0 6pt 20pt 0 rgba(0, 0, 0, 0.19);*/
+    text-align: center;
+    margin-right: 10pt;
+    float: left;
+    height: 300pt;
+
+    /*max-width: 33.333%;*/
+    padding: .75rem;
+    margin-bottom: 2rem;
+    border: 0;
+    flex-basis: 33.333%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.productImg {
+    height: inherit;
+    width: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+
+    opacity: 1;
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.productInfoOverlay {
+    transition: .5s ease;
+    opacity: 0;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.productCaption {
+    font-size: 16pt;
+    /*padding: 16px 32px;*/
+}
+
+.product:hover .productImg {
+    opacity: 0.3;
+}
+
+.product:hover .productInfoOverlay {
+    opacity: 1;
+}

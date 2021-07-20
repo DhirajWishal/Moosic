@@ -5,111 +5,8 @@
     <title>Checkout</title>
     <script src="../Scripts/ShoppingCart.js"></script>
     <link rel="stylesheet" href="../Styles/DefaultTheme.css">
-    <link rel="stylesheet" href="../Styles/NavBar.css">
     <link rel="stylesheet" href="../Styles/ButtonStyle.css">
-
-    <style>
-        .container {
-            padding-top: 3.4%;
-        }
-
-        #pageFooter {
-            width: 100%;
-            background-color: whitesmoke;
-        }
-
-        body {
-            height: 100%;
-            color: white;
-            font-size: larger;
-            display: grid;
-            grid-template-rows: auto auto auto;
-        }
-
-        footer {
-            display: grid;
-            align-self: end;
-            /* The trick */
-        }
-
-        #productTable {
-            padding-top: 1%;
-            background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../Assets/1162936.jpg");
-            padding-bottom: 1%;
-        }
-
-        #productTable table {
-            border-collapse: collapse;
-            text-align: center;
-            font-size: larger;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        #productTable table th {
-            padding-right: 10pt;
-        }
-
-        .updateIcon {
-            filter: invert(100%);
-            width: 20pt;
-            height: 20pt;
-            margin-left: 10pt;
-        }
-
-        .removeIcon {
-            filter: invert(100%);
-            width: 15pt;
-            height: 15pt;
-            margin-left: 10pt;
-        }
-
-        .totalPrice {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .inputForm {
-            text-align: left;
-        }
-
-        .formStyle {
-            width: 50%;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 5%;
-            margin-top: 5%;
-            color: black;
-        }
-
-        .formInputElement {
-            background: transparent;
-            border-style: none;
-            outline: none;
-            font-size: large;
-            border-bottom: grey;
-            border-bottom-style: solid;
-            margin-top: 20pt;
-            width: 50%;
-        }
-
-        .formStyle option {
-            color: black;
-        }
-
-        .formSubmitButton {
-            background: transparent;
-            border-style: solid;
-            border-color: white;
-            color: white;
-            font-size: large;
-            border-radius: 7.5pt;
-        }
-
-        .goBackButton {
-            font-size: xx-large;
-        }
-    </style>
+    <link rel="stylesheet" href="../Styles/Checkout.css">
 </head>
 
 <body>
@@ -261,7 +158,8 @@
                 function onCheckout(form) {
                     // Validate the form.
                     if (form.customer_first_name.value.length == 0 || form.customer_last_name.value.length == 0 || form
-                        .customer_country.value.length == 0 || form.customer_address.value.length == 0 || form.customer_email.value.length == 0) {
+                        .customer_country.value.length == 0 || form.customer_address.value.length == 0 || form
+                        .customer_email.value.length == 0) {
                         alert("Field specified as required (*) should not be empty!");
                     } else {
                         sessionStorage.setItem("customer_first_name", form.customer_first_name.value);
