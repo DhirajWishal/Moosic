@@ -3,8 +3,6 @@ html{
     color: white;
     text-align: left;
     background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("../Assets/Backdrop1.jpg");
-    
-    
 }
 
 legend{
@@ -24,8 +22,6 @@ fieldset{
     border-radius: 3px;
     padding-bottom: 10pt;
 }
-
-
 
 .faq p{
     opacity: 1;
