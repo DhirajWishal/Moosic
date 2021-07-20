@@ -70,5 +70,10 @@ html {
 }
 
 .footer {
-    background-color: rgba(4, 9, 30, 0.7);
+    background-color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5%;
 }

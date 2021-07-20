@@ -10,7 +10,7 @@
 
     <style>
         .container {
-            margin-top: 3.9%;
+            padding-top: 3.4%;
         }
 
         #pageFooter {
@@ -20,7 +20,6 @@
 
         body {
             height: 100%;
-            background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../Assets/1162936.jpg");
             color: white;
             font-size: larger;
             display: grid;
@@ -31,6 +30,12 @@
             display: grid;
             align-self: end;
             /* The trick */
+        }
+
+        #productTable {
+            padding-top: 1%;
+            background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../Assets/1162936.jpg");
+            padding-bottom: 1%;
         }
 
         #productTable table {
@@ -72,6 +77,9 @@
             width: 50%;
             margin-left: auto;
             margin-right: auto;
+            margin-bottom: 5%;
+            margin-top: 5%;
+            color: black;
         }
 
         .formInputElement {
@@ -79,8 +87,7 @@
             border-style: none;
             outline: none;
             font-size: large;
-            color: white;
-            border-bottom: white;
+            border-bottom: grey;
             border-bottom-style: solid;
             margin-top: 20pt;
             width: 50%;
@@ -97,6 +104,10 @@
             color: white;
             font-size: large;
             border-radius: 7.5pt;
+        }
+
+        .goBackButton {
+            font-size: xx-large;
         }
     </style>
 </head>
@@ -120,28 +131,6 @@
     <div class="container">
         <div id="productTable">
             <script>
-                var priceList = [
-                    200,
-                    200,
-                    250,
-                    300,
-                    335,
-                    30,
-                    500,
-                    500,
-                    1000,
-                    250,
-                    150,
-                    250,
-                    375,
-                    125,
-                    600,
-                    600,
-                    120,
-                    20,
-                    10
-                ];
-
                 /**
                  * Increment the product quantity by reducing one.
                  * This will also update the table.
@@ -252,6 +241,7 @@
                 </select><br />
 
                 <input type="text" name="customer_address" placeholder="Address *" class="formInputElement" /><br />
+                <input type="email" name="customer_email" placeholder="Email *" class="formInputElement" /><br />
                 <input type="date" name="customer_date_of_birth" placeholder="Date of birth"
                     class="formInputElement"><br />
 
@@ -271,14 +261,25 @@
                 function onCheckout(form) {
                     // Validate the form.
                     if (form.customer_first_name.value.length == 0 || form.customer_last_name.value.length == 0 || form
-                        .customer_country.value.length == 0 || form.customer_address.value.length == 0) {
+                        .customer_country.value.length == 0 || form.customer_address.value.length == 0 || form.customer_email.value.length == 0) {
                         alert("Field specified as required (*) should not be empty!");
+                    } else {
+                        sessionStorage.setItem("customer_first_name", form.customer_first_name.value);
+                        sessionStorage.setItem("customer_last_name", form.customer_last_name.value);
+                        sessionStorage.setItem("customer_country", form.customer_country.value);
+                        sessionStorage.setItem("customer_address", form.customer_address.value);
+                        sessionStorage.setItem("customer_email", form.customer_email.value);
                     }
                 }
             </script>
         </form>
     </div>
-    <footer id="pageFooter">
+
+    <div style="float: right; bottom: 0; position: fixed; margin-bottom: 5%; margin-left: 83.5%;">
+        <a href="Shop.html" class="button goBackButton">Go Back to Shop</a>
+    </div>
+
+    <footer class="footer">
         <a href="Dhiraj.html">Dhiraj Wishal | Student 1</a>
     </footer>
 </body>
