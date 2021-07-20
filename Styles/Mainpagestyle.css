@@ -1,3 +1,7 @@
+body{
+    
+}
+
 .header {
     min-height: 100vh;
     width: 100%;
@@ -10,6 +14,7 @@
 
 /*Entrance Text */
 .entrance-text {
+    font-family: default;
     width: 90%;
     color: white;
     position: absolute;
@@ -101,9 +106,11 @@ fieldset {
 
 .queryshow h1 {
     font-size: 2.8vw;
+    font-family: 'Bebas Neue', cursive;
 }
 
 .queryshow p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 140%;
     font-size: 1.5vw;
     color: rgb(47, 53, 53);
@@ -131,9 +138,11 @@ fieldset {
 
 .reviewcustomer {
     color: black;
+    font-family: 'Festive', cursive;
 }
 
 .reviews {
+     
     display: flex;
     margin-top: 2%;
     justify-content: space-between;
@@ -154,8 +163,15 @@ fieldset {
     border-radius: 50%;
 }
 
+
+.reviewer p{
+    color: rgb(36, 31, 31);
+    font-family:'Times New Roman', Times, serif;
+}
+
 .reviewer h3{
     margin-right: 6%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .stars img{
     width: 5.5%;
