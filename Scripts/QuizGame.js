@@ -68,20 +68,19 @@ function  evaluateAnswers(userSelection, noOfQuestions, userScore){
     
     if(userScore > 15){
         result.innerHTML = "<h2> You scored <span id='good'>" + userScore + "</span> out of <span>" + (noOfQuestions*2) + "</span> Good Job!!</h2>";
-        change.style.backgroundImage = "none";
-        change.style.backgroundColor= "darkgreen";
+        change.style.backgroundImage = "linear-gradient(rgba(18, 65, 4, 0.7),rgba(4, 82, 27, 0.7)),url('../Assets/Backdrop1.jpg')";
+        
 
     }
     else if (userScore > 7){
         result.innerHTML = "<h2> You only scored <span id='okay'>" + userScore + "</span> out of <span>" + (noOfQuestions*2) + "</span> You could do better so try again!</h2>";
-        change.style.backgroundImage = "none";
-        change.style.backgroundColor= "orange";
+        change.style.backgroundImage = "linear-gradient(rgba(155, 59, 3, 0.7),rgba(141, 56, 0, 0.7)),url('../Assets/Backdrop1.jpg')";
     }
         
     else{
         result.innerHTML = "<h2> You only scored <span id='bad'>" + userScore + "</span> out of <span>" + (noOfQuestions*2) + "</span> Try again!</h2>";
-        change.style.backgroundImage = "none";
-        change.style.backgroundColor= "red";
+        change.style.backgroundImage = "linear-gradient(rgba(112, 12, 12, 0.7),rgba(121, 9, 9, 0.7)),url('../Assets/Backdrop1.jpg')";
+        
     }
     
 }    
