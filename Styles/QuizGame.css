@@ -42,6 +42,9 @@ header h1 {
 }
 
 section {
+    text-align: left;
+    padding: 15pt;
+    margin: 10pt;
     min-height: 400px;
     font-family: 'Open Sans', sans-serif;
 }
