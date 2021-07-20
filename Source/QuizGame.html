@@ -26,7 +26,8 @@
                 
             </header>
             <section>
-                <form name="quiz" onsubmit="return QuizResults()">
+                <div id="result"></div>
+                <form name="quiz" id="quizform" onclick="">
                     <h3>1. The first pop music video released is?</h3><br>
                     <input type="radio" name="question1" value="A" id="question1A" > 
                     <label for="question1A"> A. Bohemian Rhapsody </label> <br> 
@@ -127,15 +128,15 @@
                     <input type="radio" name="question10" value="D" id="question10D">
                     <label for="question10D"> D. Usher</label> <br>
                     <br><br>
-                    <input type="submit"  value="Submit">
-                    <input type="reset" value="Retry">
+                    <input type="button" id="submit"  value="Submit">
+                    <input type="button" value="Retry" onclick="resetForm()">
                     
                     <a class="backtotop" href="#"><i class="fas fa-arrow-up"></i></a>
 
                 </form>
                 
                 
-                <div id="result"></div>
+                
 
             </section>
             
