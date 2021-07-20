@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-.logo{
+.logo {
     float: left;
     padding-top: 0.6%;
     padding-left: 0.8%;
@@ -12,7 +12,7 @@
     margin-left: 0;
 }
 
-.navbar{
+.navbar {
     margin-left: 0;
     text-align: center;
     z-index: 500;
@@ -26,14 +26,18 @@
         
 }
 
-.linkalign a{
+.linkalign a {
+    top: 0;
+    width: 100%;
+    font-size: 1.5vw;
+    text-align: center;
+    left: 0;
     color: white;
     text-decoration: none;
     text-transform: uppercase;
     padding: 15pt 45pt;
     display: block; 
 }
-
 
 .linkalign a:hover{
     color:rgb(25, 26, 27) ;
@@ -49,5 +53,5 @@
 
 .linkalign li{
     list-style: none;
-    display:inline-block;
+    display: inline-block;
 }
