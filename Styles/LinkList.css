@@ -1,0 +1,11 @@
+.linkList {
+    float: left;
+    margin-top: 5%;
+}
+
+.linkList img {
+    width: 2.5%;
+    height: 2.5%;
+    margin-left: 2%;
+    margin-right: 2%;
+}

@@ -6,6 +6,7 @@
     <script src="../Scripts/ShoppingCart.js"></script>
     <link rel="stylesheet" href="../Styles/DefaultTheme.css">
     <link rel="stylesheet" href="../Styles/NavBar.css">
+    <link rel="stylesheet" href="../Styles/ButtonStyle.css">
 
     <style>
         .container {
@@ -21,13 +22,81 @@
             height: 100%;
             background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../Assets/1162936.jpg");
             color: white;
-            font-size: large;
+            font-size: larger;
+            display: grid;
+            grid-template-rows: auto auto auto;
         }
-        
+
+        footer {
+            display: grid;
+            align-self: end;
+            /* The trick */
+        }
+
         #productTable table {
             border-collapse: collapse;
             text-align: center;
             font-size: larger;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #productTable table th {
+            padding-right: 10pt;
+        }
+
+        .updateIcon {
+            filter: invert(100%);
+            width: 20pt;
+            height: 20pt;
+            margin-left: 10pt;
+        }
+
+        .removeIcon {
+            filter: invert(100%);
+            width: 15pt;
+            height: 15pt;
+            margin-left: 10pt;
+        }
+
+        .totalPrice {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .inputForm {
+            text-align: left;
+        }
+
+        .formStyle {
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .formInputElement {
+            background: transparent;
+            border-style: none;
+            outline: none;
+            font-size: large;
+            color: white;
+            border-bottom: white;
+            border-bottom-style: solid;
+            margin-top: 20pt;
+            width: 50%;
+        }
+
+        .formStyle option {
+            color: black;
+        }
+
+        .formSubmitButton {
+            background: transparent;
+            border-style: solid;
+            border-color: white;
+            color: white;
+            font-size: large;
+            border-radius: 7.5pt;
         }
     </style>
 </head>
@@ -51,53 +120,146 @@
     <div class="container">
         <div id="productTable">
             <script>
-                var tableString = "<table>";
-                tableString += "<tr>";
-                tableString += "<th>Product Name</th><th>Quantity</th>";
-                tableString += "</tr>";
+                var priceList = [
+                    200,
+                    200,
+                    250,
+                    300,
+                    335,
+                    30,
+                    500,
+                    500,
+                    1000,
+                    250,
+                    150,
+                    250,
+                    375,
+                    125,
+                    600,
+                    600,
+                    120,
+                    20,
+                    10
+                ];
 
-                for (let i = 0; i < 20; i++) {
-                    var product = getProduct(i);
-                    if (!product.isNull()) {
-                        tableString += "<tr>";
-
-                        tableString += "<td>" + product.mProductName + "</td><td>" + product.mQuantity + "</td>";
-
-                        tableString += "</tr>";
-                    }
+                /**
+                 * Increment the product quantity by reducing one.
+                 * This will also update the table.
+                 */
+                function incrementQuantity(index) {
+                    var product = getProduct(index);
+                    updateProductQuantity(index, parseInt(product.mQuantity) + 1);
+                    processTable()
                 }
-                tableString += "</table>";
 
-                document.getElementById("productTable").innerHTML = tableString;
+                /**
+                 * Decrement the product quantity by reducing one.
+                 * This will also update the table.
+                 */
+                function decrementQuantity(index) {
+                    var product = getProduct(index);
+                    var newQuantity = product.mQuantity - 1;
+
+                    if (newQuantity == 0)
+                        removeProduct(index);
+                    else
+                        updateProductQuantity(index, newQuantity);
+
+                    processTable()
+                }
+
+                /**
+                 * Remove a product from the storage and remove it from the table.
+                 */
+                function removeProductAndRow(index) {
+                    removeProduct(index);
+                    processTable();
+                }
+
+                /**
+                 * Process the table and print out the content.
+                 */
+                function processTable() {
+                    var tableString = "<table>";
+                    tableString += "<tr>";
+                    tableString += "<th>Item Number</th>";
+                    tableString += "<th>Product Name</th>";
+                    tableString += "<th>Quantity</th>";
+                    tableString += "<th>Unit Price</th>";
+                    tableString += "<th>Total Price</th>";
+                    tableString += "<th></th><th></th><th></th>";
+                    tableString += "</tr>";
+
+                    var itemNumber = 1;
+                    var totalPrice = 0;
+                    for (let i = 0; i < 19; i++) {
+                        var product = getProduct(i);
+                        if (!product.isNull()) {
+                            tableString += "<tr>";
+
+                            tableString += "<td>" + itemNumber + "</td>";
+                            tableString += "<td>" + product.mProductName + "</td>";
+                            tableString += "<td>" + product.mQuantity + "</td>";
+                            tableString += "<td>USD " + priceList[i] + "</td>";
+                            tableString += "<td>USD " + product.mQuantity * priceList[i] + "</td>";
+
+                            tableString += "<td onclick=\"incrementQuantity(" + i +
+                                ")\"><img src=\"../Assets/bigPlus.png\" class=\"updateIcon\" /></td>";
+
+                            tableString += "<td onclick=\"decrementQuantity(" + i +
+                                ")\"><img src=\"../Assets/bigMinus.png\" class=\"updateIcon\" /></td>";
+
+                            tableString += "<td onclick=\"removeProductAndRow(" + i +
+                                ")\"><img src=\"../Assets/bigX.png\" class=\"removeIcon\" /></td>";
+
+                            tableString += "</tr>";
+                            itemNumber++;
+                            totalPrice += product.mQuantity * priceList[i];
+                        }
+                    }
+
+                    tableString += "<tr style=\"border-top: solid; margin-top: 10pt;\">";
+                    tableString += "<td style=\"padding-top: 10pt;\">Total Price</td>";
+                    tableString += "<td></td><td></td><td></td>";
+                    tableString += "<td style=\"padding-top: 10pt;\"> USD " + totalPrice + "/= </td>";
+                    tableString += "<td></td><td></td><td></td>";
+                    tableString += "</tr>";
+
+                    tableString += "</table>";
+                    document.getElementById("productTable").innerHTML = tableString;
+                }
+
+                processTable();
             </script>
         </div>
 
-        <form>
+        <!--<hr style="width: 50%; margin-left: auto; margin-right: auto; margin-top: 10pt;" />-->
+        <form class="formStyle">
             <fieldset>
-                <legend>Personal Information</legend>
+                <legend style="font-size: xx-large;">Personal Information</legend>
                 <p style="color: red;">All fields marked with * is mandatory.</p>
-                <label> First Name:* <input type="text" name="customer_first_name" placeholder="John" /></label> <br />
-                <label> Last Name:* <input type="text" name="customer_last_name" placeholder="McDonald" /> </label>
-                <br />
+                <input type="text" name="customer_first_name" placeholder="First Name *"
+                    class="formInputElement" /><br />
+                <input type="text" name="customer_last_name" placeholder="Last Name * "
+                    class="formInputElement" /><br />
 
-                <label> Country:*
-                    <select name="customer_country">
-                        <option value="sri_lanka" selected>Sri Lanka</option>
-                        <option value="india">India</option>
-                        <option value="Russia">Russia</option> <!-- Mother rrrussia -->
-                        <option value="england">United Kingdom</option>
-                        <option value="murrica">United States</option>
-                    </select>
-                </label> <br />
+                <select name="customer_country" class="formInputElement">
+                    <option value="sri_lanka" selected>Sri Lanka</option>
+                    <option value="india">India</option>
+                    <option value="Russia">Russia</option> <!-- Mother rrrussia -->
+                    <option value="england">United Kingdom</option>
+                    <option value="murrica">United States</option>
+                </select><br />
 
-                <label> Address:* <input type="text" name="customer_address"
-                        placeholder="123/45, Zoo road, Dehiwala." />
-                </label> <br />
+                <input type="text" name="customer_address" placeholder="Address *" class="formInputElement" /><br />
+                <input type="date" name="customer_date_of_birth" placeholder="Date of birth"
+                    class="formInputElement"><br />
 
-                <label> Date of birth: <input type="date" name="customer_date_of_birth"></label> <br />
-
-                <input type="button" value="Checkout" onclick="onCheckout(this.form)" />
-                <input type="reset" value="Clear" />
+                <div style="margin-top: 20pt;">
+                    <input type="button" value="Checkout" onclick="onCheckout(this.form)" class="button"
+                        style="float: left; margin-left: 25%;" />
+                    <input type="reset" value="Clear" class="button" style="float: right; margin-right: 25%;" />
+                </div>
             </fieldset>
 
             <script>

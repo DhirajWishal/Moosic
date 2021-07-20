@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Menu</title>
     <!--<link rel="stylesheet" href="../Styles/DefaultTheme.css">-->
+    <link rel="stylesheet" href="../Styles/NavBar.css">
     <style>
         html {
             height: 100%;
@@ -114,6 +115,8 @@
             var element = document.getElementById("productList");
             var content = "";
 
+            var productIDs = ["p1", "p2", "p3", "p4", "p5"];
+
             var imageList = [
                 "../Assets/NTX700-1.jpg",
                 "../Assets/fender-american-pro-stratocaster-mn-3ts-hss-a.jpg",
@@ -156,6 +159,20 @@
 </head>
 
 <body>
+    <!--This is the Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="../Assets/Moosic.png" width="100" height="50" />
+        </div>
+        <ul class="linkalign">
+            <li><a href="MainPage.html">Home</a></li>
+            <li><a href="Menu.html">Products</a></li>
+            <li><a href="query.html">Query</a></li>
+            <li><a href="QuizPage.html">Quiz</a></li>
+            <li><a href="CW.html">CW</a></li>
+            <li><a>About</a></li>
+        </ul>
+    </div>
     <div class="productSelection">
         <!--<button class="scrollButtons" style="float: left;" onclick="onLeftClick()">LEFT</button>-->
         <!--<button class="scrollButtons" style="float: right;" onclick="onRightClick()">RIGHT</button>-->
@@ -169,7 +186,7 @@
         // Set the horizontal scroll event listener.
         document.getElementById("productList").addEventListener("wheel", (event) => {
             event.preventDefault();
-            document.getElementById("productList").scrollLeft += event.deltaY
+            document.getElementById("productList").scrollLeft += event.deltaY;
         });
     </script>
 </body>
