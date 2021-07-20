@@ -1,3 +1,17 @@
-document.getElementById('navbar').innerHTML = "<div class='logo'><img src='../Assets/Moosic.png' width='100' height='50' /></div><ul class='linkalign'><li><a href='MainPage.html'>Home</a></li><li><a href='CW.html'>Products</a></li><li><a href='query.html'>Query</a></li><li><a href='QuizPage.html'>Quiz</a></li><li><a>Sitemap</a></li><li><a href='About.html'>About</a></li></ul>";
+let navString = "<div class='logo'>";
+navString += "<img src='../Assets/Moosic.png' width='100' height='50' />";
+navString += "</div>";
+navString += "<ul class='linkalign'>";
+navString += "<li><a href='MainPage.html'>Home</a></li>";
+navString += "<li><a href='CW.html'>Products</a></li>";
+navString += "<li><a href='query.html'>Query</a></li>";
+navString += "<li><a href='QuizPage.html'>Quiz</a></li>";
+navString += "<li><a>Sitemap</a></li>";
+navString += "<li><a href='About.html'>About</a></li>";
+navString += "<div class='audioControls'>";
+navString += "<img src=\"../Assets/Play.png\" onclick=\"playAudio()\" height='25'>";
+navString += "<img src=\"../Assets/Pause.png\" onclick=\"pauseAudio()\" height='25'>";
+navString += "</div>";
+navString += "</ul>";
 
-
+document.getElementById('navbar').innerHTML = navString;
