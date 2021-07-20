@@ -1,6 +1,13 @@
 
 /**
- * Function to process user's answers and display the results 
+ * must add reset btn functionality
+ * @returns 
+ */
+
+
+
+/**
+ * Function to obtain radio values(user's selected values) and display the results 
  */
 
  function QuizResults(){
@@ -21,9 +28,9 @@
 }
 
 /**
- * Function to validate the form
- * @param userSelection 
- * @param noOfQuestions 
+ * Validation - to ensure user selects an answer for every question
+ * @param {*} userSelection 
+ * @param {*} noOfQuestions 
  * @returns 
  */
 function formValidation(userSelection , noOfQuestions){
@@ -37,11 +44,12 @@ function formValidation(userSelection , noOfQuestions){
 }
 
 /**
- * Function to Check Correct Answers
- * @param userSelection 
- * @param noOfQuestions 
- * @param userScore 
+ * Evaluating the user selections and dertermining the result.
+ * @param {*} userSelection 
+ * @param {*} noOfQuestions 
+ * @param {*} userScore 
  */
+
 function  evaluateAnswers(userSelection, noOfQuestions, userScore){
     //creating an array to store the correct answers based by value
     var answers=['A', 'D', 'B', 'C', 'A', 'A', 'B', 'D', 'C', 'A'];
@@ -54,20 +62,60 @@ function  evaluateAnswers(userSelection, noOfQuestions, userScore){
             userScore -= 1;
         }
     }
+    
+    var result = document.getElementById("result");
+    var change = document.getElementsByTagName("body")[0];
+    
     if(userScore > 15){
-        var result = document.getElementById("result");
         result.innerHTML = "<h2> You scored <span id='good'>" + userScore + "</span> out of <span>" + (noOfQuestions*2) + "</span> Good Job!!</h2>";
-    }
-    else if (userScore > 7){
-        var result = document.getElementById("result");
-        result.innerHTML = "<h2> You only scored <span id='okay'>" + userScore + "</span> out of <span>" + (noOfQuestions*2) + "</span> Try again!</h2>";
+        change.style.backgroundImage = "none";
+        change.style.backgroundColor= "darkgreen";
 
     }
-    else{
-        var result = document.getElementById("result");
-        result.innerHTML = "<h2> You only scored <span id='bad'>" + userScore + "</span> out of <span>" + (noOfQuestions*2) + "</span> Try again!</h2>";
+    else if (userScore > 7){
+        result.innerHTML = "<h2> You only scored <span id='okay'>" + userScore + "</span> out of <span>" + (noOfQuestions*2) + "</span> You could do better so try again!</h2>";
+        change.style.backgroundImage = "none";
+        change.style.backgroundColor= "orange";
     }
+        
+    else{
+        result.innerHTML = "<h2> You only scored <span id='bad'>" + userScore + "</span> out of <span>" + (noOfQuestions*2) + "</span> Try again!</h2>";
+        change.style.backgroundImage = "none";
+        change.style.backgroundColor= "red";
+    }
+    
+}    
+
+
+const timer = document.querySelector('h2');
+let timeInSec = 60;
+document.addEventListener("click", showTime(timeInSec));
+
+showTime(timeInSec);
+
+
+const countdownTimer = setInterval(()=>{
+    timeInSec-=1;
+    showTime(timeInSec);
+    if (timeInSec ==0){
+        clearInterval(countdownTimer);
+        QuizResults();
+    }
+
+},1000)
+
+/**
+ * Displaying time correctly on page 
+ * @param {*} seconds 
+ */
+
+function showTime(seconds){
+    // used Math.floor - to avoid rounding error
+    const minute = Math.floor(seconds/60); 
+    const second = Math.floor(seconds % 60);
+    timer.innerHTML=`${minute<10 ? '0': ''}${minute}:${second<10 ? '0':''}${second}`
+}
    
     
-}
+
 

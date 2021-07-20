@@ -1,71 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto&display=swap');
 
-.logo{
-    float: left;
-    padding-top: 0.6%;
-    padding-left: 0.8%;
-    border: 0.4%;
-    border-radius: 0.4%;
-}
-
-.navbar{
-    text-align: center;
-    z-index: 500;
-    overflow: hidden;
-    background-color: black;
-    position: fixed;
-    top:0;
-    width:100%;
-    font-size: 100%;
-        
-}
-
-.linkalign a{
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 15pt 45pt;
-    display: block; 
-}
 
 
-.linkalign a:hover{
-    color:rgb(25, 26, 27) ;
-    background-color: rgba(4,9,30,0.7);
-}
-
-.linkalign ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;   
-}
-
-.linkalign li{
-    list-style: none;
-    display:inline-block;
-}
-
-
-
-
-
-body{
-    
+body {
     background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("../Assets/Backdrop1.jpg");
+    background-color: rgb(17, 17, 17);
     color: white;
 }
 
-#timer{
-    color: #fff;
-    text-align: end;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 40px;
-    margin: 0;
-    height: 70px;
-    width: 200px;
 
-}
+
 
 #container{
     width: 60%;
@@ -88,6 +32,20 @@ header h1{
     margin: 0;
     padding: 0;
     font-size: 3.8rem;
+
+}
+
+
+.timer{
+    padding-top: 0;
+    margin-top: 0;
+    font-size: 15pt;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(0, 225, 255);
 
 }
 
@@ -149,6 +107,9 @@ input[type="radio"]:checked + label:before{
 footer{
     text-align: center;
 }
+a{
+    font-size: 15pt;
+}
 
 input[type="submit"]{
     background-color: rgb(9, 22, 136);
@@ -162,6 +123,17 @@ input[type="submit"]{
 }
 
 input[type="reset"]{
+    background-color: rgb(9, 22, 136);
+    border: 0;
+    color: #fff;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 25px;
+    border-radius: 10%;
+
+}
+
+.backtotop{
     background-color: rgb(9, 22, 136);
     border: 0;
     color: #fff;

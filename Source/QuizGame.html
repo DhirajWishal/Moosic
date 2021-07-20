@@ -6,7 +6,9 @@
         <title>Quiz Game</title>
         
         <link rel="stylesheet" href="../Styles/QuizGame.css">
-        <script src="../Scripts/QuizGame.js"></script>
+        <link rel="stylesheet" href="../Styles/NavBar.css">
+        <link rel="stylesheet" href ="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+        
         
     </head>
 
@@ -17,11 +19,10 @@
             </div>
             <ul class="linkalign">
                 <li><a href="../Source/MainPage.html">Home</a></li>
-                <li><a href="../Source/Menu.html">Products</a></li>
+                <li><a href="../Source/CW.html">Products</a></li>
                 <li><a href="../Source/">Query</a></li>
                 <li><a href="../Source/QuizPage.html">Quiz</a></li>
-                <li><a href="../Source/CW.html">CW</a></li>
-                <li><a>About</a></li>
+                <li><a href="../Source/About.html">About</a></li>
             </ul>
         </div>
         
@@ -29,7 +30,10 @@
         <div id="container">
             <header>
                 <br><br>
-                <h1>Music Trivia</h1>
+                <h1>Moosic Trivia</h1>   
+                <div class="timer">
+                    <h2>00:00</h2>
+                </div>             
                 <br>
                 
             </header>
@@ -137,19 +141,25 @@
                     <br><br>
                     <input type="submit"  value="Submit">
                     <input type="reset" value="Retry">
+                    
+                    <a class="backtotop" href="#"><i class="fas fa-arrow-up"></i></a>
 
                 </form>
+                
                 
                 <div id="result"></div>
 
             </section>
+            
 
             <footer>
                 <p>Copyright &copy; Group G-retards 2021, All Rights Reserved</p>
+                <a href="../Source/Miran.html">Page Editor</a>
             </footer>        
 
         </div>
+        
 
-
+        <script src="../Scripts/QuizGame.js"></script>
     </body>
 </html>

@@ -1,56 +1,7 @@
-.logo{
-    float: left;
-    padding-top: 0.6%;
-    padding-left: 0.8%;
-    border: 0.4%;
-    border-radius: 0.4%;
-}
-
-.navbar{
-    text-align: center;
-    z-index: 500;
-    overflow: hidden;
-    background-color: black;
-    position: fixed;
-    top:0;
-    width:100%;
-    font-size: 100%;    
-}
-
-.linkalign a{
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 15pt 45pt;
-    display: block; 
-}
-
-
-.linkalign a:hover{
-    color:rgb(25, 26, 27) ;
-    background-color: rgba(4,9,30,0.7);
-}
-
-.linkalign ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;   
-}
-
-.linkalign li{
-    list-style: none;
-    display:inline-block;
-}
-
-
-
-
-
-
 
 body{
-    background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("../Assets/bacdrop3.jpeg")
+    background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("../Assets/bacdrop3.jpeg");
+    
     
 }
 * {
