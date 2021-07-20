@@ -1,6 +1,6 @@
 
 /**
- * must add reset btn functionality
+ * must add reset btn functionality and submit btn must show results -->
  * @returns 
  */
 
