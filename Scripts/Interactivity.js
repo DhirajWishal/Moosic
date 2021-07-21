@@ -33,7 +33,10 @@ function cypherText(element, trueString, timeout = 3000) {
 
 const audioAssets = [
     "../Assets/Audio/Travis Scott - SICKO MODE (Clean -) ft. Drake.mp3",
-    "../Assets/Audio/Future, Drake - Life is Good (Clean -).mp3"
+    "../Assets/Audio/Future, Drake - Life is Good (Clean -).mp3",
+    "../Assets/Audio/The_Weeknd_-_Blinding_Lights_Audio.mp3",
+    "../Assets/Audio/Future_ft._The_Weeknd_-_Low_Life_Instrumental_Prod.By_Metro_Boomin__Ben_Billions.mp3",
+    "../Assets/Audio/Eminem - Not Afraid.mp3",
 ];
 
 // global audio object variable.
@@ -66,7 +69,7 @@ function audioFadeOut() {
             clearInterval(code);
         } else
             decreaseAudioVolume()
-    }, 200);
+    }, 500);
 }
 
 /**
