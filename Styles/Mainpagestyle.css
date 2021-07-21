@@ -147,7 +147,6 @@ fieldset {
 }
 
 .reviews {
-     
     display: flex;
     margin-top: 2%;
     justify-content: space-between;
