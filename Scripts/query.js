@@ -35,7 +35,7 @@ function viewquery(frm) {
         filled=false;
         frm.firstname.value="";
     }
-    if(lname.length==1 || lname.length>30){
+    if(lname.length==1 || lname.length>30 || !isNaN(fname)){
         alert("Enter a valid Last name!");
         filled=false;
         frm.lastname.value="";   
