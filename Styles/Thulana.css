@@ -20,10 +20,15 @@ footer {
 }
 
 .icon {
-    width: 20pt;
     height: 20pt;
 }
 
 .iconbar {
     display: inline;
+    text-decoration: none;
+}
+.iconbar img{
+    margin-left:2% ;
+    margin-right:2%;
+    
 }
