@@ -1,9 +1,5 @@
 
-/**
- * must add reset btn functionality and submit btn must show results -->
- * @returns 
- */
-
+var quizdone=true; 
 
 
 /**
@@ -27,7 +23,7 @@
     return false;
 }
 
-document.getElementById("submit").addEventListener("click", QuizResults);
+document.getElementById("submit").addEventListener("click", QuizResults); // event listener when submit button selected QuizResults() will run
 
 
 /**
@@ -40,7 +36,11 @@ function formValidation(userSelection , noOfQuestions){
     for(i=0;i< noOfQuestions;i++){
         if (userSelection[i] == null || userSelection[i] == ""){
             alert("You missed Question Number " + (i+1) + " Please select an answer!!")
+            quizdone = false;
             return false;
+        }
+        else{
+            quizdone= true;
         }
     }
     return true;  
@@ -56,16 +56,116 @@ function formValidation(userSelection , noOfQuestions){
 function  evaluateAnswers(userSelection, noOfQuestions, userScore){
     //creating an array to store the correct answers based by value
     var answers=['A', 'D', 'B', 'C', 'A', 'A', 'B', 'D', 'C', 'A'];
+    var qright=[]; //
+    var qwrong =[];
+    var results = document.getElementById("results");
+    var form = document.getElementById("quizform");
+
 
     for(i=0;i< noOfQuestions;i++){
         if (userSelection[i] == answers[i]){
             userScore+=2;
+            qright[i] = i+1;
+            
+
         }
         else{
             userScore -= 1;
-            
+            qwrong[i] = i + 1;
+
+
         }
     }
+    if (quizdone == true){
+        form.style.display ='none';
+
+        if (qright[0] == 1){
+            results.innerHTML += "<h2> You got question " + qright[0] + " correct! </h2> <br>";  
+            
+        }
+        else{
+            results.innerHTML += "<h2> You got question " + qwrong[0] + " wrong! Try Again! </h2> <br>";
+        }
+
+        if (qright[1] == 2){
+            results.innerHTML += "<h2> You got question " + qright[1] + " correct! </h2> <br>";  
+            
+        }
+        else{
+            results.innerHTML += "<h2> You got question " + qwrong[1] + " wrong! Try Again! </h2> <br>";
+        }
+
+        if (qright[2] == 3){
+            results.innerHTML += "<h2> You got question " + qright[2] + " correct! </h2> <br>";  
+            
+        }
+        else{
+            results.innerHTML += "<h2> You got question " + qwrong[2] + " wrong! Try Again! </h2> <br>";
+        }
+
+        if (qright[3] == 4){
+            results.innerHTML += "<h2> You got question " + qright[3] + " correct! </h2> <br>";  
+            
+        }
+        else{
+            results.innerHTML += "<h2> You got question " + qwrong[3] + " wrong! Try Again! </h2> <br>";
+        }
+
+        if (qright[4] == 5){
+            results.innerHTML += "<h2> You got question " + qright[4] + " correct! </h2> <br>";  
+            
+        }
+        else{
+            results.innerHTML += "<h2> You got question " + qwrong[4] + " wrong! Try Again! </h2> <br>";
+        }
+
+        if (qright[5] == 6){
+            results.innerHTML += "<h2> You got question " + qright[5] + " correct! </h2> <br>";  
+            
+        }
+        else{
+            results.innerHTML += "<h2> You got question " + qwrong[5] + " wrong! Try Again! </h2> <br>";
+        }
+
+        if (qright[6] == 7){
+            results.innerHTML += "<h2> You got question " + qright[6] + " correct! </h2> <br>";  
+            
+        }
+        else{
+            results.innerHTML += "<h2> You got question " + qwrong[6] + " wrong! Try Again! </h2> <br>";
+        }
+
+        if (qright[7] == 8){
+            results.innerHTML += "<h2> You got question " + qright[7] + " correct! </h2> <br>";  
+            
+        }
+        else{
+            results.innerHTML += "<h2> You got question " + qwrong[7] + " wrong! Try Again! </h2> <br>";
+        }
+
+        if (qright[8] == 9){
+            results.innerHTML += "<h2> You got question " + qright[8] + " correct! </h2> <br>";  
+            
+        }
+        else{
+            results.innerHTML += "<h2> You got question " + qwrong[8] + " wrong! Try Again! </h2> <br>";
+        }
+
+        if (qright[9] == 10){
+            results.innerHTML += "<h2> You got question " + qright[9] + " correct! </h2> <br>";  
+            
+        }
+        else{
+            results.innerHTML += "<h2> You got question " + qwrong[9] + " wrong! Try Again! </h2> <br>";
+        }
+
+    } 
+
+    
+        
+        
+        
+    
     
     var result = document.getElementById("result");
     var change = document.getElementsByTagName("body")[0];

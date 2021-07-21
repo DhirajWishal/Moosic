@@ -9,16 +9,16 @@ body {
 #container {
     width: 60%;
     font: 'Roboto';
-    margin: 20px auto;
+    margin: 20pt auto;
     overflow: auto;
-    padding: 25px;
+    padding: 25pt;
     background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../Assets/Backdrop1.jpg");
 }
 
 header {
-    margin-top: 10px;
+    margin-top: 10pt;
     text-align: center;
-    border-bottom: #fff dashed 1px;
+    border-bottom: #fff dashed 1pt;
 }
 
 header h1 {
@@ -45,14 +45,14 @@ section {
     text-align: left;
     padding: 15pt;
     margin: 10pt;
-    min-height: 400px;
+    min-height: 400pt;
     font-family: 'Open Sans', sans-serif;
 }
 
 section h3 {
-    font-size: 35px;
-    margin-left: 10px;
-    padding: 10px;
+    font-size: 35pt;
+    margin-left: 10pt;
+    padding: 10pt;
 
 }
 
@@ -63,10 +63,10 @@ input[type="radio"] {
 label {
     position: relative;
     color: rgb(0, 225, 255);
-    font-size: 20px;
-    border: 2px solid rgb(0, 225, 255);
-    border-radius: 5px;
-    padding: 15px 50px;
+    font-size: 20pt;
+    border: 2pt solid rgb(0, 225, 255);
+    border-radius: 5pt;
+    padding: 15pt 50pt;
     font-family: 'Roboto', sans-serif;
     display: flex;
     align-items: center;
@@ -76,11 +76,11 @@ label {
 label:before {
 
     content: "";
-    height: 30px;
-    width: 30px;
-    border: 3px solid rgb(0, 225, 255);
+    height: 30pt;
+    width: 30pt;
+    border: 3pt solid rgb(0, 225, 255);
     border-radius: 50%;
-    margin-right: 20px;
+    margin-right: 20pt;
 }
 
 
@@ -90,9 +90,9 @@ input[type="radio"]:checked+label {
 }
 
 input[type="radio"]:checked+label:before {
-    height: 16px;
-    width: 16px;
-    border: 10px solid #fff;
+    height: 16pt;
+    width: 16pt;
+    border: 10pt solid #fff;
     background-color: rgb(0, 225, 255);
 }
 
@@ -108,37 +108,29 @@ input[type="button"] {
     background-color: rgb(9, 22, 136);
     border: 0;
     color: #fff;
-    padding: 10px 15px;
+    padding: 10pt 15pt;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 25pt;
     border-radius: 10%;
 }
 
-input[type="reset"] {
-    background-color: rgb(9, 22, 136);
-    border: 0;
-    color: #fff;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 25px;
-    border-radius: 10%;
-}
+
 
 .backtotop {
     background-color: rgb(9, 22, 136);
     border: 0;
     color: #fff;
-    padding: 10px 15px;
+    padding: 10pt 15pt;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 25pt;
     border-radius: 10%;
 }
 
 #result h2 {
     text-align: center;
-    padding: 10px;
-    margin: 10px 0;
-    font-size: 20px;
+    padding: 10pt;
+    margin: 10pt 0;
+    font-size: 20pt;
 }
 
 #result span {

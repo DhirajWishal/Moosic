@@ -2,12 +2,12 @@
     background-color: black;
     border: none;
     color: white;
-    padding: 10px 20px;
+    padding: 8pt 14pt;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    border-radius: 4px;
+    font-size: 10pt;
+    border-radius: 2pt;
     transition: 1s;
 }
 
