@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="../Styles/ButtonStyle.css">
     <link rel="stylesheet" href="../Styles/Checkout.css">
     <script src="../Scripts/Interactivity.js"></script>
-
+    <script>
+        // Global total price variable for this page.
+        var totalPrice = 0;
+    </script>
 </head>
 
 <body>
@@ -50,16 +53,19 @@
                  */
                 function removeProductAndRow(index) {
                     removeProduct(index);
-                    processTable();
 
                     itemCount--;
                     sessionStorage.setItem("itemCount", itemCount);
+
+                    processTable();
                 }
 
                 /**
                  * Process the table and print out the content.
                  */
                 function processTable() {
+                    totalPrice = 0;
+
                     var tableString = "<table>";
                     tableString += "<tr>";
                     tableString += "<th>Item Number</th>";
@@ -71,7 +77,6 @@
                     tableString += "</tr>";
 
                     var itemNumber = 1;
-                    var totalPrice = 0;
                     for (let i = 0; i < 19; i++) {
                         var product = getProduct(i);
                         if (!product.isNull()) {
@@ -134,9 +139,9 @@
             <input type="date" name="customer_date_of_birth" placeholder="Date of birth" class="formInputElement"><br />
 
             <div style="margin-top: 20pt;">
+                <input type="reset" value="Clear" class="button" style="float: left; margin-left: 25%;" />
                 <input type="button" value="Checkout" onclick="onCheckout(this.form)" class="button"
-                    style="float: left; margin-left: 25%;" />
-                <input type="reset" value="Clear" class="button" style="float: right; margin-right: 25%;" />
+                    style="float: right; margin-right: 25%;" />
             </div>
         </fieldset>
 
@@ -152,13 +157,24 @@
                     .customer_country.value.length == 0 || form.customer_address.value.length == 0 || form
                     .customer_email.value.length == 0) {
                     alert("Field specified as required (*) should not be empty!");
+                    return;
                 } else {
+                    if (!form.customer_email.value.includes("@")) {
+                        alert("Please check if the entered email is valid!");
+                        return;
+                    }
+
+                    console.log("Updating!");
                     sessionStorage.setItem("customer_first_name", form.customer_first_name.value);
                     sessionStorage.setItem("customer_last_name", form.customer_last_name.value);
-                    sessionStorage.setItem("customer_country", form.customer_country.value);
+                    sessionStorage.setItem("customer_country", form.customer_country.options[form.customer_country
+                        .selectedIndex].text);
                     sessionStorage.setItem("customer_address", form.customer_address.value);
                     sessionStorage.setItem("customer_email", form.customer_email.value);
+                    sessionStorage.setItem("customer_total_price", totalPrice);
                 }
+
+                open("Invoice.html", "_blank");
             }
         </script>
     </form>
