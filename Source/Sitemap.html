@@ -8,103 +8,136 @@
         .padDown {
             padding-bottom: 25pt;
         }
-        body{
+
+        body {
             height: 100%;
+            background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../Assets/sitemapBgV2.jpg");
+            background-size: cover;
+            width: 100%;
+        }
+        text{
+            fill:white;
+        }
+        rect{
+            fill:black;
+        }
+        .intro{
+            color: white;
+            font-size: 20pt;
         }
     </style>
 
 </head>
 
 <body>
-    <p>The site map of the Moosic shop </p>
-    <p class="padDown"></p>
-    <svg width="300" height="100">
-        <g>
-            <rect width="300" height="100" style="fill:yellow;" />
-            <text x="50%" y="50%" text-anchor="middle">Index</text>
-        </g>
-    </svg>
-    <p class="padDown"></p>
-    <svg width="200" height="50">
-        <g>
-            <rect width="200" height="50" style="fill:yellow;" />
-            <text x="50%" y="50%" text-anchor="middle">Home page</text>
-        </g>
-    </svg>
-    
-    <svg width="1300" height="30">
-        <polyline points="130,10  1160,10  " style="fill:none;stroke:black;stroke-width:3" />
-        <polyline points="130,10  130,30 120,20 140,20 130,30" style="fill:none;stroke:black;stroke-width:3" />
-        <polyline points="330,10  330,30 320,20 340,20 330,30" style="fill:none;stroke:black;stroke-width:3" />
-        <polyline points="550,10  550,30 560,20 540,20 550,30" style="fill:none;stroke:black;stroke-width:3" />
-        <polyline points="750,10  750,30 760,20 740,20 750,30" style="fill:none;stroke:black;stroke-width:3" />
-        <polyline points="960,10  960,30 970,20 950,20 960,30" style="fill:none;stroke:black;stroke-width:3" />
-        <polyline points="1160,10  1160,30 1170,20 1150,20 1160,30" style="fill:none;stroke:black;stroke-width:3" />
-    </svg>
-    <p style="padding-bottom: 2pt;"></p>
-    <div>
-        <svg width="200" height="50">
+        <p class="intro">The site map of the Moosic shop </p>
+        <p class="padDown"></p>
+        <svg width="300" height="100">
             <g>
-                <rect width="200" height="50" style="fill:yellow;" />
-                <text x="50%" y="50%" text-anchor="middle">Products</text>
+
+                <rect width="300" height="100" style="fill:black;Stroke:white;stroke-width:5;"/>
+                <text x="50%" y="50%" text-anchor="middle" style="color:white;">Index</text>
             </g>
         </svg>
+        <p class="padDown"></p>
         <svg width="200" height="50">
             <g>
-                <rect width="200" height="50" style="fill:yellow;" />
-                <text x="50%" y="50%" text-anchor="middle">Query</text>
-            </g>
+                <a href="../Source/MainPage.html" target="_blank">
+                    <rect width="200" height="50" style="fill:black;Stroke:white;stroke-width:5;" />
+                    <text x="50%" y="50%" text-anchor="middle">Home page</text>
+                </a>
         </svg>
-        <svg width="200" height="50">
+
+        <svg width="1300" height="30">
+            <polyline points="130,10  1160,10  " style="fill:none;stroke:white;stroke-width:3" />
+            <polyline points="130,10  130,30 120,20 140,20 130,30" style="fill:none;stroke:white;stroke-width:3" />
+            <polyline points="330,10  330,30 320,20 340,20 330,30" style="fill:none;stroke:white;stroke-width:3" />
+            <polyline points="550,10  550,30 560,20 540,20 550,30" style="fill:none;stroke:white;stroke-width:3" />
+            <polyline points="750,10  750,30 760,20 740,20 750,30" style="fill:none;stroke:white;stroke-width:3" />
+            <polyline points="960,10  960,30 970,20 950,20 960,30" style="fill:none;stroke:white;stroke-width:3" />
+            <polyline points="1160,10  1160,30 1170,20 1150,20 1160,30" style="fill:none;stroke:white;stroke-width:3" />
+        </svg>
+        <p style="padding-bottom: 2pt;"></p>
+        <div>
+            <svg width="200" height="50">
+                <g>
+                    <a href="../Source/Menu.html" target="_blank">
+                        <rect width="200" height="50" style="fill:black;Stroke:white;stroke-width:5;" />
+                        <text x="50%" y="50%" text-anchor="middle">Products</text>
+                    </a>
+                </g>
+            </svg>
+            <svg width="200" height="50">
+                <g>
+                    <a href="../Source/query.html" target="_blank">
+                        <rect width="200" height="50" style="fill:black;Stroke:white;stroke-width:5;" />
+                        <text x="50%" y="50%" text-anchor="middle">Query</text>
+                    </a>
+                </g>
+            </svg>
+            <svg width="200" height="50">
+                <g>
+                    <a href="../Source/QuizPage.html" target="_blank">
+                        <rect width="200" height="50" style="fill:black;Stroke:white;stroke-width:5;" />
+                        <text x="50%" y="50%" text-anchor="middle">Quiz</text>
+                    </a>
+                </g>
+            </svg>
+            <svg width="200" height="50">
+                <g>
+                    <a href="../Source/Gallery.html" target="_blank">
+                        <rect width="200" height="50" style="fill:black;Stroke:white;stroke-width:5;" />
+                        <text x="50%" y="50%" text-anchor="middle">Gallery</text>
+                    </a>
+                </g>
+            </svg>
+            <svg width="200" height="50">
+                <g>
+                    <a href="../Source/About.html" target="_blank">
+                        <rect width="200" height="50" style="fill:black;Stroke:white;stroke-width:5;" />
+                        <text x="50%" y="50%" text-anchor="middle">About</text>
+                    </a>
+                </g>
+            </svg>
+            <svg width="200" height="50">
+                <g>
+                    <a href="../Source/Sitemap.html" target="_blank">
+                        <rect width="200" height="50" style="fill:black;Stroke:white;stroke-width:5;" />
+                        <text x="50%" y="50%" text-anchor="middle">SiteMap</text>
+                        <a href="../Source/Menu.html" target="_blank"></a>
+                </g>
+            </svg>
+            <svg width="1100" height="130">
+                <polyline points="40,0    40,130  50,115   30,115   40,130"
+                    style="fill:none;stroke:white;stroke-width:3" />
+                <polyline points="860,0  860,130  870,115  850,115  860,130 "
+                    style="fill:none;stroke:white;stroke-width:3" />
+            </svg>
+        </div>
+        <svg width="1300" height="50">
             <g>
-                <rect width="200" height="50" style="fill:yellow;" />
-                <text x="50%" y="50%" text-anchor="middle">Quiz</text>
+                <a href="../Source/Checkout.html" target="_blank">
+                    <rect x="40" y="0" width="200" height="50" style="fill:black;Stroke:white;stroke-width:5;" />
+                    <text x="140" y="30" text-anchor="middle">Check Out</text>
+                </a>
             </g>
-        </svg>
-        <svg width="200" height="50">
             <g>
-                <rect width="200" height="50" style="fill:yellow;" />
-                <text x="50%" y="50%" text-anchor="middle">Cw</text>
+                <rect x="860" y="0" width="200" height="50" style="fill:black;Stroke:white;stroke-width:5;" />
+                <text x="960" y="30" text-anchor="middle">Editor Page</text>
             </g>
         </svg>
-        <svg width="200" height="50">
-            <g>
-                <rect width="200" height="50" style="fill:yellow;" />
-                <text x="50%" y="50%" text-anchor="middle">About</text>
-            </g>
-        </svg>
-        <svg width="200" height="50">
-            <g>
-                <rect width="200" height="50" style="fill:yellow;" />
-                <text x="50%" y="50%" text-anchor="middle">Query</text>
-            </g>
-        </svg>
-        <svg width="1100" height="130">
-            <polyline points="40,0    40,130  50,115   30,115   40,130" style="fill:none;stroke:black;stroke-width:3" />
-            <polyline points="860,0  860,130  870,115  850,115  860,130 " style="fill:none;stroke:black;stroke-width:3" />
-        </svg>
-    </div>
-    <svg width="1300" height="50">
-        <g>
-         <rect x="40" y="0" width="200" height="50" style="fill: yellow;" />
-         <text x="140" y="30" text-anchor="middle">Check Out</text>
-        </g>
-        <g>
-         <rect x="860" y="0" width="200" height="50" style="fill: yellow;" />
-         <text x="960" y="30" text-anchor="middle">Editor Page</text>
-        </g>
-    </svg>
-    <footer class="footer">
+    <footer class="footer" style="position:fixed;">
         <a href="https://stackoverflow.com/users/story/16494682?newreg=971ce508805d41d3b95ae00638f7ae6c&_=1"
-          target="_blank"><img src="../Assets/stack_overlow.png"></a>
+            target="_blank"><img src="../Assets/stack_overlow.png"></a>
         <a href="https://www.facebook.com/thulana.thidaswin.9/" target="_blank"><img src="../Assets/facebook.png"></a>
         <a href="https://www.youtube.com/watch?v=VhDPPenQot8" target="_blank"><img src="../Assets/youtube.png"
-            style="padding-top: 0.5%;"></a>
+                style="padding-top: 0.5%;"></a>
         <a href="https://www.linkedin.com/in/thulana-thidaswin-2b5121207/" target="_blank"><img
-            src="../Assets/linkedin.png"></a>
-        <a href="https://www.instagram.com/awesome_guy_0.0/?hl=en" target="_blank"><img src="../Assets/instagram.png"></a>
+                src="../Assets/linkedin.png"></a>
+        <a href="https://www.instagram.com/awesome_guy_0.0/?hl=en" target="_blank"><img
+                src="../Assets/instagram.png"></a>
         <p><br><b>Page editor: </b> <a href="Thulana.html"><i>Thulana Thidaswin | Student 4</i></a></p>
-      </footer>
+    </footer>
 </body>
 
 </html>
