@@ -184,3 +184,21 @@ fieldset {
     background-color: rgba(4, 9, 30, 0.7);
     
 }
+
+#backtotop {
+    display: none; 
+    position: fixed; 
+    right: 0%;
+    bottom: 6%; 
+    z-index: 99;  
+    cursor: pointer; 
+    padding: 15px; 
+    border-radius: 50%; 
+    opacity: 0.7;
+}
+
+
+#backtotop:hover {
+    opacity: 1;
+    
+  }
