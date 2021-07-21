@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-    font-size: 100pt;
+    font-size: 50pt;
     font-family: 'GoodTimes';
 }
 
@@ -137,7 +137,6 @@ h1 {
 }
 
 .ghostInputElement {
-    background: transparent;
     border-style: none;
     outline: none;
     font-size: large;
@@ -160,6 +159,8 @@ h1 {
 
 .ghostContent {
     color: black;
+    background-color: white;
+    border-radius: 10pt;
 }
 
 .ghostDescription {
@@ -183,6 +184,7 @@ h1 {
     position: relative;
     margin-left: 5%;
     margin-right: 5%;
+    margin-bottom: 5%;
 }
 
 #fadeOverlay {
@@ -221,5 +223,4 @@ h1 {
     position: fixed;
     bottom: 10%;
     right: 5%;
-    resize:none;
 }

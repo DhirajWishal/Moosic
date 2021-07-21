@@ -37,24 +37,10 @@ const audioAssets = [
 ];
 
 // global audio object variable.
-var audioObject = new Audio(audioAssets[Math.floor(Math.random() * audioAssets.length)]);
-audioObject.volume = 5 / 100;
-
-/**
- * Play audio if the user wants to.
- */
-function playAudio() {
-    audioObject.play();
-    sessionStorage.setItem("audiPlayback", 1);
-}
-
-/**
- * Pause audio playback.
- */
-function pauseAudio() {
-    audioObject.pause();
-    sessionStorage.setItem("audiPlayback", 0);
-}
+var audioAsset = audioAssets[Math.floor(Math.random() * audioAssets.length)];
+var audioObject = new Audio(audioAsset);
+audioObject.volume = 0;
+var isPlaying = false;
 
 /**
  * Increase audio volume.
@@ -68,4 +54,78 @@ function increaseAudioVolume() {
  */
 function decreaseAudioVolume() {
     audioObject.volume -= 0.01;
+}
+
+/**
+ * Fade audio volume out.
+ */
+function audioFadeOut() {
+    let code = setInterval(() => {
+        if (audioObject.volume <= 0.01) {
+            audioObject.volume = 0;
+            clearInterval(code);
+        }
+        else
+            decreaseAudioVolume()
+    }, 200);
+}
+
+/**
+ * Fade audio volume in.
+ * 
+ * @param {*} maxVolume The maximum audio volume. Default is 5%;
+ */
+function audioFadeIn(maxVolume = 0.05) {
+    let code = setInterval(() => {
+        if (audioObject.volume === maxVolume)
+            clearInterval(code);
+
+        increaseAudioVolume()
+    }, 200);
+}
+
+/**
+ * Play audio if the user wants to.
+ */
+function playAudio() {
+    audioObject.play();
+    audioFadeIn();
+
+    sessionStorage.setItem("audioPlayback", 1);
+    sessionStorage.setItem("audioCurrentTime", audioObject.currentTime);
+    sessionStorage.setItem("audioAsset", audioAsset);
+    isPlaying = true;
+}
+
+/**
+ * Pause audio playback.
+ */
+function pauseAudio() {
+    audioFadeOut();
+    audioObject.pause();
+
+    sessionStorage.setItem("audioPlayback", 0);
+    isPlaying = false;
+}
+
+// Play audio when the user interacts with the page IF an audio file was playing in the background.
+document.onclick = () => {
+    if (sessionStorage.getItem("audioPlayback") == 1 && !isPlaying) {
+        audioObject = new Audio(sessionStorage.getItem("audioAsset"));
+        audioObject.currentTime = sessionStorage.getItem("audioCurrentTime");
+        audioObject.volume = 0;
+        audioObject.play();
+
+        audioFadeIn();
+
+        isPlaying = true;
+    }
+}
+
+// Before the window loads the next page, pause audio and record the current time.
+window.onbeforeunload = () => {
+    audioFadeOut();
+    audioObject.pause();
+
+    sessionStorage.setItem("audioCurrentTime", audioObject.currentTime);
 }
