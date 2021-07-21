@@ -51,12 +51,11 @@ html {
     display: block;
 }
 
-
 .linkalign a:hover {
-    color: rgb(25, 26, 27);
-    background-color: rgba(4, 9, 30, 0.7);
-    border-bottom-color: white;
-    border-bottom-width: 10pt;
+    border-bottom: 1pt;
+    border-bottom-style: solid;
+
+    transition: 1s ease;
 }
 
 .linkalign ul {

@@ -13,10 +13,12 @@ const imageList = [
     "Drumkit.png",
     "Drumstick.png",
     "14501339_800.jpg",
+
     "Speakers.png",
     "FenderPick.png",
     "image-efx12-front_original.jpg",
     "pro-headset-hero.png",
+
     'imageedit_1_6365420526.png',
     "Tcymbals.png",
     "Transparent.png"
@@ -32,10 +34,12 @@ const altList = [
     "Tabla",
     "Tambourine",
     "Snare Drum",
+
     "Bass Drum",
     "Drum Kit",
     "Drumsticks",
     "Cymbals",
+    
     "Speaker Set",
     "Guitar Picks",
     "Audio Mixer",
