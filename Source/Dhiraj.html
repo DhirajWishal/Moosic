@@ -7,8 +7,17 @@
     <link rel="stylesheet" href="../Styles/LinkList.css">
     <script src="../Scripts/Interactivity.js"></script>
     <style>
+        body {
+            font-size: xx-large;
+        }
+
         .container {
             margin-top: 3.9%;
+        }
+
+        .innerContent {
+            float: left;
+            margin-top: 1%;
         }
 
         .editorImage {
@@ -16,11 +25,22 @@
             height: 25%;
             float: left;
             margin-left: 10%;
+            border-radius: 10pt;
         }
 
         .details {
             font-size: large;
+            margin-right: 10%;
             /*transform: translate(-50%, -50%);*/
+        }
+
+        .contribution {
+            text-align: left;
+            padding-left: 10%;
+        }
+
+        .courseworkDetails {
+            font-size: xx-large;
         }
     </style>
 </head>
@@ -34,13 +54,36 @@
             cypherText(document.getElementById("toCypher"), "Dhiraj Wishal");
         </script>
 
-        <h2>Student 1</h2>
-        <img src="../Assets/Dhiraj.png" alt="Dhiraj" class="editorImage" />
-        <p class="details">
-            Morphing 5 years of C/C++ to JavaScript to make things much more easier and compact. <br />
-            Student ID: 20200903 <br />
-            UoW ID: w1838836 <br />
-        </p>
+        <h3>Student 1 | Team Leader | 20200903 | w1838836</h3>
+
+        <div class="innerContent">
+            <img src="../Assets/Dhiraj.png" alt="Dhiraj" class="editorImage" />
+            <div class="details">
+                I've been in the programming game for over 5 years, building desktop and IoT applications using C and
+                C++. About two years ago I picked up on game
+                engines and I've been hooked up to it ever since. By working on medium to large scale projects, by using
+                tools like Visual Studio 2017/ 2019, version control systems like GitHub, undoubtedly gave me an upper
+                hand in my university life. I've also helped over 10,000 people on StackOverflow and on other platforms
+                as well, teaching them everything from low level optimizations to designing software applications or
+                libraries.
+                <br />
+
+                My biggest flex is my programming experience and by using it wisely, my ultimate goal is to
+                produce or contribute to something which would change the whole world :D
+
+                <br /><br />
+
+                <h3>Contributions</h3>
+                <ul style="list-style-type: none;">
+                    <li>Index/ Presentation page.</li>
+                    <li>Menu/ Shop page.</li>
+                    <li>Buying/ Checkout page.</li>
+                    <li>Audio playback.</li>
+                    <li>Fancy font/ Cypher text.</li>
+                    <li>Moosic Logo.</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <!-- Link list -->

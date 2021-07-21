@@ -3,10 +3,12 @@ const imageList = [
     "GuitarProduct.png",
     "baseguitar.png",
     "Vguitar.png",
+
     "Bongo.png",
     "tabla.png",
     "Tamborine.png",
     "14071697_800.jpg",
+    
     "BassDrum.png",
     "Drumkit.png",
     "Drumstick.png",
@@ -25,6 +27,7 @@ const altList = [
     "Electric Guitar",
     "Base Guitar",
     "Rock Guitar",
+
     "Bongo",
     "Tabla",
     "Tambourine",

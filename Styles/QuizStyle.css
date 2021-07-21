@@ -6,7 +6,7 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-size: 16px;
+    font-size: 16pt;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -52,7 +52,7 @@ h1 {
     text-decoration: none;
     color: rgb(28, 26, 26);
     background: linear-gradient(90deg, rgb(255, 96, 22), rgb(235, 80, 19) 100%);
-    border-radius: 4px;
+    border-radius: 4pt;
 }
 
 .btn:hover {
