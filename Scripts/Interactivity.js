@@ -64,8 +64,7 @@ function audioFadeOut() {
         if (audioObject.volume <= 0.01) {
             audioObject.volume = 0;
             clearInterval(code);
-        }
-        else
+        } else
             decreaseAudioVolume()
     }, 200);
 }
@@ -77,7 +76,7 @@ function audioFadeOut() {
  */
 function audioFadeIn(maxVolume = 0.05) {
     let code = setInterval(() => {
-        if (audioObject.volume === maxVolume)
+        if (audioObject.volume >= maxVolume)
             clearInterval(code);
 
         increaseAudioVolume()
@@ -85,9 +84,37 @@ function audioFadeIn(maxVolume = 0.05) {
 }
 
 /**
+ * Setup audio object callbacks.
+ */
+function setupCallbacks() {
+    // In the case of audio finishes playing, it will load another file at random.
+    audioObject.onended = () => {
+        audioFadeOut();
+
+        audioAsset = audioAssets[Math.floor(Math.random() * audioAssets.length)];
+        sessionStorage.setItem("audioAsset", audioAsset);
+
+        audioObject = new Audio(audioAsset);
+        audioObject.volume = 0;
+        setupCallbacks();
+
+        audioObject.play();
+        audioFadeIn();
+    }
+}
+
+/**
  * Play audio if the user wants to.
  */
 function playAudio() {
+    if (sessionStorage.getItem("audioPlayback") == 1 && !isPlaying) {
+        audioObject = new Audio(sessionStorage.getItem("audioAsset"));
+        audioObject.currentTime = sessionStorage.getItem("audioCurrentTime");
+        audioObject.volume = 0;
+
+        setupCallbacks();
+    }
+
     audioObject.play();
     audioFadeIn();
 
@@ -114,8 +141,9 @@ document.onclick = () => {
         audioObject = new Audio(sessionStorage.getItem("audioAsset"));
         audioObject.currentTime = sessionStorage.getItem("audioCurrentTime");
         audioObject.volume = 0;
-        audioObject.play();
+        setupCallbacks();
 
+        audioObject.play();
         audioFadeIn();
 
         isPlaying = true;

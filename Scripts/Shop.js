@@ -15,7 +15,7 @@ for (let i = 0; i < elements.length; i++) {
 var hello = document.getElementsByClassName("box");
 for (let index = 0; index < hello.length; index++) {
     hello[index].addEventListener("click", () => {
-        shoppingKart(index);
+        showImage(index);
     })
 }
 function showImage(index) {
