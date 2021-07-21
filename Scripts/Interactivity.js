@@ -38,13 +38,14 @@ const audioAssets = [
 
 // global audio object variable.
 var audioObject = new Audio(audioAssets[Math.floor(Math.random() * audioAssets.length)]);
-audioObject.volume = 0.2;
+audioObject.volume = 5 / 100;
 
 /**
  * Play audio if the user wants to.
  */
 function playAudio() {
     audioObject.play();
+    sessionStorage.setItem("audiPlayback", 1);
 }
 
 /**
@@ -52,18 +53,19 @@ function playAudio() {
  */
 function pauseAudio() {
     audioObject.pause();
+    sessionStorage.setItem("audiPlayback", 0);
 }
 
 /**
  * Increase audio volume.
  */
 function increaseAudioVolume() {
-    audioObject.volume += 0.1;
+    audioObject.volume += 0.01;
 }
 
 /**
  * Decrease audio volume.
  */
 function decreaseAudioVolume() {
-    audioObject.volume -= 0.1;
+    audioObject.volume -= 0.01;
 }
