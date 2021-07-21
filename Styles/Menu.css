@@ -38,11 +38,6 @@ h1 {
     height: 400pt;
     overflow-x: hidden;
     overflow-y: hidden;
-
-    /* for Internet Explorer, Edge */
-    -ms-overflow-style: none;
-    /* for Firefox */
-    scrollbar-width: none;
     padding-left: 1%;
 }
 
