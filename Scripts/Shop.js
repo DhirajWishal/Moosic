@@ -18,14 +18,14 @@ for (let index = 0; index < hello.length; index++) {
         shoppingKart(index);
     })
 }
-  
-function shoppingKart(index) {
-    let outputName;
-    let userInput = prompt("Please enter the amount of this item you want");
-    if (userInput == null || userInput == " "|| isNaN(userInput)) {
-        alert("Enter a Valid number ");
-    } else {
-        alert("Added to cart sucessfully")
-        setProduct(index, itemlist[index], userInput);
-    }
-}
+function showImage(index) {
+    var ghost=document.getElementById("bgImage");
+    ghost.style.zIndex=1;
+    let  content = "<img src=\"../Assets/" + imageList[index] + "\" alt=\"" + altList[index] + "\" />";
+    content +="<button type=\"button\" onclick=\"hideImage();\" style=\"position: fixed;\"padding:30pt\"/>Click me to go back</button>"
+    ghost.innerHTML = content;
+} 
+function hideImage() {
+    var ghost=document.getElementById("bgImage");
+    ghost.style.zIndex=-1;
+} 

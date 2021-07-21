@@ -7,10 +7,12 @@
   <script src="../Scripts/ShoppingCart.js"> </script>
   <title>Welcome to the Moosic Shop</title>
   <script src="../Scripts/Interactivity.js"></script>
+  <script src="../Scripts/Menu.js"></script>
 
 </head>
-
 <body>
+  <div class="hidden" id="bgImage">
+  </div>
   <div id='navbar'></div>
   <script src="../Scripts/navbar.js"></script>
   <p class="paddown"></p>
@@ -20,134 +22,126 @@
       <div class="box">
         <img class="image" src="../assets/Guitar.png">
         <div class="Imageoverlay">
-          <p class="text">Classic Guitar<br>
-            USD 200</p>
+          <p class="text">Classic Guitar</p>
+          <p class="description">This guitar was made using the wood of a Mahogany tree which is strong and very durable</p>
+          <button type="button" style="font-size:8pt;" onclick="showImage(0);">Click me for a better view of me</button>
         </div>
       </div>
+  
       <p class="paddRight"></p>
-      <div class="box" float="left">
-        <img class="image" src="../Assets/Taylor-GS-Mini-Koa-ESB-fr-2017.png" alt="Electric">
+      <div class="box">
+        <img class="image" src="../assets/baseguitar.png">
         <div class="Imageoverlay">
-          <p class="text">YAMAHA ELECTRIC ACOUSTIC GUITAR NTX700N<br>
-            USD 200</p>
+          <p class="text">Base Guitar</p>
+          <p class="description">This guitar will give you a nice base for the music track you are producing and the strings are made of high quality horse tail</p>
+          <button type="button" style="font-size:8pt;" onclick="showImage(2);">Click me for a better view of me</button>
         </div>
       </div>
       <p class="paddRight"></p>
       <div class="box">
-        <img class="image" src="../assets/RockGuitar.png">
+        <img class="image" src="../assets/GuitarProduct.png">
         <div class="Imageoverlay">
-          <p class="text">ROCK and ROLL themed Electric Guitar <br>
-            USD 250</p>
+          <p class="text">Electric Guitar</p>
+          <p class="description">Made with premium ceramic and the notes are calibrated to give you the perfect pitch for any of your occasions</p>
+          <button type="button" style="font-size:8pt;" onclick="showImage(1);">Click me for a better view of me</button>
         </div>
       </div>
       <p class="paddRight"></p>
       <div class="box">
         <img class="image" src="../assets/Vguitar.png">
         <div class="Imageoverlay">
-          <p class="text">V based Guitar <br>
-            USD 300</p>
-        </div>
-      </div>
-      <p class="paddRight"></p>
-      <div class="box">
-        <img class="image" src="../assets/Violin.png">
-        <div class="Imageoverlay">
-          <p class="text">Mendini High quality Violin<br>
-            USD 335</p>
-        </div>
-      </div>
-      <p class="paddRight"></p>
-      <div class="box">
-        <img class="image" src="../assets/FenderPick.png">
-        <div class="Imageoverlay">
-          <p class="text">Fenders Light Pick
-            <br>[4 pack] <br>
-            USD 30
-          </p>
+          <p class="text">Rock Guitar </p>
+          <p class="description">This guitar is imported all the way from Italy and celebreties like Thulana Rhoades are in love with this product. He uses one of these for his concerts </p>
+          <button type="button" style="font-size:8pt;" onclick="showImage(3);">Click me for a better view of me</button>
         </div>
       </div>
     </div>
   </div>
+  <p class="paddRight"></p>
   <div class="mainBox" id="productList">
-    <h3> DRUMS </h3>
+    <h3>PERCUSSION</h3>
     <div class="subBox">
-      <div class="box">
-        <img class="image" src="../assets/Drumkit.png">
-        <div class="Imageoverlay">
-          <p class="text">Pearl Full drum kit <br>
-            USD 500</p>
-        </div>
-      </div>
-      <p class="paddRight"></p>
-      <div class="box">
-        <img class="image" src="../assets/BassDrum.png">
-        <div class="Imageoverlay">
-          <p class="text">YAMAHA Bass drum <br>
-            USD 500</p>
-        </div>
-      </div>
-      <p class="paddRight"></p>
-      <div class="box">
-        <img class="image" src="../assets/Tamborine.png">
-        <div class="Imageoverlay">
-          <p class="text">Hermes eidition Tamborine<br>
-            USD 1000</p>
-        </div>
-      </div>
-      <p class="paddRight"></p>
       <div class="box">
         <img class="image" src="../assets/Bongo.png">
         <div class="Imageoverlay">
-          <p class="text">High Quality Bongos <br>
-            USD 250</p>
+          <p class="text">Bongo</p>
+          <p class="description">A bongo is a commom drum used by many people in the world as its portable and its compact in size</p>
+          <button type="button" style="font-size:8pt;" onclick="showImage(4);">Click me for a better view of me</button>
         </div>
       </div>
       <p class="paddRight"></p>
       <div class="box">
         <img class="image" src="../assets/tabla.png">
         <div class="tablaoverlay">
-          <p class="text"> A Classic Tabla <br>
-            USD 150</p>
+          <p style="color: black; padding-top: 40pt;">Tabla</p>
+          <p class="description" style="padding-bottom: 40pt; color:white;">The Tabla is a famous drum used my many famous artists around the world because its loud and can fit inbetween your legs and portable</p>
+          <button type="button" style="font-size:8pt;" onclick="showImage(5);">Click me for a better view of me</button> 
         </div>
       </div>
+      <p class="paddRight"></p>
+      <div class="box">
+        <img class="image" src="../assets/Tamborine.png">
+        <div class="Imageoverlay">
+          <p class="text">Tamborine</p>
+          <p class="description">Our tamborines are given with one year warrenty , all the more reasons to get one</p>
+          <button type="button" style="font-size:8pt;" onclick="showImage(6);">Click me for a better view of me</button>
+        </div>
+      </div>
+      <p class="paddRight"></p>
+    
+      <div class="box">
+        <img class="image" src="../assets/Transparent.png">
+        <div class="Imageoverlay">
+          <p class="text">Snare Drum</p>
+          <p class="description">Snare drums are commom on parades our best selling item as a lot of schools and institutes use them and always leave good feed back </p>
+          <button type="button" style="font-size:8pt;" onclick="showImage(18);">Click me for a better view of me</button>
+
+        </div>
+      </div>
+ 
     </div>
-  </div>
   <div class="mainBox" id="productList">
-    <h3> AIR INSTRUMENTS </h3>
+    <h3> DRUMS </h3>
     <div class="subBox">
       <div class="box">
-        <img class="image" src="../assets/Clarinet.png">
+        <p class="paddLeft"></p>
+        <img class="image" src="../assets/Drumkit.png">
         <div class="Imageoverlay">
-          <p class="text">Yamaha Clarinet <br>
-            USD 250</p>
+          <p class="text">Drum Kit</p>
+          <p class="description">A classic drum kit Just like in the movies... what more could you ask for?</p>
+          <button type="button" style="font-size:8pt;" onclick="showImage(9);">Click me for a better view of me</button>
         </div>
       </div>
       <p class="paddRight"></p>
       <div class="box">
-        <img class="image" src="../assets/Trumpet.png">
+        <img class="image" src="../assets/BassDrum.png">
         <div class="Imageoverlay">
-          <p class="text">Polished Brass Trumpet<br>
-            USD 375</p>
+          <p class="text">Bass drum <br></p>
+          <p class="description">They do provide good bass, perfect to destry your neighbours eardrums</p>
+          <button type="button" style="font-size:8pt;" onclick="showImage(8);">Click me for a better view of me</button>
         </div>
       </div>
       <p class="paddRight"></p>
       <div class="box">
-        <img class="image" src="../assets/Flute.png">
+        <img class="image" src="../assets/Drumstick.png">
         <div class="Imageoverlay">
-          <p class="text">Maple wood Flute <br>
-            USD 125</p>
+          <p class="text">Drum sticks</p>
+          <p class="description">Just a pair of sticks used to beat the hell out of these drums</p>
+          <button type="button" style="font-size:8pt;" onclick="showImage(10);">Click me for a better view of me</button>
         </div>
       </div>
       <p class="paddRight"></p>
       <div class="box">
-        <img class="image" src="../assets/Bagpipe2.png">
+        <img class="image" src="../assets/Tcymbals.png">
         <div class="Imageoverlay">
-          <p class="text"> Scottish bagpipes <br>
-            USD 600</p>
+          <p class="text"> Cymbals </p>
+          <p class="description">Made from 24 carat gold these cymballs do know how make your ears ring </p>
+          <button type="button" style="font-size:8pt;" onclick="showImage(17);">Click me for a better view of me</button>
         </div>
       </div>
     </div>
   </div>
+
   <p class="paddRight"></p>
   <div class="mainBox" id="productList">
     <h3>ACCESSORIES</h3>
@@ -155,39 +149,45 @@
       <div class="box">
         <img class="image" src="../assets/Speakers.png">
         <div class="Imageoverlay">
-          <p class="text">HI-FI Speaker Setup <br>
-            USD 600</p>
+          <p class="text">Speaker Set </p>
+          <p class="description">This guitar was made using the wood of a Mahogany tree which is strong and very durable</p>
+          <button type="button" style="font-size:8pt;" onclick="showImage(12);">Click me for a better view of me</button>
         </div>
       </div>
       <p class="paddRight"></p>
       <div class="box">
-        <img class="image" src="../assets/poweradpater.png">
+        <img class="image" src="../assets/FenderPick.png">
         <div class="Imageoverlay">
-          <p class="text">Yamaha Piano Keyboard Power adpater<br>
-            USD 120</p>
+          <p class="text">Guitar Picks></p>
+          <p class="description">This guitar was made using the wood of a Mahogany tree which is strong and very durable</p>
+          <button type="button" style="font-size:8pt;" onclick="showImage(13);">Click me for a better view of me</button>
         </div>
       </div>
       <p class="paddRight"></p>
       <div class="box">
-        <img class="image" src="../assets/violinbow.png">
+        <img class="image" src="../assets/imageedit_1_6365420526.png">
         <div class="Imageoverlay">
-          <p class="text">Violin Bow<br>
-            USD 20</p>
+          <p class="text">Audio mixer</p>
+          <p class="description">This guitar was made using the wood of a Mahogany tree which is strong and very durable</p>
+          <button type="button" style="font-size:8pt;" onclick="showImage(16);">Click me for a better view of me</button>
         </div>
       </div>
       <p class="paddRight"></p>
+    
       <div class="box">
-        <img class="image" src="../assets/Drumstick.png">
+        <img class="image" src="../assets/pro-headset-hero.png">
         <div class="Imageoverlay">
-          <p class="text"> Wooden Drum sticks <br>
-            USD 10</p>
+          <p class="text">Preminum Headset </p>
+          <p class="description">This guitar was made using the wood of a Mahogany tree which is strong and very durable</p>
+          <button type="button" style="font-size:8pt;" onclick="showImage(15);">Click me for a better view of me</button>
         </div>
       </div>
     </div>
+    
+    
   </div>
-  <script src="../Scripts/Shop.js"> </script>
+  <script src="../Scripts/Shop.js"></script>
   <button type="button" class="buttoncss">
-    <a href="Checkout.html">Proceed to shopping cart</a>
   </button>
   <footer class="footer">
     <a href="https://www.linkedin.com/in/miran-kurukulasuriya-5525091bb/" target="_blank"><img src="../Assets/stack_overlow.png"></a>
@@ -195,7 +195,7 @@
     <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><img src="../Assets/youtube.png" style="padding-top: 0.5%;"></a>
     <a href="https://stackoverflow.com/users/11228029/d-raj" target="_blank"><img src="../Assets/linkedin.png"></a>
     <a href="https://www.instagram.com/fm_fizzy/" target="_blank"><img src="../Assets/instagram.png"></a>
-    <p><br><b>Page editor: </b> <a href="Dhiraj.html"><i>Dhiraj Wishal | Student 1</i></a></p>
+    <p><br><b>Page editor: </b> <a href="Thulana.html"><i>Thulana Thidaswin | Student 4</i></a></p>
 </footer>
 </body>
 
