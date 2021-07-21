@@ -19,13 +19,14 @@ for (let index = 0; index < hello.length; index++) {
     })
 }
 function showImage(index) {
-    var ghost=document.getElementById("bgImage");
-    ghost.style.zIndex=1;
+    var variable=document.getElementById("bgImage");
+    variable.style.zIndex=1;
     let  content = "<img src=\"../Assets/" + imageList[index] + "\" alt=\"" + altList[index] + "\" />";
-    content +="<button type=\"button\" onclick=\"hideImage();\" style=\"position: fixed;\"padding:30pt\"/>Click me to go back</button>"
-    ghost.innerHTML = content;
+    content +="<button type=\"button\" onclick=\"hideImage();\"class=\"backButton \" />Click me to go back</button>"
+    variable.innerHTML = content;
 } 
 function hideImage() {
-    var ghost=document.getElementById("bgImage");
-    ghost.style.zIndex=-1;
+    var variable=document.getElementById("bgImage");
+    variable.style.zIndex=-1;
+   
 } 
