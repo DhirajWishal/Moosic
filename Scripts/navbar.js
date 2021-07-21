@@ -8,6 +8,7 @@ navString += "<li><a href='query.html'>Query</a></li>";
 navString += "<li><a href='QuizPage.html'>Quiz</a></li>";
 navString += "<li><a>Sitemap</a></li>";
 navString += "<li><a href='About.html'>About</a></li>";
+navString += "<li><a href='Gallery.html'>Gallery</a></li>";
 navString += "<div class='audioControls'>";
 navString += "<img src=\"../Assets/Play.png\" onclick=\"playAudio()\" height='25'>";
 navString += "<img src=\"../Assets/Pause.png\" onclick=\"pauseAudio()\" height='25'>";
