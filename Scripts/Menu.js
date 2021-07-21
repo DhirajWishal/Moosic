@@ -39,7 +39,7 @@ const altList = [
     "Drum Kit",
     "Drumsticks",
     "Cymbals",
-    
+
     "Speaker Set",
     "Guitar Picks",
     "Audio Mixer",
@@ -111,7 +111,7 @@ function initializeProductList() {
  * @returns None.
  */
 function handleAddToCart(index, form) {
-    if (form.quantity.value.length == 0 || isNaN(form.quantity.value)) {
+    if (form.quantity.value.length == 0 || isNaN(form.quantity.value) || form.quantity.value < 0) {
         alert("Quantity should be a valid number!");
         form.quantity.value = "";
         return;
