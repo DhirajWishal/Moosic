@@ -94,7 +94,7 @@ fieldset {
     background: rgba(4, 9, 30, 0.7);
 }
 .ProductItem img:hover{
-    width: 220pt;
+    width: 230pt;
     cursor:pointer;
 }
 
