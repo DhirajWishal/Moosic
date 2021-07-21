@@ -20,7 +20,7 @@ for (let index = 0; index < hello.length; index++) {
 }
 function showImage(index) {
     var variable=document.getElementById("bgImage");
-    variable.style.zIndex=1;
+    variable.style.zIndex=100;
     let  content = "<img src=\"../Assets/" + imageList[index] + "\" alt=\"" + altList[index] + "\" />";
     content +="<button type=\"button\" onclick=\"hideImage();\"class=\"backButton \" />Click me to go back</button>"
     variable.innerHTML = content;
