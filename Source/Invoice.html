@@ -3,20 +3,103 @@
 
 <head>
     <title>Invoice</title>
-    <script src="../Scripts/Interactivity.js"></script>
+    <style>
+        body {
+            font-size: x-large;
+            text-align: center;
+        }
+
+        table,
+        tr,
+        th,
+        td {
+            border-collapse: collapse;
+            border-style: solid;
+            border-width: 1pt;
+        }
+
+        table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        hr {
+            margin-top: 5%;
+            margin-bottom: 5%;
+            width: 75%;
+            size: 10pt;
+        }
+
+        .timestamp {
+            bottom: 10pt;
+            font-size: small;
+        }
+
+        .printButton {
+            margin-left: auto;
+            margin-right: auto;
+            bottom: 10%;
+        }
+
+        @media print {
+            .printButton {
+                display: none;
+            }
+        }
+    </style>
+    <script src="../Scripts/Menu.js"></script>
+    <script src="../Scripts/ShoppingCart.js"></script>
 </head>
 
 <body>
-    <h1>Purchase Invoice</h1>
+    <h1>Moosic Purchase Invoice</h1>
     <p id="detailArea"></p>
-    <script src="../Scripts/ShoppingCart.js">
-        var element = document.getElementById("detailArea");
+    <script>
+        var details = "<strong>Customer Name: </strong>" + sessionStorage.getItem("customer_first_name") + " " +
+            sessionStorage.getItem(
+                "customer_last_name") + "<br>";
+        details += "<strong> Customer Country: </strong>" + sessionStorage.getItem("customer_country") + "<br>";
+        details += "<strong> Customer Address: </strong>" + sessionStorage.getItem("customer_address") + "<br>";
+        details += "<strong> Customer Email: </strong>" + sessionStorage.getItem("customer_email") + "<br>";
+        details += "<strong> Total Price: USD </strong>" + sessionStorage.getItem("customer_total_price") + "<br>";
+        details += "<hr>";
 
-        var details = "Customer Name: " + sessionStorage.getItem("customer_first_name") + " " + sessionStorage.getItem(
-            "customer_last_name") + "<br>";
-        details += "Customer Country: " + sessionStorage.getItem("customer_country") + "<br>";
-        details += "Customer Address: " + sessionStorage.getItem("customer_address") + "<br>";
-        details += "Customer Email: " + sessionStorage.getItem("customer_email") + "<br>";
+        details += "<table>";
+        details += "<tr>";
+        details += "<th>Item Number</th>";
+        details += "<th>Product Name</th>";
+        details += "<th>Quantity</th>";
+        details += "<th>Unit Price</th>";
+        details += "<th>Total Price</th>";
+        details += "</tr>";
+
+        var itemNumber = 1;
+        for (let i = 0; i < 19; i++) {
+            var product = getProduct(i);
+            if (!product.isNull()) {
+                details += "<tr>";
+
+                details += "<td>" + itemNumber + "</td>";
+                details += "<td>" + product.mProductName + "</td>";
+                details += "<td>" + product.mQuantity + "</td>";
+                details += "<td>USD " + prices[i] + "</td>";
+                details += "<td>USD " + product.mQuantity * prices[i] + "</td>";
+
+                details += "</tr>";
+                itemNumber++;
+            }
+        }
+
+        details += "</table>";
+        details += "<hr>";
+
+        details += "<div class\"timestamp\">";
+        details += new Date();
+        details += "</div>";
+
+        details += "<button class=\"printButton\" onclick=\"window.print()\">Print Page</button>";
+
+        document.getElementById("detailArea").innerHTML = details;
     </script>
 </body>
 

@@ -8,6 +8,8 @@ body {
 
 .container {
     background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../Assets/1162936.jpg");
+    padding-top: 5%;
+    height: 500pt;
 }
 
 #productTable {
