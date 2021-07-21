@@ -4,191 +4,92 @@
 <head>
     <meta charset="UTF-8">
     <title>Menu</title>
+    <script src="../Scripts/ShoppingCart.js"></script>
     <link rel="stylesheet" href="../Styles/DefaultTheme.css">
-    <link rel="stylesheet" href="../Styles/NavBar.css">
-    <style>
-        html {
-            height: 100%;
-            width: 100%;
-            background-image: url("../Assets/wp2727676.jpg");
-            background-repeat: no-repeat;
-        }
-
-        body {
-            width: 100%;
-            height: 100%;
-            overflow-x: hidden;
-            overflow-y: hidden;
-        }
-
-        #productList {
-            align-items: stretch;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            height: 350pt;
-            overflow-x: hidden;
-            overflow-y: hidden;
-
-            /* for Internet Explorer, Edge */
-            -ms-overflow-style: none;
-            /* for Firefox */
-            scrollbar-width: none;
-            background-color: white;
-            padding-left: 1%;
-        }
-
-        .scrollButtons {
-            margin-top: 50%;
-            height: 100pt;
-        }
-
-        .productSelection {
-            margin-top: auto;
-            margin-bottom: auto;
-            width: 100%;
-        }
-
-        .product {
-            width: auto;
-            /*box-shadow: 0 4pt 8pt 0 rgba(0, 0, 0, 0.2), 0 6pt 20pt 0 rgba(0, 0, 0, 0.19);*/
-            text-align: center;
-            margin-right: 10pt;
-            float: left;
-            height: 300pt;
-
-            /*max-width: 33.333%;*/
-            padding: .75rem;
-            margin-bottom: 2rem;
-            border: 0;
-            flex-basis: 33.333%;
-            flex-grow: 0;
-            flex-shrink: 0;
-            position: relative;
-        }
-
-        .productImg {
-            height: inherit;
-            width: auto;
-            transition: .5s ease;
-            backface-visibility: hidden;
-
-            opacity: 1;
-            display: block;
-
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .productInfoOverlay {
-            transition: .5s ease;
-            opacity: 0;
-            text-align: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .productCaption {
-            font-size: 16pt;
-            /*padding: 16px 32px;*/
-        }
-
-        .product:hover .productImg {
-            opacity: 0.3;
-        }
-
-        .product:hover .productInfoOverlay {
-            opacity: 1;
-        }
-    </style>
-
-    <script>
-        /***
-         * This function initializes the product list.
-         * The reason to add the product items dynamically, is because there are a lot of similar tags in the similar structure. This means that the same code gets repeated and
-         * will result in a much more complex and cluttered file. 
-         * Using JS to perform this task will not only make things easier, will also make things much more readable, and will get rid of code redundancy.
-         */
-        function initializeProductList() {
-            var element = document.getElementById("productList");
-            var content = "";
-
-            var productIDs = ["p1", "p2", "p3", "p4", "p5"];
-
-            var imageList = [
-                "../Assets/NTX700-1.jpg",
-                "../Assets/fender-american-pro-stratocaster-mn-3ts-hss-a.jpg",
-                "../Assets/Taylor-GS-Mini-Koa-ESB-fr-2017.png",
-                "../Assets/Taylor-PS14ce-frl-2020.png",
-                "../Assets/THRC212-1.jpg"
-            ];
-
-            var altList = [
-                "NXT700",
-                "Fender American Pro",
-                "Taylow GS Mini",
-                "Taylor PS14ce",
-                "THRC212"
-            ];
-
-            var captionList = [
-                "YAMAHA ELECTRIC ACOUSTIC GUITAR NTX700N",
-                "AMERICAN PROFESSIONAL II STRATOCASTER",
-                "Taylor GS Mini-e Koa",
-                "Taylor PS14ce Honduran Rosewood",
-                "Yamaha THRC212 300-watt 2x12\" THR Stereo Cabinet"
-            ];
-
-            for (var i = 0; i < imageList.length; i++) {
-                content += "<div class=\"product\">";
-
-                content += "<img class=\"productImg\" src=\"" + imageList[i] + "\" alt=\"" + altList[i] + "\" />";
-
-                content += "<div class=\"productInfoOverlay\">";
-                content += "<div class=\"productCaption\">" + captionList[i] + "</div>"
-                content += "</div>";
-
-                content += "</div>";
-            }
-
-            element.innerHTML = content;
-        }
-    </script>
+    <link rel="stylesheet" href="../Styles/ButtonStyle.css">
+    <link rel="stylesheet" href="../Styles/Menu.css">
+    <script src="../Scripts/Interactivity.js"></script>
 </head>
 
 <body>
     <!--This is the Navbar -->
-    <div class="navbar">
-        <div class="logo">
-            <img src="../Assets/Moosic.png" width="100" height="50" />
+    <div class="container">
+        <div id='navbar'></div>
+        <script src="../Scripts/navbar.js"></script>
+
+        <div class="infoSection">
+            <h1 id="#guitars">Guitars</h1>
+            <div class="productInfo">
+                <div class="productList">
+                </div>
+            </div>
+
+            <h1 id="#percussion">Percussion</h1>
+            <div class="productInfo">
+                <div class="productList">
+                </div>
+            </div>
+
+            <h1 id="#drums">Drums</h1>
+            <div class="productInfo">
+                <div class="productList">
+                </div>
+            </div>
+
+            <h1 id="#accessories">Accessories</h1>
+            <div class="productInfo">
+                <div class="productList"></div>
+                <div style="height: 100pt;"></div> <!-- Just some padding. -->
+            </div>
         </div>
-        <ul class="linkalign">
-            <li><a href="MainPage.html">Home</a></li>
-            <li><a href="Menu.html">Products</a></li>
-            <li><a href="query.html">Query</a></li>
-            <li><a href="QuizPage.html">Quiz</a></li>
-            <li><a href="CW.html">CW</a></li>
-            <li><a>About</a></li>
-        </ul>
-    </div>
-    <div class="productSelection">
-        <!--<button class="scrollButtons" style="float: left;" onclick="onLeftClick()">LEFT</button>-->
-        <!--<button class="scrollButtons" style="float: right;" onclick="onRightClick()">RIGHT</button>-->
-        <span id="productList"></span>
     </div>
 
+    <!-- Fade overlay -->
+    <div id="fadeOverlay"></div>
+
+    <!-- Ghost box. This will contain the selected item information. -->
+    <div id="productGhost" class="ghostHide">
+    </div>
+
+    <div style="float: right; bottom: 0; position: fixed; margin-bottom: 5%; margin-left: 89%;">
+        <a href="Checkout.html" class="button goBackButton">Checkout</a>
+        <span id="itemNumber">0</span>
+    </div>
+
+
+    <script src="../Scripts/Menu.js"></script>
     <script>
-        // Initialize the product list.
         initializeProductList();
+        updateItemCount();
 
-        // Set the horizontal scroll event listener.
-        document.getElementById("productList").addEventListener("wheel", (event) => {
-            event.preventDefault();
-            document.getElementById("productList").scrollLeft += event.deltaY;
-        });
+        var elements = document.getElementsByClassName("productList");
+        for (let i = 0; i < elements.length; i++) {
+            let element = elements[i];
+
+            element.addEventListener("wheel", (event) => {
+                event.preventDefault();
+                element.scrollLeft += event.deltaY;
+            })
+        }
+
+        var products = document.getElementsByClassName("product");
+        for (let i = 0; i < products.length; i++) {
+            let product = products[i];
+
+            product.addEventListener("click", () => {
+                onProductSelect(i);
+            })
+        }
     </script>
+    <footer class="footer">
+        <a href="https://www.linkedin.com/in/miran-kurukulasuriya-5525091bb/" target="_blank"><img src="../Assets/stack_overlow.png"></a>
+        <a href="https://www.facebook.com/thulana.thidaswin.9/" target="_blank"><img src="../Assets/facebook.png"></a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><img src="../Assets/youtube.png" style="padding-top: 0.5%;"></a>
+        <a href="https://stackoverflow.com/users/11228029/d-raj" target="_blank"><img src="../Assets/linkedin.png"></a>
+        <a href="https://www.instagram.com/fm_fizzy/" target="_blank"><img src="../Assets/instagram.png"></a>
+        <p><br><b>Page editor: </b> <a href="Dhiraj.html"><i>Dhiraj Wishal | Student 1</i></a></p>
+    </footer>
+
 </body>
 
 </html>

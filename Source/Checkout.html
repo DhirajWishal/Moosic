@@ -4,144 +4,21 @@
 <head>
     <title>Checkout</title>
     <script src="../Scripts/ShoppingCart.js"></script>
+    <script src="../Scripts/Menu.js"></script>
     <link rel="stylesheet" href="../Styles/DefaultTheme.css">
-    <link rel="stylesheet" href="../Styles/NavBar.css">
     <link rel="stylesheet" href="../Styles/ButtonStyle.css">
+    <link rel="stylesheet" href="../Styles/Checkout.css">
+    <script src="../Scripts/Interactivity.js"></script>
 
-    <style>
-        .container {
-            margin-top: 3.9%;
-        }
-
-        #pageFooter {
-            width: 100%;
-            background-color: whitesmoke;
-        }
-
-        body {
-            height: 100%;
-            background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../Assets/1162936.jpg");
-            color: white;
-            font-size: larger;
-            display: grid;
-            grid-template-rows: auto auto auto;
-        }
-
-        footer {
-            display: grid;
-            align-self: end;
-            /* The trick */
-        }
-
-        #productTable table {
-            border-collapse: collapse;
-            text-align: center;
-            font-size: larger;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        #productTable table th {
-            padding-right: 10pt;
-        }
-
-        .updateIcon {
-            filter: invert(100%);
-            width: 20pt;
-            height: 20pt;
-            margin-left: 10pt;
-        }
-
-        .removeIcon {
-            filter: invert(100%);
-            width: 15pt;
-            height: 15pt;
-            margin-left: 10pt;
-        }
-
-        .totalPrice {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .inputForm {
-            text-align: left;
-        }
-
-        .formStyle {
-            width: 50%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .formInputElement {
-            background: transparent;
-            border-style: none;
-            outline: none;
-            font-size: large;
-            color: white;
-            border-bottom: white;
-            border-bottom-style: solid;
-            margin-top: 20pt;
-            width: 50%;
-        }
-
-        .formStyle option {
-            color: black;
-        }
-
-        .formSubmitButton {
-            background: transparent;
-            border-style: solid;
-            border-color: white;
-            color: white;
-            font-size: large;
-            border-radius: 7.5pt;
-        }
-    </style>
 </head>
 
 <body>
-    <!--This is the Navbar -->
-    <div class="navbar">
-        <div class="logo">
-            <img src="../Assets/Moosic.png" width="100" height="50" />
-        </div>
-        <ul class="linkalign">
-            <li><a href="MainPage.html">Home</a></li>
-            <li><a href="Menu.html">Products</a></li>
-            <li><a href="query.html">Query</a></li>
-            <li><a href="QuizPage.html">Quiz</a></li>
-            <li><a href="CW.html">CW</a></li>
-            <li><a>About</a></li>
-        </ul>
-    </div>
-
     <div class="container">
+        <div id='navbar'></div>
+        <script src="../Scripts/navbar.js"></script>
+
         <div id="productTable">
             <script>
-                var priceList = [
-                    200,
-                    200,
-                    250,
-                    300,
-                    335,
-                    30,
-                    500,
-                    500,
-                    1000,
-                    250,
-                    150,
-                    250,
-                    375,
-                    125,
-                    600,
-                    600,
-                    120,
-                    20,
-                    10
-                ];
-
                 /**
                  * Increment the product quantity by reducing one.
                  * This will also update the table.
@@ -174,6 +51,9 @@
                 function removeProductAndRow(index) {
                     removeProduct(index);
                     processTable();
+
+                    itemCount--;
+                    sessionStorage.setItem("itemCount", itemCount);
                 }
 
                 /**
@@ -200,8 +80,8 @@
                             tableString += "<td>" + itemNumber + "</td>";
                             tableString += "<td>" + product.mProductName + "</td>";
                             tableString += "<td>" + product.mQuantity + "</td>";
-                            tableString += "<td>USD " + priceList[i] + "</td>";
-                            tableString += "<td>USD " + product.mQuantity * priceList[i] + "</td>";
+                            tableString += "<td>USD " + prices[i] + "</td>";
+                            tableString += "<td>USD " + product.mQuantity * prices[i] + "</td>";
 
                             tableString += "<td onclick=\"incrementQuantity(" + i +
                                 ")\"><img src=\"../Assets/bigPlus.png\" class=\"updateIcon\" /></td>";
@@ -214,7 +94,7 @@
 
                             tableString += "</tr>";
                             itemNumber++;
-                            totalPrice += product.mQuantity * priceList[i];
+                            totalPrice += product.mQuantity * prices[i];
                         }
                     }
 
@@ -232,54 +112,68 @@
                 processTable();
             </script>
         </div>
-
-        <!--<hr style="width: 50%; margin-left: auto; margin-right: auto; margin-top: 10pt;" />-->
-        <form class="formStyle">
-            <fieldset>
-                <legend style="font-size: xx-large;">Personal Information</legend>
-                <p style="color: red;">All fields marked with * is mandatory.</p>
-                <input type="text" name="customer_first_name" placeholder="First Name *"
-                    class="formInputElement" /><br />
-                <input type="text" name="customer_last_name" placeholder="Last Name * "
-                    class="formInputElement" /><br />
-
-                <select name="customer_country" class="formInputElement">
-                    <option value="sri_lanka" selected>Sri Lanka</option>
-                    <option value="india">India</option>
-                    <option value="Russia">Russia</option> <!-- Mother rrrussia -->
-                    <option value="england">United Kingdom</option>
-                    <option value="murrica">United States</option>
-                </select><br />
-
-                <input type="text" name="customer_address" placeholder="Address *" class="formInputElement" /><br />
-                <input type="date" name="customer_date_of_birth" placeholder="Date of birth"
-                    class="formInputElement"><br />
-
-                <div style="margin-top: 20pt;">
-                    <input type="button" value="Checkout" onclick="onCheckout(this.form)" class="button"
-                        style="float: left; margin-left: 25%;" />
-                    <input type="reset" value="Clear" class="button" style="float: right; margin-right: 25%;" />
-                </div>
-            </fieldset>
-
-            <script>
-                /**
-                 * On checkout function.
-                 * 
-                 * @param form The html form.
-                 */
-                function onCheckout(form) {
-                    // Validate the form.
-                    if (form.customer_first_name.value.length == 0 || form.customer_last_name.value.length == 0 || form
-                        .customer_country.value.length == 0 || form.customer_address.value.length == 0) {
-                        alert("Field specified as required (*) should not be empty!");
-                    }
-                }
-            </script>
-        </form>
     </div>
-    <footer id="pageFooter">
-        <a href="Dhiraj.html">Dhiraj Wishal | Student 1</a>
+
+    <form class="formStyle">
+        <fieldset>
+            <legend style="font-size: xx-large;">Personal Information</legend>
+            <p style="color: red;">All fields marked with * are mandatory.</p>
+            <input type="text" name="customer_first_name" placeholder="First Name *" class="formInputElement" /><br />
+            <input type="text" name="customer_last_name" placeholder="Last Name * " class="formInputElement" /><br />
+
+            <select name="customer_country" class="formInputElement">
+                <option value="sri_lanka" selected>Sri Lanka</option>
+                <option value="india">India</option>
+                <option value="Russia">Russia</option> <!-- Mother rrrussia -->
+                <option value="england">United Kingdom</option>
+                <option value="murrica">United States</option>
+            </select><br />
+
+            <input type="text" name="customer_address" placeholder="Address *" class="formInputElement" /><br />
+            <input type="email" name="customer_email" placeholder="Email *" class="formInputElement" /><br />
+            <input type="date" name="customer_date_of_birth" placeholder="Date of birth" class="formInputElement"><br />
+
+            <div style="margin-top: 20pt;">
+                <input type="button" value="Checkout" onclick="onCheckout(this.form)" class="button"
+                    style="float: left; margin-left: 25%;" />
+                <input type="reset" value="Clear" class="button" style="float: right; margin-right: 25%;" />
+            </div>
+        </fieldset>
+
+        <script>
+            /**
+             * On checkout function.
+             * 
+             * @param form The html form.
+             */
+            function onCheckout(form) {
+                // Validate the form.
+                if (form.customer_first_name.value.length == 0 || form.customer_last_name.value.length == 0 || form
+                    .customer_country.value.length == 0 || form.customer_address.value.length == 0 || form
+                    .customer_email.value.length == 0) {
+                    alert("Field specified as required (*) should not be empty!");
+                } else {
+                    sessionStorage.setItem("customer_first_name", form.customer_first_name.value);
+                    sessionStorage.setItem("customer_last_name", form.customer_last_name.value);
+                    sessionStorage.setItem("customer_country", form.customer_country.value);
+                    sessionStorage.setItem("customer_address", form.customer_address.value);
+                    sessionStorage.setItem("customer_email", form.customer_email.value);
+                }
+            }
+        </script>
+    </form>
+
+    <div style="float: right; bottom: 0; position: fixed; margin-bottom: 5%; margin-left: 83.5%;">
+        <a href="Menu.html" class="button goBackButton">Go Back to Shop</a>
+    </div>
+
+    <footer class="footer">
+        <a href="https://www.linkedin.com/in/miran-kurukulasuriya-5525091bb/" target="_blank"><img src="../Assets/stack_overlow.png"></a>
+        <a href="https://www.facebook.com/thulana.thidaswin.9/" target="_blank"><img src="../Assets/facebook.png"></a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><img src="../Assets/youtube.png" style="padding-top: 0.5%;"></a>
+        <a href="https://stackoverflow.com/users/11228029/d-raj" target="_blank"><img src="../Assets/linkedin.png"></a>
+        <a href="https://www.instagram.com/fm_fizzy/" target="_blank"><img src="../Assets/instagram.png"></a>
+        <p><br><b>Page editor: </b> <a href="Dhiraj.html"><i>Dhiraj Wishal | Student 1</i></a></p>
     </footer>
 </body>
 

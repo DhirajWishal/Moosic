@@ -1,0 +1,217 @@
+body {
+    color: white;
+}
+
+h1 {
+    font-size: 100pt;
+    font-family: 'GoodTimes';
+}
+
+.container {
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../Assets/Backdrop6.jpeg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.infoSection {
+    margin-top: 3.4%;
+}
+
+.productInfo {
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+
+.productSelection {
+    padding-top: 3.4%;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+}
+
+.productList {
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 400pt;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    /* for Internet Explorer, Edge */
+    -ms-overflow-style: none;
+    /* for Firefox */
+    scrollbar-width: none;
+    padding-left: 1%;
+}
+
+.product {
+    width: auto;
+    /*box-shadow: 0 4pt 8pt 0 rgba(0, 0, 0, 0.2), 0 6pt 20pt 0 rgba(0, 0, 0, 0.19);*/
+    text-align: center;
+    margin-right: 10pt;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    float: left;
+    height: 300pt;
+
+    /*max-width: 33.333%;*/
+    padding: .75rem;
+    margin-bottom: 2rem;
+    flex-basis: 33.333%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: relative;
+
+    /*border: 1;
+    border-style: solid;*/
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 5pt;
+    background-color: white;
+    color: black;
+}
+
+.productImage {
+    height: inherit;
+    width: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+
+    opacity: 1;
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.productInfoOverlay {
+    transition: .5s ease;
+    opacity: 0;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.productCaption {
+    font-size: 16pt;
+    /*padding: 16px 32px;*/
+}
+
+.product:hover {
+    z-index: 1;
+    transform: scale(1.2);
+    cursor: pointer;
+
+    box-shadow: 0pt 3pt 5pt rgba(0, 0, 0, 0.2);
+}
+
+.product:hover .productImage {
+    opacity: 0.3;
+}
+
+.product:hover .productInfoOverlay {
+    opacity: 1;
+}
+
+#productGhost {
+    background-color: white;
+    border-radius: 10pt;
+
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+
+    box-shadow: 0 4pt 8pt 0 rgba(0, 0, 0, 0.2);
+}
+
+.ghostHide {
+    z-index: -1;
+}
+
+.ghostFloat {
+    z-index: 1;
+}
+
+.ghostContent {
+    color: black;
+}
+
+.ghostDescription {
+    font-size: large;
+}
+
+.ghostContent img {
+    margin-top: 1%;
+    margin-left: 1%;
+    height: 200pt;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.ghostFixedContent {
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ghostFixedContent input[type=button] {
+    position: relative;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.ghostInputElement {
+    background: transparent;
+    border-style: none;
+    outline: none;
+    font-size: large;
+    border-bottom: grey;
+    border-bottom-style: solid;
+    margin-top: 20pt;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 5%;
+    bottom: 0;
+}
+
+#fadeOverlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+#itemNumber {
+    position: absolute;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    top: -15pt;
+    right: -15pt;
+    font-size: 15pt;
+    border-style: solid;
+    border-radius: 100%;
+    border-color: red;
+    color: white;
+    background-color: red;
+    text-decoration: solid;
+
+    width: 20pt;
+    height: 20pt;
+    padding: 2pt;
+}

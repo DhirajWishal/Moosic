@@ -1,0 +1,85 @@
+body {
+    height: 100%;
+    color: white;
+    font-size: larger;
+    display: grid;
+    grid-template-rows: auto auto auto;
+}
+
+.container {
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../Assets/1162936.jpg");
+}
+
+#productTable {
+    padding-top: 3.5%;
+    /*padding-top: 1%;*/
+    padding-bottom: 1%;
+}
+
+#productTable table {
+    border-collapse: collapse;
+    text-align: center;
+    font-size: larger;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#productTable table th {
+    padding-right: 10pt;
+}
+
+.updateIcon {
+    filter: invert(100%);
+    width: 20pt;
+    height: 20pt;
+    margin-left: 10pt;
+}
+
+.removeIcon {
+    filter: invert(100%);
+    width: 15pt;
+    height: 15pt;
+    margin-left: 10pt;
+}
+
+.totalPrice {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inputForm {
+    text-align: left;
+}
+
+.formStyle {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    color: black;
+}
+
+.formInputElement {
+    background: transparent;
+    border-style: none;
+    outline: none;
+    font-size: large;
+    border-bottom: grey;
+    border-bottom-style: solid;
+    margin-top: 20pt;
+    width: 50%;
+}
+
+.formStyle option {
+    color: black;
+}
+
+.formSubmitButton {
+    background: transparent;
+    border-style: solid;
+    border-color: white;
+    color: white;
+    font-size: large;
+    border-radius: 7.5pt;
+}

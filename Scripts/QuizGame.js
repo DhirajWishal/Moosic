@@ -1,6 +1,6 @@
 
 /**
- * must add reset btn functionality
+ * must add reset btn functionality and submit btn must show results -->
  * @returns 
  */
 
@@ -26,6 +26,9 @@
 
     return false;
 }
+
+document.getElementById("submit").addEventListener("click", QuizResults);
+
 
 /**
  * Validation - to ensure user selects an answer for every question
@@ -60,6 +63,7 @@ function  evaluateAnswers(userSelection, noOfQuestions, userScore){
         }
         else{
             userScore -= 1;
+            
         }
     }
     
@@ -116,5 +120,7 @@ function showTime(seconds){
 }
    
     
-
+function resetForm(){
+    location.reload();
+}
 

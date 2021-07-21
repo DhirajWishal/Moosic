@@ -8,21 +8,12 @@
         <link rel="stylesheet" href="../Styles/QuizGame.css">
         <link rel="stylesheet" href="../Styles/DefaultTheme.css">
         <link rel="stylesheet" href ="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+        <script src="../Scripts/Interactivity.js"></script>
     </head>
 
     <body>
-        <div class="navbar">
-            <div class="logo" >
-                <img src="../Assets/Moosic.png" width="100" height="50" />
-            </div>
-            <ul class="linkalign">
-                <li><a href="../Source/MainPage.html">Home</a></li>
-                <li><a href="../Source/CW.html">Products</a></li>
-                <li><a href="../Source/">Query</a></li>
-                <li><a href="../Source/QuizPage.html">Quiz</a></li>
-                <li><a href="../Source/About.html">About</a></li>
-            </ul>
-        </div>
+        <div id='navbar'></div>
+        <script src="../Scripts/navbar.js"></script>
         
         
         <div id="container">
@@ -36,7 +27,8 @@
                 
             </header>
             <section>
-                <form name="quiz" onsubmit="return QuizResults()">
+                <div id="result"></div>
+                <form name="quiz" id="quizform" onclick="">
                     <h3>1. The first pop music video released is?</h3><br>
                     <input type="radio" name="question1" value="A" id="question1A" > 
                     <label for="question1A"> A. Bohemian Rhapsody </label> <br> 
@@ -137,15 +129,15 @@
                     <input type="radio" name="question10" value="D" id="question10D">
                     <label for="question10D"> D. Usher</label> <br>
                     <br><br>
-                    <input type="submit"  value="Submit">
-                    <input type="reset" value="Retry">
+                    <input type="button" id="submit"  value="Submit">
+                    <input type="button" value="Retry" onclick="resetForm()">
                     
                     <a class="backtotop" href="#"><i class="fas fa-arrow-up"></i></a>
 
                 </form>
                 
                 
-                <div id="result"></div>
+                
 
             </section>
             
@@ -159,5 +151,13 @@
         
 
         <script src="../Scripts/QuizGame.js"></script>
+        <footer class="footer">
+            <a href="https://www.linkedin.com/in/miran-kurukulasuriya-5525091bb/" target="_blank"><img src="../Assets/stack_overlow.png"></a>
+            <a href="https://www.facebook.com/thulana.thidaswin.9/" target="_blank"><img src="../Assets/facebook.png"></a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><img src="../Assets/youtube.png" style="padding-top: 0.5%;"></a>
+            <a href="https://stackoverflow.com/users/11228029/d-raj" target="_blank"><img src="../Assets/linkedin.png"></a>
+            <a href="https://www.instagram.com/fm_fizzy/" target="_blank"><img src="../Assets/instagram.png"></a>
+            <p><br><b>Page editor: </b> <a href="Dhiraj.html"><i>Dhiraj Wishal | Student 1</i></a></p>
+        </footer>
     </body>
 </html>

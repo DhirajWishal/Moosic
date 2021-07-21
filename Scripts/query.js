@@ -30,7 +30,7 @@ function viewquery(frm) {
 
     }
 
-    /*if(fname.length==1 || fname.length>30){
+    if(fname.length==1 || fname.length>30 || !isNaN(fname) ){
         alert("Enter a valid first name!");
         filled=false;
         frm.firstname.value="";
@@ -40,26 +40,26 @@ function viewquery(frm) {
         filled=false;
         frm.lastname.value="";   
     }
-    if(email.length<7){
+    if(mail.length<7 || mail.indexOf('@')<-1){
         alert("Enter a valid Email Address!");
         filled=false;
         frm.email.value="";
     }
-    if(feedback.length<11){
+    if(feedback.length<11 || feedback.length>1000){
         alert("Please type in more details in your query!")
         filled=false;
         frm.feedback.value="";
-    }*/
+    }
 
     if (filled == true) {
         x.style.display = 'none';
-        document.getElementById('editquery').innerHTML = "<div class='querydetails'><fieldset><form action='mailto:fizzypop470@gmail.com' method='post' enctype='text/plain' ><h3>Are these details correct?</h3><p><br><br>Your first name: " + fname +
-            "<br><br>Your last name: " + lname + "<br><br>Your Email Address :" + mail +
-            "<br><br>Your query type: " + frm.selector.value + "<br><br>Your query: <div class='feedback'>" + feedback +
-            "</div></p><button class='button2' onClick='editquery()' style='margin-left:600pt;'><b>Edit query</b></button> <input type='submit' value='Submit' class='button2' ></form></fieldset></div>";
+        document.getElementById('editquery').innerHTML = "<div class='querydetails'><fieldset><form action='mailto:fizzypop470@gmail.com' method='post'><h3>DO YOU WISH TO PROCEED WITH THESE DETAILS?</h3><p><br><br><i>Your first name     :</i>" + fname +
+            "<br><br><i>Your last name      :</i>" + lname + "<br><br><i>Your Email Address :</i>" + mail +
+            "<br><br><i>Your query type      :</i>" + frm.selector.value + "<br><br><i>Your query: </i><div class='feedback'>" + feedback +
+            "</div></p><button class='button2' onClick='editquery()' style='margin-left:600pt;'><b>Edit query</b></button> <input type='submit' value='Submit' class='button2'  ></form></fieldset></div>";
 
     }
-    /* */
+    /*https://www.w3schools.com/jsref/prop_style_display.asp*/
    
 
 }

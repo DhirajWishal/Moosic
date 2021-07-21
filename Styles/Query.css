@@ -21,9 +21,12 @@ fieldset{
     width: 800pt;
     border-radius: 3px;
     padding-bottom: 10pt;
+    margin-bottom: 5%;
+
 }
 
 .faq p{
+    margin-left: 0.8%;
     opacity: 1;
     text-align: left;
 }
@@ -62,11 +65,18 @@ input[type=radio]{
 .button:hover{
     background-color:white;
     color: black;
+    cursor:pointer;
 }
 
 .querydetails{
     font-size: 18pt;
     text-align: left;  
+}
+.querydetails p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.querydetails i{
+    font-family:'Courier New', Courier, monospace;
 }
 
 .feedback{
@@ -94,4 +104,6 @@ input[type=radio]{
 .button2:hover{
     background-color:white;
     color: black;
+    cursor:pointer;
 }
+
