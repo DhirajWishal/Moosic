@@ -99,6 +99,7 @@ fieldset {
 }
 
 .queryshow {
+    margin-top: 5%;
     text-align: left;
     color: black;
     padding-left: 130px;
@@ -139,6 +140,10 @@ fieldset {
 .reviewcustomer {
     color: black;
     font-family: 'Festive', cursive;
+}
+
+.reviewcustomer h1{
+    font-size: 300%;
 }
 
 .reviews {
