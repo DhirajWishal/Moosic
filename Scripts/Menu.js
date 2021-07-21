@@ -17,6 +17,9 @@ const imageList = [
     "FenderPick.png",
     "image-efx12-front_original.jpg",
     "pro-headset-hero.png",
+    'imageedit_1_6365420526.png',
+    "Tcymbals.png",
+    "Transparent.png"
 ];
 
 const altList = [

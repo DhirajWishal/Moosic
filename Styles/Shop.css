@@ -2,6 +2,7 @@ html {
   height: 100%;
   width: 100%;
   background-size: cover;
+
 }
 
 body {
@@ -28,6 +29,7 @@ footer {
   border-radius: 10%;
   display: inline-block;
   overflow: x;
+  margin-left:50pt;
 }
 
 .box2 {
@@ -73,10 +75,14 @@ footer {
 
 .Imageoverlay:hover {
   opacity: 0.8;
+  transform:scale(1.5);
+  z-index: 1;
 }
 
 .tablaoverlay:hover {
   opacity: 0.8;
+  transform:scale(1.5);
+  z-index: 1;
 }
 
 .mainBox {
@@ -102,7 +108,7 @@ footer {
 .text {
   text-align: center;
   color: white;
-  padding-top: 60pt;
+  padding-top: 40pt;
 }
 
 h3 {
@@ -169,10 +175,41 @@ h3 {
 .paddRight {
   padding-right: 10pt;
 }
+.paddLeft{
+  padding-left: 20pt;
+}
 
 .buttoncss {
   padding: 10pt;
   background-color: pink;
   font-size: 20pt;
   margin-left: 80%;
+}
+.description{
+  font-size: 8pt;
+  color: aliceblue;
+}
+.hidden{
+  top:0;
+  bottom: 0;
+  right:0;
+  left:0;
+  position: fixed;
+  width: 70%;
+  height: 70%;
+  margin:auto;
+  background-color: white;
+  z-index: -1;
+  border: black;
+  border-color: black;
+  background-color: aqua;
+  border-style: groove;
+  
+}
+.hidden img{
+ height: 300pt;
+}
+.backButton{
+  font-size: 8pt;
+  padding: 2pt;
 }
