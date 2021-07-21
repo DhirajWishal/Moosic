@@ -18,6 +18,7 @@ function showImage(index) {
     variable.style.zIndex = 100;
     let content = "<img src=\"../Assets/" + imageList[index] + "\" alt=\"" + altList[index] + "\" />";
     content += "<button type=\"button\" onclick=\"hideImage();\"class=\"backButton \" />Click me to go back</button>"
+    //used to call the "back button" to use the main gallery back
     variable.innerHTML = content;
 }
 
