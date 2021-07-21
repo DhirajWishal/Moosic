@@ -11,7 +11,9 @@ var quizdone=true;
     var userScore = 0; //initialising user's score
 
 
-    //creating an array to store users selected values
+    /**
+     * creating an array to store user's selected values
+     */
     var userSelection=[ document.forms["quiz"]["question1"].value, 
     document.forms["quiz"]["question2"].value, document.forms["quiz"]["question3"].value, document.forms["quiz"]["question4"].value, 
     document.forms["quiz"]["question5"].value, document.forms["quiz"]["question6"].value, document.forms["quiz"]["question7"].value, 
@@ -23,8 +25,11 @@ var quizdone=true;
     return false;
 }
 
-document.getElementById("submit").addEventListener("click", QuizResults); // event listener when submit button selected QuizResults() will run
-
+/**
+ * event listener when submit button selected QuizResults() will run
+ */
+document.getElementById("submit").addEventListener("click", QuizResults); 
+quizdone=true;
 
 /**
  * Validation - to ensure user selects an answer for every question
@@ -54,119 +59,58 @@ function formValidation(userSelection , noOfQuestions){
  */
 
 function  evaluateAnswers(userSelection, noOfQuestions, userScore){
-    //creating an array to store the correct answers based by value
+
+    /**
+     * creating an array to store the correct answers based by value
+     */
     var answers=['A', 'D', 'B', 'C', 'A', 'A', 'B', 'D', 'C', 'A'];
-    var qright=[]; //
+    var qperformance=[]; //
     var qwrong =[];
     var results = document.getElementById("results");
     var form = document.getElementById("quizform");
 
-
+    /**
+     * Recording user's score and tracking question performance(correct/inncorect)
+     */
     for(i=0;i< noOfQuestions;i++){
         if (userSelection[i] == answers[i]){
             userScore+=2;
-            qright[i] = i+1;
+            qperformance[i] = "correct";
             
 
         }
         else{
             userScore -= 1;
-            qwrong[i] = i + 1;
-
+            qperformance[i] = "incorrect";
 
         }
     }
+
+    /**
+     * stops timer if quiz submitted, question performance and time displayed
+     */
     if (quizdone == true){
+        clearInterval(countdownTimer);
         form.style.display ='none';
+        var timetaken = 60 - timeInSec;
+        console.log(timetaken);
 
-        if (qright[0] == 1){
-            results.innerHTML += "<h2> You got question " + qright[0] + " correct! </h2> <br>";  
-            
+        for(i=0;i<qperformance.length;i++){
+            if (qperformance[i] == "correct"){
+                results.innerHTML +=  "<h2> You got question " + (i+1) + " correct! </h2> <br>"
+            }
+            else{
+                results.innerHTML +=  "<h2> You got question " + (i+1) + " incorrect! Try Again!! </h2> <br>"
+            }
         }
-        else{
-            results.innerHTML += "<h2> You got question " + qwrong[0] + " wrong! Try Again! </h2> <br>";
-        }
-
-        if (qright[1] == 2){
-            results.innerHTML += "<h2> You got question " + qright[1] + " correct! </h2> <br>";  
-            
-        }
-        else{
-            results.innerHTML += "<h2> You got question " + qwrong[1] + " wrong! Try Again! </h2> <br>";
-        }
-
-        if (qright[2] == 3){
-            results.innerHTML += "<h2> You got question " + qright[2] + " correct! </h2> <br>";  
-            
-        }
-        else{
-            results.innerHTML += "<h2> You got question " + qwrong[2] + " wrong! Try Again! </h2> <br>";
-        }
-
-        if (qright[3] == 4){
-            results.innerHTML += "<h2> You got question " + qright[3] + " correct! </h2> <br>";  
-            
-        }
-        else{
-            results.innerHTML += "<h2> You got question " + qwrong[3] + " wrong! Try Again! </h2> <br>";
-        }
-
-        if (qright[4] == 5){
-            results.innerHTML += "<h2> You got question " + qright[4] + " correct! </h2> <br>";  
-            
-        }
-        else{
-            results.innerHTML += "<h2> You got question " + qwrong[4] + " wrong! Try Again! </h2> <br>";
-        }
-
-        if (qright[5] == 6){
-            results.innerHTML += "<h2> You got question " + qright[5] + " correct! </h2> <br>";  
-            
-        }
-        else{
-            results.innerHTML += "<h2> You got question " + qwrong[5] + " wrong! Try Again! </h2> <br>";
-        }
-
-        if (qright[6] == 7){
-            results.innerHTML += "<h2> You got question " + qright[6] + " correct! </h2> <br>";  
-            
-        }
-        else{
-            results.innerHTML += "<h2> You got question " + qwrong[6] + " wrong! Try Again! </h2> <br>";
-        }
-
-        if (qright[7] == 8){
-            results.innerHTML += "<h2> You got question " + qright[7] + " correct! </h2> <br>";  
-            
-        }
-        else{
-            results.innerHTML += "<h2> You got question " + qwrong[7] + " wrong! Try Again! </h2> <br>";
-        }
-
-        if (qright[8] == 9){
-            results.innerHTML += "<h2> You got question " + qright[8] + " correct! </h2> <br>";  
-            
-        }
-        else{
-            results.innerHTML += "<h2> You got question " + qwrong[8] + " wrong! Try Again! </h2> <br>";
-        }
-
-        if (qright[9] == 10){
-            results.innerHTML += "<h2> You got question " + qright[9] + " correct! </h2> <br>";  
-            
-        }
-        else{
-            results.innerHTML += "<h2> You got question " + qwrong[9] + " wrong! Try Again! </h2> <br>";
-        }
-
+        results.innerHTML += "<h2> Your time taken to complete the quiz was: " + timetaken + " seconds</h2> <br>";
+        results.innerHTML += "<input type='button' value='Retry' onclick='resetForm()'></input>"
     } 
 
     
-        
-        
-        
-    
-    
+    /**
+     * displaying a score and change of background based on result
+     */
     var result = document.getElementById("result");
     var change = document.getElementsByTagName("body")[0];
     
@@ -190,6 +134,10 @@ function  evaluateAnswers(userSelection, noOfQuestions, userScore){
 }    
 
 
+
+/**
+ * setting the timer
+ */
 const timer = document.querySelector('h2');
 let timeInSec = 60;
 document.addEventListener("click", showTime(timeInSec));
@@ -204,6 +152,7 @@ const countdownTimer = setInterval(()=>{
         clearInterval(countdownTimer);
         QuizResults();
     }
+    
 
 },1000)
 
@@ -213,7 +162,9 @@ const countdownTimer = setInterval(()=>{
  */
 
 function showTime(seconds){
-    // used Math.floor - to avoid rounding error
+    /**
+     * used Math.floor - to avoid rounding error
+     */
     const minute = Math.floor(seconds/60); 
     const second = Math.floor(seconds % 60);
     timer.innerHTML=`${minute<10 ? '0': ''}${minute}:${second<10 ? '0':''}${second}`
