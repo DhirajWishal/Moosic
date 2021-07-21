@@ -2,15 +2,16 @@ body {
     color: white;
 }
 
+h1 {
+    font-size: 100pt;
+    font-family: 'GoodTimes';
+}
+
 .container {
     background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../Assets/Backdrop6.jpeg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-h1 {
-    margin-bottom: 10pt;
 }
 
 .infoSection {
@@ -19,6 +20,7 @@ h1 {
 
 .productInfo {
     margin-bottom: 10%;
+    margin-top: 10%;
 }
 
 .productSelection {
@@ -33,7 +35,7 @@ h1 {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    height: 350pt;
+    height: 400pt;
     overflow-x: hidden;
     overflow-y: hidden;
 
@@ -49,6 +51,8 @@ h1 {
     /*box-shadow: 0 4pt 8pt 0 rgba(0, 0, 0, 0.2), 0 6pt 20pt 0 rgba(0, 0, 0, 0.19);*/
     text-align: center;
     margin-right: 10pt;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
     float: left;
     height: 300pt;
 
@@ -96,6 +100,14 @@ h1 {
 .productCaption {
     font-size: 16pt;
     /*padding: 16px 32px;*/
+}
+
+.product:hover {
+    z-index: 1;
+    transform: scale(1.2);
+    cursor: pointer;
+
+    box-shadow: 0pt 3pt 5pt rgba(0, 0, 0, 0.2);
 }
 
 .product:hover .productImage {
@@ -182,4 +194,24 @@ h1 {
     left: 0;
     right: 0;
     z-index: -1;
+}
+
+#itemNumber {
+    position: absolute;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    top: -15pt;
+    right: -15pt;
+    font-size: 15pt;
+    border-style: solid;
+    border-radius: 100%;
+    border-color: red;
+    color: white;
+    background-color: red;
+    text-decoration: solid;
+
+    width: 20pt;
+    height: 20pt;
+    padding: 2pt;
 }

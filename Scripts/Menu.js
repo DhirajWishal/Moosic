@@ -59,6 +59,16 @@ const productDescription = [
     "",
 ];
 
+var itemCount = (sessionStorage.getItem("itemCount") == null) ? 0 : sessionStorage.getItem("itemCount");
+
+/**
+ * Update the item count display.
+ */
+function updateItemCount() {
+    console.log(itemCount);
+    document.getElementById("itemNumber").innerHTML = itemCount;
+}
+
 /***
  * This function initializes the product list.
  * The reason to add the product items dynamically, is because there are a lot of similar tags in the similar structure. This means that the same code gets repeated and
@@ -95,16 +105,20 @@ function initializeProductList() {
  * @returns None.
  */
 function handleAddToCart(index, form) {
-    let ghost = document.getElementById("productGhost");
     if (form.quantity.value.length == 0 || isNaN(form.quantity.value)) {
         alert("Quantity should be a valid number!");
+        form.quantity.value = "";
         return;
     }
 
-    setProduct(index, altList[index], form.quantity.value);
+    if (getProduct(index).isNull())
+        itemCount++;
 
-    alert("Item added to the cart!");
+    setProduct(index, altList[index], form.quantity.value);
+    sessionStorage.setItem("itemCount", itemCount);
+
     hideGhost();
+    updateItemCount();
 }
 
 /**
