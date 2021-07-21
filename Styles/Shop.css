@@ -145,6 +145,7 @@ h3 {
 .linkalign a:hover {
   color: rgb(25, 26, 27);
   background-color: rgba(4, 9, 30, 0.7);
+  margin: 20pt;
 }
 
 .linkalign ul {
