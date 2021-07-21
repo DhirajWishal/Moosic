@@ -1,7 +1,9 @@
 mybutton = document.getElementById("backtotop");
 
 
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () {
+  scrollFunction()
+};
 
 function scrollFunction() {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
@@ -10,5 +12,3 @@ function scrollFunction() {
     mybutton.style.display = "none";
   }
 }
-
-

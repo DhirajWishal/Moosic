@@ -1,4 +1,3 @@
-
 .dp {
     display: block;
     width: 15%;
@@ -27,8 +26,9 @@ footer {
     display: inline;
     text-decoration: none;
 }
-.iconbar img{
-    margin-left:2% ;
-    margin-right:2%;
-    
+
+.iconbar img {
+    margin-left: 2%;
+    margin-right: 2%;
+
 }

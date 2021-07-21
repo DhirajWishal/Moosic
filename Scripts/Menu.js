@@ -61,10 +61,6 @@ const prices = [
     300
 ];
 
-const productDescription = [
-    "",
-];
-
 var itemCount = (sessionStorage.getItem("itemCount") == null) ? 0 : sessionStorage.getItem("itemCount");
 
 /**

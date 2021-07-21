@@ -55,6 +55,8 @@ html {
 .linkalign a:hover {
     color: rgb(25, 26, 27);
     background-color: rgba(4, 9, 30, 0.7);
+    border-bottom-color: white;
+    border-bottom-width: 10pt;
 }
 
 .linkalign ul {
