@@ -5,12 +5,9 @@ var quizdone=true;
 /**
  * Function to obtain radio values(user's selected values) and display the results 
  */
-
  function QuizResults(){
     var noOfQuestions = 10; //total number of questions  
     var userScore = 0; //initialising user's score
-
-
     /**
      * creating an array to store user's selected values
      */
@@ -57,9 +54,7 @@ function formValidation(userSelection , noOfQuestions){
  * @param {*} noOfQuestions 
  * @param {*} userScore 
  */
-
 function  evaluateAnswers(userSelection, noOfQuestions, userScore){
-
     /**
      * creating an array to store the correct answers based by value
      */
@@ -68,7 +63,6 @@ function  evaluateAnswers(userSelection, noOfQuestions, userScore){
     var qwrong =[];
     var results = document.getElementById("results");
     var form = document.getElementById("quizform");
-
     /**
      * Recording user's score and tracking question performance(correct/inncorect)
      */
@@ -85,9 +79,8 @@ function  evaluateAnswers(userSelection, noOfQuestions, userScore){
 
         }
     }
-
     /**
-     * stops timer if quiz submitted, question performance and time displayed
+     * stops timer if quiz submitted, question performance and time displayed.
      */
     if (quizdone == true){
         clearInterval(countdownTimer);
@@ -105,11 +98,9 @@ function  evaluateAnswers(userSelection, noOfQuestions, userScore){
         }
         results.innerHTML += "<h2> Your time taken to complete the quiz was: " + timetaken + " seconds</h2> <br>";
         results.innerHTML += "<input type='button' value='Retry' onclick='resetForm()'></input>"
-    } 
-
-    
+    }    
     /**
-     * displaying a score and change of background based on result
+     * displaying a score and change of background based on result.
      */
     var result = document.getElementById("result");
     var change = document.getElementsByTagName("body")[0];
@@ -132,9 +123,6 @@ function  evaluateAnswers(userSelection, noOfQuestions, userScore){
     }
     
 }    
-
-
-
 /**
  * setting the timer
  */
@@ -170,7 +158,9 @@ function showTime(seconds){
     timer.innerHTML=`${minute<10 ? '0': ''}${minute}:${second<10 ? '0':''}${second}`
 }
    
-    
+/**
+ * Fucntion to reset the form
+ */
 function resetForm(){
     location.reload();
 }

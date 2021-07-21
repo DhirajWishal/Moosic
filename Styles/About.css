@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto&display=swap');
 
 
 body {
@@ -8,11 +8,13 @@ body {
     color: white;
     height: 100%;
     width: 100%;
+    
 }
 
 
 #container {
-    
+
+    font-family: 'Open Sans', sans-serif;
     width: 60%;
     font: 'Roboto';
     margin: 20pt auto;
