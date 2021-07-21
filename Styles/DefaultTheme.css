@@ -52,10 +52,14 @@ html {
 }
 
 .linkalign a:hover {
+    color: black;
+    background-color: white;
+
     border-bottom: 1pt;
     border-bottom-style: solid;
+    border-bottom-color: black;
 
-    transition: 1s ease;
+    transition: .5s ease;
 }
 
 .linkalign ul {
