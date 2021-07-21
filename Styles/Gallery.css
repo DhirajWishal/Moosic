@@ -120,53 +120,7 @@ h3 {
   color: black;
 }
 
-.logo {
-  float: left;
-  padding-top: 0.6%;
-  padding-left: 0.8%;
-  border: 0.4%;
-  border-radius: 0.4%;
-}
 
-.navbar {
-  z-index: 500;
-  overflow: hidden;
-  background-color: black;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  font-size: 1.5vw;
-
-}
-
-.linkalign a {
-  color: white;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 15pt 45pt;
-  display: block;
-}
-
-
-.linkalign a:hover {
-  color: rgb(25, 26, 27);
-  background-color: rgba(4, 9, 30, 0.7);
-  margin: 20pt;
-}
-
-.linkalign ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-
-
-}
-
-.linkalign li {
-  list-style: none;
-  display: inline-block;
-}
 
 .paddown {
   padding-bottom: 60pt;
@@ -202,7 +156,7 @@ h3 {
   z-index: -1;
   border: black;
   border-color: black;
-  background-color: aqua;
+  background-color:#fff;
   border-style: groove;
   
 }
@@ -212,4 +166,7 @@ h3 {
 .backButton{
   font-size: 8pt;
   padding: 2pt;
+  position:relative;
+  padding:20pt;
+  font-size:15pt
 }

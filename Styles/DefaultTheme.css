@@ -40,14 +40,14 @@ html {
     position: fixed;
     top: 0;
     width: 100%;
-    font-size: 12pt;
+    font-size: 100%;
 }
 
 .linkalign a {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
-    padding: 16pt 45pt;
+    padding: 16pt 28pt;
     display: block;
 }
 
